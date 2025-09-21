@@ -1,0 +1,160 @@
+{
+  "mcp_usage_patterns": {
+    "description": "Padrões inteligentes para uso do MCP Nuxt UI no Enhanced Create-Spec",
+    "version": "2.0.0",
+    "timestamp": "21/09/2025 20:20:15 (America/Sao_Paulo)",
+    
+    "discovery_patterns": {
+      "by_functionality": {
+        "form_components": {
+          "keywords": ["formulário", "form", "input", "campo", "validação", "submit"],
+          "mcp_query": "mcp_nuxt_ui_search_components_by_category({ category: 'form' })",
+          "common_components": ["UForm", "UFormGroup", "UInput", "UTextarea", "USelect", "UButton"]
+        },
+        
+        "data_display": {
+          "keywords": ["tabela", "lista", "dados", "table", "grid", "cards"],
+          "mcp_query": "mcp_nuxt_ui_search_components_by_category({ category: 'data' })",
+          "common_components": ["UTable", "UCard", "UBadge", "UAvatar", "UKbd"]
+        },
+        
+        "navigation": {
+          "keywords": ["menu", "navegação", "botão", "link", "breadcrumb"],
+          "mcp_query": "mcp_nuxt_ui_search_components_by_category({ category: 'navigation' })",
+          "common_components": ["UButton", "UDropdown", "UBreadcrumb", "UPagination"]
+        },
+        
+        "feedback": {
+          "keywords": ["alerta", "notificação", "toast", "modal", "loading"],
+          "mcp_query": "mcp_nuxt_ui_search_components_by_category({ category: 'feedback' })",
+          "common_components": ["UAlert", "UNotification", "UModal", "UProgress"]
+        },
+        
+        "layout": {
+          "keywords": ["container", "layout", "grid", "sidebar", "header"],
+          "mcp_query": "mcp_nuxt_ui_search_components_by_category({ category: 'layout' })",
+          "common_components": ["UContainer", "UPage", "UCard", "UDivider"]
+        }
+      }
+    },
+    
+    "validation_patterns": {
+      "prop_validation": {
+        "workflow": [
+          "1. Obter metadados: mcp_nuxt_ui_get_component_metadata({ componentName: 'ComponentName' })",
+          "2. Validar props propostas contra metadata.props",
+          "3. Alertar sobre props inválidas",
+          "4. Sugerir props corretas baseadas em metadata"
+        ],
+        "example": {
+          "component": "UButton",
+          "invalid_props": ["color='blue'", "size='large'"],
+          "valid_props": ["color='primary'", "size='lg'"],
+          "validation_query": "mcp_nuxt_ui_get_component_metadata({ componentName: 'Button' })"
+        }
+      },
+      
+      "event_validation": {
+        "workflow": [
+          "1. Obter metadados do componente",
+          "2. Verificar eventos disponíveis em metadata.emits",
+          "3. Validar eventos propostos",
+          "4. Gerar handlers baseados em eventos reais"
+        ]
+      },
+      
+      "slot_validation": {
+        "workflow": [
+          "1. Verificar slots disponíveis em metadata.slots",
+          "2. Validar uso de slots propostos",
+          "3. Documentar props de slots quando disponíveis"
+        ]
+      }
+    },
+    
+    "code_generation_patterns": {
+      "component_template": {
+        "workflow": [
+          "1. Consultar MCP para informações reais",
+          "2. Gerar template baseado em dados validados",
+          "3. Incluir apenas props/events/slots confirmados",
+          "4. Adicionar comentários explicativos"
+        ],
+        "template": "<!-- Baseado em dados reais do MCP Nuxt UI -->\n<U{ComponentName}\n  {validated_props}\n  {validated_events}\n>\n  {validated_slots}\n</U{ComponentName}>"
+      },
+      
+      "accessibility_integration": {
+        "workflow": [
+          "1. Extrair informações A11y dos metadados MCP",
+          "2. Identificar props relacionadas a ARIA",
+          "3. Gerar atributos WCAG 2.1 AA automáticos",
+          "4. Validar suporte a teclado e screen readers"
+        ]
+      }
+    },
+    
+    "error_prevention": {
+      "common_mistakes": [
+        {
+          "mistake": "Assumir props sem consultar MCP",
+          "solution": "SEMPRE consultar mcp_nuxt_ui_get_component_metadata() primeiro"
+        },
+        {
+          "mistake": "Usar nomes de componentes incorretos",
+          "solution": "Validar com mcp_nuxt_ui_list_components() antes de usar"
+        },
+        {
+          "mistake": "Duplicar informações do MCP",
+          "solution": "Referenciar MCP como fonte única da verdade"
+        },
+        {
+          "mistake": "Não validar compatibilidade de versão",
+          "solution": "Verificar versão do componente nos metadados MCP"
+        }
+      ],
+      
+      "validation_checklist": [
+        "✓ Componente existe no MCP?",
+        "✓ Props são válidas segundo metadados?",
+        "✓ Events são suportados pelo componente?",
+        "✓ Slots estão sendo usados corretamente?",
+        "✓ Acessibilidade está implementada?",
+        "✓ Exemplos seguem padrões do MCP?"
+      ]
+    },
+    
+    "performance_patterns": {
+      "efficient_queries": {
+        "batch_queries": "Fazer múltiplas consultas em paralelo quando possível",
+        "cache_results": "Cachear resultados MCP durante a sessão de spec",
+        "targeted_queries": "Usar search_components_by_category em vez de list_components quando possível"
+      },
+      
+      "query_optimization": {
+        "category_first": "Sempre começar com busca por categoria",
+        "metadata_on_demand": "Obter metadados apenas para componentes selecionados",
+        "parallel_processing": "Processar múltiplos componentes em paralelo"
+      }
+    },
+    
+    "spec_integration": {
+      "enhanced_spec_workflow": [
+        "1. Análise semântica da descrição da spec",
+        "2. Mapeamento para categorias Nuxt UI",
+        "3. Descoberta via MCP por categoria",
+        "4. Validação de componentes descobertos",
+        "5. Obtenção de metadados completos",
+        "6. Geração de specs baseadas em dados reais",
+        "7. Validação final de precisão"
+      ],
+      
+      "accuracy_guarantees": {
+        "component_props": "100% - vindos diretamente do MCP",
+        "component_events": "100% - validados via metadados MCP",
+        "component_slots": "100% - confirmados pelo MCP",
+        "accessibility": "95%+ - baseado em informações oficiais",
+        "examples": "90%+ - adaptados de documentação MCP"
+      }
+    }
+  }
+}

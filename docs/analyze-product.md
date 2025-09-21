@@ -876,8 +876,8 @@ export default defineNuxtConfig({
               Integration Tests (20%)
             ┌─────────────────────────┐
             │  Component Integration  │
-            │  API Integration       │
-            │  Store Integration     │
+            │   API Integration       │
+            │   Store Integration     │
             └─────────────────────────┘
             
           Unit Tests (70%)
