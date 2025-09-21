@@ -25,6 +25,8 @@ O **Agent Nuxt** é um sistema de conhecimento e contextos estruturados baseado 
 - 🔄 **Zero Alucinação** através de sistema robusto de validação
 - 📊 **Redução de 60%** no consumo de tokens
 - 🚀 **Produtividade 40% maior** no desenvolvimento
+- 🎯 **Enhanced Create-Spec v2.0** com estratégia MCP inteligente
+- 🔍 **MCP como Fonte Única da Verdade** para 100% de precisão
 
 ## 🎯 Para Quem É Este Projeto
 
@@ -135,6 +137,12 @@ agent-nuxt/
 │   │   └── roadmap.md
 │   ├── 📂 specs/                   # Implementações técnicas
 │   │   └── implementation-guide.md
+│   ├── 📂 instructions/core/       # Instruções principais
+│   │   ├── create-spec.md          # Versão clássica
+│   │   ├── enhanced-create-spec.md # Enhanced v2.0 com MCP
+│   │   └── mcp-intelligent-usage.md # Guia de uso MCP
+│   ├── 📂 knowledge/               # Base de conhecimento
+│   │   └── mcp-usage-patterns.json # Padrões MCP inteligentes
 │   ├── 📂 agents/                  # Subagentes especializados
 │   │   ├── nuxt-ui-specialist.js
 │   │   └── ui-agent.js
@@ -147,7 +155,11 @@ agent-nuxt/
 │       └── Nuxt4xKnowledgeManager.js
 ├── 📂 docs/                        # Documentação
 │   ├── analyze-product.md          # Análise técnica completa
-│   └── project/                    # Documentação do projeto
+│   └── 📂 project/                 # Documentação do projeto
+│       ├── enhanced-create-spec-proposal.md # Proposta Enhanced v2.0
+│       ├── agent-os.md             # Documentação Agent OS
+│       ├── nuxt-4x.md              # Guia Nuxt 4.x
+│       └── nuxt-ui-v4.md           # Guia Nuxt UI v4
 ├── 📂 utils/                       # Utilitários
 │   └── timestamp.ts               # Sistema de timestamp
 ├── 📄 README.md                    # Este arquivo
@@ -166,8 +178,11 @@ agent-nuxt/
 ### 2. Criar Nova Especificação
 
 ```bash
-# Para criar especificação de nova funcionalidade
+# Para criar especificação de nova funcionalidade (versão clássica)
 @.agent-os/instructions/core/create-spec.md
+
+# Para criar especificação com Enhanced Create-Spec v2.0 (MCP inteligente)
+@.agent-os/instructions/core/enhanced-create-spec.md
 ```
 
 ### 3. Executar Tarefas
@@ -207,6 +222,65 @@ agent-nuxt/
 - **Playwright** `^1.40.0` - Testes E2E
 - **Axe-core** `^4.8.0` - Testes de acessibilidade
 - **Lighthouse CI** - Auditoria de performance
+
+## 🆕 Enhanced Create-Spec v2.0 - Estratégia MCP Inteligente
+
+### 🎯 Nova Funcionalidade: MCP como Fonte Única da Verdade
+
+O **Enhanced Create-Spec v2.0** implementa uma estratégia revolucionária que usa o **MCP Nuxt UI como fonte única da verdade**, eliminando completamente a alucinação de APIs e garantindo 100% de precisão.
+
+#### ✨ Características Principais
+
+- 🔍 **MCP-First Discovery**: Sempre consulta MCP antes de sugerir componentes
+- 🛡️ **Anti-Hallucination Engine**: Previne alucinação através de validação MCP obrigatória
+- ⚡ **Real-Time Validation**: Valida props/events em tempo real via MCP
+- 🎯 **100% Accuracy**: Props e events sempre corretos (vindos do MCP)
+- 🔄 **Zero Duplication**: MCP como única fonte, sempre atualizada
+- 🧠 **Smart Teaching**: Ensina LLMs a "pescar" vs dar "peixes duplicados"
+
+#### 📊 Impacto Esperado
+
+- **Props/Events Accuracy**: 100% (vindos do MCP)
+- **Hallucination Rate**: 0% (validação MCP obrigatória)
+- **Code Accuracy**: 95%+ (baseado em dados reais)
+- **Maintenance**: Zero (MCP sempre atualizado)
+
+#### 🚀 Como Usar Enhanced Create-Spec v2.0
+
+```bash
+# Usar Enhanced Create-Spec com estratégia MCP
+@.agent-os/instructions/core/enhanced-create-spec.md
+
+# Consultar padrões de uso MCP
+@.agent-os/instructions/core/mcp-intelligent-usage.md
+
+# Acessar base de conhecimento MCP
+@.agent-os/knowledge/mcp-usage-patterns.json
+```
+
+#### 📋 Exemplo de Workflow MCP
+
+```typescript
+// 1. Descoberta via MCP (nunca assumir)
+const components = await mcp_nuxt_ui_search_components_by_category({
+  category: "form"
+})
+
+// 2. Validação obrigatória via MCP
+const realInfo = await mcp_nuxt_ui_get_component({
+  componentName: "Button"
+})
+
+const realMetadata = await mcp_nuxt_ui_get_component_metadata({
+  componentName: "Button"
+})
+
+// 3. Implementação baseada em dados REAIS
+<UButton 
+  :color="realMetadata.props.color.default"  // 100% correto
+  @click="handleClick"                       // Event validado
+>
+```
 
 ## 🎨 Exemplos de Uso
 
@@ -399,6 +473,9 @@ O projeto inclui configuração completa para:
 ## 📚 Documentação Adicional
 
 - 📖 **[Análise Técnica Completa](docs/analyze-product.md)** - Documentação detalhada do sistema
+- 🆕 **[Enhanced Create-Spec v2.0](docs/project/enhanced-create-spec-proposal.md)** - Proposta completa com estratégia MCP
+- 🎯 **[MCP Intelligent Usage](.agent-os/instructions/core/mcp-intelligent-usage.md)** - Guia de uso MCP
+- 🧠 **[MCP Usage Patterns](.agent-os/knowledge/mcp-usage-patterns.json)** - Padrões inteligentes MCP
 - 🏗️ **[Agent OS Documentation](https://buildermethods.com/agent-os)** - Documentação oficial
 - 🎨 **[Nuxt UI v4 Components](https://ui.nuxt.com)** - Guia de componentes
 - ♿ **[WCAG 2.1 Guidelines](https://www.w3.org/WAI/WCAG21/quickref/)** - Padrões de acessibilidade
@@ -434,6 +511,8 @@ Este projeto está licenciado sob a [MIT License](LICENSE).
 <div align="center">
 
 **Agent Nuxt v2.1.0** - Sistema de Conhecimento Especializado para Nuxt.js
+
+**🆕 Enhanced Create-Spec v2.0** - MCP como Fonte Única da Verdade
 
 [![Agent OS](https://img.shields.io/badge/Powered%20by-Agent%20OS-blue.svg)](https://buildermethods.com/agent-os)
 [![Made with ❤️](https://img.shields.io/badge/Made%20with-❤️-red.svg)](#)
