@@ -1,0 +1,1382 @@
+================
+CODE SNIPPETS
+================
+TITLE: Native Install of Claude Code for Windows PowerShell
+DESCRIPTION: Installs Claude Code natively on Windows systems using PowerShell's `Invoke-RestMethod` (irm) to download and execute an installation script. This native installation method is currently in beta.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: PowerShell
+CODE:
+```
+irm https://claude.ai/install.ps1 | iex
+```
+
+--------------------------------
+
+TITLE: Install and Get Started with Claude Code CLI
+DESCRIPTION: This snippet provides the commands to install Claude Code globally using npm, navigate to a project directory, and initialize the Claude Code CLI. It notes that a login prompt will appear on first use.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/index
+
+LANGUAGE: Shell
+CODE:
+```
+# Install Claude Code
+npm install -g @anthropic-ai/claude-code
+
+# Navigate to your project
+cd your-awesome-project
+
+# Start coding with Claude
+claude
+# You'll be prompted to log in on first use
+```
+
+--------------------------------
+
+TITLE: Ask Claude Code Questions about its Capabilities
+DESCRIPTION: Examples of interactive commands to inquire about Claude Code's own features and functionalities. Users can ask about its capabilities, how to use slash commands, or its compatibility with other tools like Docker.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Shell
+CODE:
+```
+> what can Claude Code do?
+
+> how do I use slash commands in Claude Code?
+
+> can Claude Code work with Docker?
+```
+
+--------------------------------
+
+TITLE: Native Install of Claude Code for Windows CMD
+DESCRIPTION: Installs Claude Code natively on Windows systems using the Command Prompt (CMD) by downloading an installation script via curl, executing it, and then deleting the script. This native installation method is currently in beta.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Shell
+CODE:
+```
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+--------------------------------
+
+TITLE: Navigate to project and start Claude Code CLI
+DESCRIPTION: After installing Claude Code, use these commands to change into your project directory and then launch the Claude Code CLI. This initiates the tool within your project context.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/setup
+
+LANGUAGE: Shell
+CODE:
+```
+cd your-awesome-project
+claude
+```
+
+--------------------------------
+
+TITLE: Start an Interactive Claude Code Session
+DESCRIPTION: Navigates to a specific project directory and then launches an interactive Claude Code session. This command is the entry point for using the AI assistant within the context of a code project.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Shell
+CODE:
+```
+cd /path/to/your/project
+claude
+```
+
+--------------------------------
+
+TITLE: Native Install of Claude Code for macOS, Linux, and WSL
+DESCRIPTION: Performs a native installation of Claude Code on Unix-like operating systems (macOS, Linux, and Windows Subsystem for Linux) by executing a script downloaded via curl. This native installation method is currently in beta.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Shell
+CODE:
+```
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+--------------------------------
+
+TITLE: Ask Claude Code Questions for Project Understanding
+DESCRIPTION: Examples of interactive commands to query Claude Code about the current project. Claude can analyze files to provide summaries, identify technologies, locate main entry points, and explain folder structures.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Shell
+CODE:
+```
+> what does this project do?
+
+> what technologies does this project use?
+
+> where is the main entry point?
+
+> explain the folder structure
+```
+
+--------------------------------
+
+TITLE: Install Claude Code CLI via NPM
+DESCRIPTION: Installs the Claude Code command-line interface globally using npm. This method requires Node.js version 18 or newer to be installed on the system.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: JavaScript
+CODE:
+```
+npm install -g @anthropic-ai/claude-code
+```
+
+--------------------------------
+
+TITLE: Common Development Workflows with Claude Code
+DESCRIPTION: Provides examples of how Claude Code can assist with various development tasks such as refactoring code, writing unit tests, updating documentation, and performing code reviews using natural language prompts.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Prompt
+CODE:
+```
+> refactor the authentication module to use async/await instead of callbacks
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> write unit tests for the calculator functions
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> update the README with installation instructions
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> review my changes and suggest improvements
+```
+
+--------------------------------
+
+TITLE: Migrate Claude Code Installer to Local (NPM)
+DESCRIPTION: Command to migrate the Claude Code installer to a local setup after a global npm installation, helping to avoid autoupdater permission issues.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/setup
+
+LANGUAGE: Shell
+CODE:
+```
+claude migrate-installer
+```
+
+--------------------------------
+
+TITLE: Essential Claude Code CLI Commands
+DESCRIPTION: Lists fundamental command-line interface commands for interacting with Claude Code, including starting interactive mode, running one-time tasks, continuing conversations, managing sessions, and performing Git commits directly.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Shell
+CODE:
+```
+claude
+```
+
+LANGUAGE: Shell
+CODE:
+```
+claude "fix the build error"
+```
+
+LANGUAGE: Shell
+CODE:
+```
+claude -p "explain this function"
+```
+
+LANGUAGE: Shell
+CODE:
+```
+claude -c
+```
+
+LANGUAGE: Shell
+CODE:
+```
+claude -r
+```
+
+LANGUAGE: Shell
+CODE:
+```
+claude commit
+```
+
+LANGUAGE: Shell
+CODE:
+```
+> /clear
+```
+
+LANGUAGE: Shell
+CODE:
+```
+> /help
+```
+
+LANGUAGE: Shell
+CODE:
+```
+> exit
+```
+
+--------------------------------
+
+TITLE: Create and run a basic Claude Code legal agent in Python
+DESCRIPTION: This quick start guide demonstrates how to build a simple AI agent using the `ClaudeSDKClient` in Python. The example configures a legal assistant agent with a system prompt, sends a query, and streams the response, showcasing asynchronous interaction. Instructions for running the script and using it in IPython/Jupyter are provided.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-python
+
+LANGUAGE: Python
+CODE:
+```
+import asyncio
+from claude_code_sdk import ClaudeSDKClient, ClaudeCodeOptions
+
+async def main():
+    async with ClaudeSDKClient(
+        options=ClaudeCodeOptions(
+            system_prompt="You are a legal assistant. Identify risks and suggest improvements.",
+            max_turns=2
+        )
+    ) as client:
+        # Send the query
+        await client.query(
+            "Review this contract clause for potential issues: 'The party agrees to unlimited liability...'"
+        )
+
+        # Stream the response
+        async for message in client.receive_response():
+            if hasattr(message, 'content'):
+                # Print streaming content as it arrives
+                for block in message.content:
+                    if hasattr(block, 'text'):
+                        print(block.text, end='', flush=True)
+
+if __name__ == "__main__":
+    asyncio.run(main())
+```
+
+LANGUAGE: Bash
+CODE:
+```
+python legal-agent.py
+```
+
+LANGUAGE: Python
+CODE:
+```
+await main()
+```
+
+--------------------------------
+
+TITLE: Get a Quick Codebase Overview with Claude Code
+DESCRIPTION: Use Claude Code to rapidly understand the structure of a new project. Start by navigating to the project root and launching Claude Code, then ask broad questions about the codebase, architecture, data models, and authentication to gain a high-level understanding.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/common-workflows
+
+LANGUAGE: Shell
+CODE:
+```
+cd /path/to/project
+```
+
+LANGUAGE: Shell
+CODE:
+```
+claude
+```
+
+LANGUAGE: Claude Code CLI
+CODE:
+```
+> give me an overview of this codebase
+```
+
+LANGUAGE: Claude Code CLI
+CODE:
+```
+> explain the main architecture patterns used here
+```
+
+LANGUAGE: Claude Code CLI
+CODE:
+```
+> what are the key data models?
+```
+
+LANGUAGE: Claude Code CLI
+CODE:
+```
+> how is authentication handled?
+```
+
+--------------------------------
+
+TITLE: Install latest Claude Code native binary on macOS/Linux/WSL
+DESCRIPTION: This command downloads and executes the installation script for the *latest* version of the Claude Code native binary. It uses `curl` to fetch the script and pipes it to `bash` with the `latest` argument, ensuring the most recent build is installed.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/setup
+
+LANGUAGE: Shell
+CODE:
+```
+# Install latest version
+curl -fsSL https://claude.ai/install.sh | bash -s latest
+```
+
+--------------------------------
+
+TITLE: Install Native Claude Code on macOS, Linux, and WSL
+DESCRIPTION: Instructions for installing the beta native Claude Code installer on Unix-like systems. Includes commands for stable, latest, and specific version installations using `curl`.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/troubleshooting
+
+LANGUAGE: bash
+CODE:
+```
+# Install stable version (default)
+curl -fsSL https://claude.ai/install.sh | bash
+
+# Install latest version
+curl -fsSL https://claude.ai/install.sh | bash -s latest
+
+# Install specific version number
+curl -fsSL https://claude.ai/install.sh | bash -s 1.0.58
+```
+
+--------------------------------
+
+TITLE: Install Claude Code on Windows using PowerShell
+DESCRIPTION: Provides PowerShell commands to install Claude Code, including options for installing the stable, latest, or a specific version number.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/setup
+
+LANGUAGE: PowerShell
+CODE:
+```
+# Install stable version (default)
+irm https://claude.ai/install.ps1 | iex
+```
+
+LANGUAGE: PowerShell
+CODE:
+```
+# Install latest version
+& ([scriptblock]::Create((irm https://claude.ai/install.ps1))) latest
+```
+
+LANGUAGE: PowerShell
+CODE:
+```
+# Install specific version number
+& ([scriptblock]::Create((irm https://claude.ai/install.ps1))) 1.0.58
+```
+
+--------------------------------
+
+TITLE: Install stable Claude Code native binary on macOS/Linux/WSL
+DESCRIPTION: This command downloads and executes the installation script for the stable version of the Claude Code native binary. It uses `curl` to fetch the script and pipes it directly to `bash` for execution, providing a fresh installation.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/setup
+
+LANGUAGE: Shell
+CODE:
+```
+# Install stable version (default)
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+--------------------------------
+
+TITLE: Advanced Prompting Techniques for Claude Code
+DESCRIPTION: Offers best practices for interacting with Claude Code, demonstrating how to formulate specific requests, break down complex tasks into step-by-step instructions, and allow Claude to analyze code or data before making changes.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Prompt
+CODE:
+```
+> 1. create a new database table for user profiles
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> 2. create an API endpoint to get and update user profiles
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> 3. build a webpage that allows users to see and edit their information
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> analyze the database schema
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> build a dashboard showing products that are most frequently returned by our UK customers
+```
+
+--------------------------------
+
+TITLE: Install Claude Code globally using npm
+DESCRIPTION: This command installs the Claude Code CLI tool globally on your system using npm. It requires Node.js 18+ to be installed. Avoid using `sudo` to prevent permission issues.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/setup
+
+LANGUAGE: JavaScript
+CODE:
+```
+npm install -g @anthropic-ai/claude-code
+```
+
+--------------------------------
+
+TITLE: Install Claude Code on Windows using Command Prompt
+DESCRIPTION: Provides CMD commands to install Claude Code, including options for stable, latest, or a specific version number, handling download and cleanup.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/setup
+
+LANGUAGE: CMD
+CODE:
+```
+REM Install stable version (default)
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+LANGUAGE: CMD
+CODE:
+```
+REM Install latest version
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd latest && del install.cmd
+```
+
+LANGUAGE: CMD
+CODE:
+```
+REM Install specific version number
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd 1.0.58 && del install.cmd
+```
+
+--------------------------------
+
+TITLE: Verify Claude Code Installation
+DESCRIPTION: Command to run a diagnostic check and verify the successful installation of Claude Code.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/setup
+
+LANGUAGE: Shell
+CODE:
+```
+claude doctor
+```
+
+--------------------------------
+
+TITLE: Making First Code Change with Claude Code
+DESCRIPTION: Demonstrates how to prompt Claude Code to add new functionality to a file, showing its process of finding files, proposing changes, and seeking approval before making the edit.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Prompt
+CODE:
+```
+> add a hello world function to the main file
+```
+
+--------------------------------
+
+TITLE: Claude Code Settings Precedence File Examples
+DESCRIPTION: Examples of configuration file paths demonstrating the hierarchy of settings application, from highest (enterprise policies) to lowest (user settings) precedence.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/iam
+
+LANGUAGE: File Path
+CODE:
+```
+.claude/settings.local.json
+```
+
+LANGUAGE: File Path
+CODE:
+```
+.claude/settings.json
+```
+
+LANGUAGE: File Path
+CODE:
+```
+~/.claude/settings.json
+```
+
+--------------------------------
+
+TITLE: Install Dependencies for Alpine Linux (musl/uClibc)
+DESCRIPTION: Instructions for installing necessary dependencies (`libgcc`, `libstdc++`, `ripgrep`) on Alpine Linux and setting the `USE_BUILTIN_RIPGREP` environment variable for native build compatibility.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/setup
+
+LANGUAGE: Shell
+CODE:
+```
+apk add libgcc libstdc++ ripgrep
+USE_BUILTIN_RIPGREP=0
+```
+
+--------------------------------
+
+TITLE: Install Claude Code Python SDK and its dependencies
+DESCRIPTION: This section provides the necessary commands to install the `claude-code-sdk` Python package from PyPI and its required Node.js dependency, `@anthropic-ai/claude-code`, via NPM. An optional command for installing IPython for interactive development is also included.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-python
+
+LANGUAGE: Bash
+CODE:
+```
+pip install claude-code-sdk
+npm install -g @anthropic-ai/claude-code
+```
+
+LANGUAGE: Bash
+CODE:
+```
+pip install ipython
+```
+
+--------------------------------
+
+TITLE: Install Specific Claude Code Version (Bash/Curl)
+DESCRIPTION: Demonstrates how to install a specific version of Claude Code using a curl command piped to bash, suitable for Linux/macOS systems.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/setup
+
+LANGUAGE: Bash
+CODE:
+```
+curl -fsSL https://claude.ai/install.sh | bash -s 1.0.58
+```
+
+--------------------------------
+
+TITLE: Start Claude Code REPL with initial prompt
+DESCRIPTION: Starts an interactive REPL session, pre-populating it with an initial query.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/cli-reference
+
+LANGUAGE: Shell
+CODE:
+```
+claude "explain this project"
+```
+
+--------------------------------
+
+TITLE: Claude Code Read & Edit File Permission Examples
+DESCRIPTION: Illustrative examples demonstrating the application of absolute, home directory, settings-relative, and current directory relative paths for file read and edit rules.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/iam
+
+LANGUAGE: Configuration
+CODE:
+```
+Read(//Users/alice/secrets/**)
+```
+
+LANGUAGE: Configuration
+CODE:
+```
+Read(~/Documents/*.pdf)
+```
+
+LANGUAGE: Configuration
+CODE:
+```
+Edit(/src/**/*.ts)
+```
+
+LANGUAGE: Configuration
+CODE:
+```
+Read(*.env)
+```
+
+LANGUAGE: Configuration
+CODE:
+```
+Edit(/docs/**)
+```
+
+LANGUAGE: Configuration
+CODE:
+```
+Read(~/.zshrc)
+```
+
+LANGUAGE: Configuration
+CODE:
+```
+Edit(//tmp/scratch.txt)
+```
+
+LANGUAGE: Configuration
+CODE:
+```
+Read(src/**)
+```
+
+--------------------------------
+
+TITLE: Install Claude Code via PowerShell
+DESCRIPTION: These commands demonstrate how to install the Claude Code CLI tool using a PowerShell script. You can choose to install the latest available version or specify a particular version number. The installation process adds a symlink to `~/.local/bin/claude` and requires the installation directory to be in your system's PATH.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/troubleshooting
+
+LANGUAGE: PowerShell
+CODE:
+```
+& ([scriptblock]::Create((irm https://claude.ai/install.ps1))) latest
+```
+
+LANGUAGE: PowerShell
+CODE:
+```
+& ([scriptblock]::Create((irm https://claude.ai/install.ps1))) 1.0.58
+```
+
+--------------------------------
+
+TITLE: Install Native Claude Code on Windows PowerShell
+DESCRIPTION: Provides the PowerShell command to install the beta native Claude Code installer specifically for Windows environments.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/troubleshooting
+
+LANGUAGE: powershell
+CODE:
+```
+irm https://claude.ai/install.ps1 | iex
+```
+
+--------------------------------
+
+TITLE: Log in to Claude Code on First Use
+DESCRIPTION: Initiates an interactive Claude Code session. If it's the first time using Claude Code, the user will be prompted to log in to their Claude.ai or Anthropic Console account. Credentials are then stored for future use.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Shell
+CODE:
+```
+claude
+# You'll be prompted to log in on first use
+```
+
+--------------------------------
+
+TITLE: Configure Claude Code GitHub Action with unified parameters
+DESCRIPTION: This configuration example demonstrates how to use the `anthropics/claude-code-action@v1` GitHub Action. It shows the use of `anthropic_api_key` for authentication, an optional `prompt` for instructions, and `claude_args` for passing additional CLI arguments to Claude Code.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/github-actions
+
+LANGUAGE: YAML
+CODE:
+```
+- uses: anthropics/claude-code-action@v1
+  with:
+    anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+    prompt: "Your instructions here" # Optional
+    claude_args: "--max-turns 5" # Optional CLI arguments
+```
+
+--------------------------------
+
+TITLE: Debugging and Feature Implementation with Claude Code
+DESCRIPTION: Shows how to use Claude Code to address bugs or implement new features by describing the desired outcome in natural language. Claude Code will locate relevant code, understand the context, implement a solution, and run tests if available.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Prompt
+CODE:
+```
+> add input validation to the user registration form
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> there's a bug where users can submit empty forms - fix it
+```
+
+--------------------------------
+
+TITLE: Check Claude Code Version and Installation Details
+DESCRIPTION: Use the `claude doctor` command to retrieve comprehensive information about your current Claude Code version, installation type, and system details. This command is essential for verifying your setup, understanding potential behavior changes across updates, and troubleshooting issues.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/costs
+
+LANGUAGE: Shell
+CODE:
+```
+claude doctor
+```
+
+--------------------------------
+
+TITLE: Verify Claude Bash Command Log File
+DESCRIPTION: This bash command displays the contents of the `bash-command-log.txt` file, which is populated by the `PreToolUse` hook. It allows users to verify that Claude is correctly logging executed bash commands and their descriptions.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/hooks-guide
+
+LANGUAGE: bash
+CODE:
+```
+cat ~/.claude/bash-command-log.txt
+```
+
+--------------------------------
+
+TITLE: Performing Git Operations Conversationally with Claude Code
+DESCRIPTION: Illustrates how Claude Code facilitates common Git tasks through natural language prompts, enabling users to check file status, commit changes, create branches, view commit history, and resolve merge conflicts.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Prompt
+CODE:
+```
+> what files have I changed?
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> commit my changes with a descriptive message
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> create a new branch called feature/quickstart
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> show me the last 5 commits
+```
+
+LANGUAGE: Prompt
+CODE:
+```
+> help me resolve merge conflicts
+```
+
+--------------------------------
+
+TITLE: Example Claude Code settings.json Configuration
+DESCRIPTION: This JSON example demonstrates how to configure permissions (allowing/denying specific Bash commands and file reads) and environment variables (`CLAUDE_CODE_ENABLE_TELEMETRY`, `OTEL_METRICS_EXPORTER`) within a `settings.json` file for Claude Code. These settings control Claude Code's behavior and access.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/settings
+
+LANGUAGE: JSON
+CODE:
+```
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run lint)",
+      "Bash(npm run test:*)",
+      "Read(~/.zshrc)"
+    ],
+    "deny": [
+      "Bash(curl:*)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./secrets/**)"
+    ]
+  },
+  "env": {
+    "CLAUDE_CODE_ENABLE_TELEMETRY": "1",
+    "OTEL_METRICS_EXPORTER": "otlp"
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Implement Advanced Claude Code SDK Configuration in Python
+DESCRIPTION: This example illustrates how to use `ClaudeSDKClient` with advanced `ClaudeCodeOptions` to customize an agent's behavior. It shows setting a custom working directory, additional context paths, specific model and token limits, fine-grained tool control (allowed/disallowed), and passing custom settings and CLI arguments. The example also demonstrates asynchronous interaction with the client to query and receive responses.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-python
+
+LANGUAGE: Python
+CODE:
+```
+import asyncio
+from claude_code_sdk import ClaudeSDKClient, ClaudeCodeOptions
+
+async def advanced_agent():
+    """Example showcasing advanced configuration options"""
+    
+    async with ClaudeSDKClient(
+        options=ClaudeCodeOptions(
+            # Custom working directory and additional context
+            cwd="/project/root",
+            add_dirs=["/shared/libs", "/common/utils"],
+            
+            # Model and thinking configuration
+            model="claude-3-5-sonnet-20241022",
+            max_thinking_tokens=12000,
+            
+            # Advanced tool control
+            allowed_tools=["Read", "Write", "Bash", "Grep"],
+            disallowed_tools=["WebSearch", "Bash(rm*)"],
+            
+            # Custom settings and CLI args
+            settings='{"editor": "vim", "theme": "dark"}',
+            extra_args={
+                "--verbose": None,
+                "--timeout": "300"
+            }
+        )
+    ) as client:
+        await client.query("Analyze the codebase structure")
+        
+        async for message in client.receive_response():
+            if hasattr(message, 'content'):
+                for block in message.content:
+                    if hasattr(block, 'text'):
+                        print(block.text, end='', flush=True)
+
+asyncio.run(advanced_agent())
+```
+
+--------------------------------
+
+TITLE: Create Dynamic API Key Helper Script for LiteLLM
+DESCRIPTION: This example bash script illustrates how to dynamically fetch or generate API keys, suitable for scenarios requiring rotating keys or per-user authentication. It includes examples for fetching from a vault or generating a JWT token.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/llm-gateway
+
+LANGUAGE: bash
+CODE:
+```
+#!/bin/bash
+# ~/bin/get-litellm-key.sh
+
+# Example: Fetch key from vault
+vault kv get -field=api_key secret/litellm/claude-code
+
+# Example: Generate JWT token
+jwt encode \
+  --secret="${JWT_SECRET}" \
+  --exp="+1h" \
+  '{"user":"'${USER}'","team":"engineering"}'
+
+```
+
+--------------------------------
+
+TITLE: Explicitly Log in or Switch Accounts in Claude Code
+DESCRIPTION: Allows users to explicitly log in or switch between different Claude.ai or Anthropic Console accounts within an active Claude Code interactive session. Follow the prompts to complete the login process.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/quickstart
+
+LANGUAGE: Shell
+CODE:
+```
+/login
+# Follow the prompts to log in with your account
+```
+
+--------------------------------
+
+TITLE: Install Claude Code TypeScript SDK via npm
+DESCRIPTION: This snippet provides the command to install the `@anthropic-ai/claude-code` package globally using npm, which is required to use the Claude Code TypeScript SDK.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-typescript
+
+LANGUAGE: bash
+CODE:
+```
+npm install -g @anthropic-ai/claude-code
+```
+
+--------------------------------
+
+TITLE: Migrate Claude Code to Local Installation
+DESCRIPTION: This command migrates an existing Claude Code installation to a local directory, typically `~/.claude/local/`. This process sets up an alias in your shell configuration, eliminating the need for `sudo` for future updates. After migration, you should restart your shell for changes to take effect.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/troubleshooting
+
+LANGUAGE: Shell Script
+CODE:
+```
+claude migrate-installer
+```
+
+--------------------------------
+
+TITLE: Configure Claude Hook for Bash Command Logging
+DESCRIPTION: This JSON configuration defines a `PreToolUse` hook for Claude. It uses `jq` to extract the command and description from `tool_input` and appends them to a log file (`~/.claude/bash-command-log.txt`) before a tool is used. This allows for auditing or tracking of executed bash commands.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/hooks-guide
+
+LANGUAGE: json
+CODE:
+```
+{
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jq -r '\"\\(.tool_input.command) - \\(.tool_input.description // \"No description\")\"' >> ~/.claude/bash-command-log.txt"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Example Bash Script for Dynamic OpenTelemetry Headers
+DESCRIPTION: Provides a bash script example that demonstrates how to output valid JSON with string key-value pairs representing HTTP headers. This script can be used as the `otelHeadersHelper` to dynamically fetch authentication tokens.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/monitoring-usage
+
+LANGUAGE: bash
+CODE:
+```
+#!/bin/bash
+# Example: Multiple headers
+echo "{\"Authorization\": \"Bearer $(get-token.sh)\", \"X-API-Key\": \"$(get-api-key.sh)\"}"
+```
+
+--------------------------------
+
+TITLE: Make Claude Markdown Formatter Script Executable
+DESCRIPTION: This bash command grants execute permissions to the `markdown_formatter.py` script. This is a necessary step to allow the Claude hook to run the Python script as an external command for automatic markdown formatting.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/hooks-guide
+
+LANGUAGE: bash
+CODE:
+```
+chmod +x .claude/hooks/markdown_formatter.py
+```
+
+--------------------------------
+
+TITLE: Valid OTEL_RESOURCE_ATTRIBUTES Examples (No Spaces)
+DESCRIPTION: Provides correct examples for setting the `OTEL_RESOURCE_ATTRIBUTES` environment variable, demonstrating how to use underscores or camelCase instead of spaces to adhere to the W3C Baggage specification.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/monitoring-usage
+
+LANGUAGE: bash
+CODE:
+```
+# ✅ Valid - use underscores or camelCase instead
+export OTEL_RESOURCE_ATTRIBUTES="org.name=Johns_Organization"
+export OTEL_RESOURCE_ATTRIBUTES="org.name=JohnsOrganization"
+```
+
+--------------------------------
+
+TITLE: Diagnose Node.js Path Issues in WSL
+DESCRIPTION: Explains how to identify if your WSL environment is incorrectly using a Windows Node.js installation. Suggests verifying `npm` and `node` paths to ensure they point to Linux binaries.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/troubleshooting
+
+LANGUAGE: bash
+CODE:
+```
+which npm
+which node
+```
+
+--------------------------------
+
+TITLE: Install ripgrep for Claude Code Search Functionality
+DESCRIPTION: Claude Code's search and discovery features rely on `ripgrep`. These commands provide instructions for installing `ripgrep` on various operating systems using their respective package managers. Installing `ripgrep` can resolve issues where search tools, `@file` mentions, and custom agents are not functioning correctly.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/troubleshooting
+
+LANGUAGE: Shell Script
+CODE:
+```
+# macOS (Homebrew)  
+brew install ripgrep
+```
+
+LANGUAGE: Windows Command Prompt
+CODE:
+```
+# Windows (winget)
+winget install BurntSushi.ripgrep.MSVC
+```
+
+LANGUAGE: Shell Script
+CODE:
+```
+# Ubuntu/Debian
+sudo apt install ripgrep
+```
+
+LANGUAGE: Shell Script
+CODE:
+```
+# Alpine Linux
+apk add ripgrep
+```
+
+LANGUAGE: Shell Script
+CODE:
+```
+# Arch Linux
+pacman -S ripgrep
+```
+
+--------------------------------
+
+TITLE: Verify Claude Code Installation
+DESCRIPTION: These commands help verify that Claude Code has been successfully installed and is accessible in your system's PATH. The `which` command is used on macOS/Linux/WSL to show the alias path, while `where` is used on Windows to locate the executable. The `doctor` command provides a general health check of the installation.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/troubleshooting
+
+LANGUAGE: Shell Script
+CODE:
+```
+which claude  # Should show an alias to ~/.claude/local/claude
+```
+
+LANGUAGE: Windows Command Prompt
+CODE:
+```
+where claude  # Should show path to claude executable
+```
+
+LANGUAGE: Shell Script
+CODE:
+```
+claude doctor # Check installation health
+```
+
+--------------------------------
+
+TITLE: Example Claude Commands for Issue and PR Comments
+DESCRIPTION: Provides examples of natural language commands that can be used within GitHub issue or pull request comments to interact with the Claude Code action. These commands trigger Claude to analyze context and provide assistance for tasks like feature implementation, authentication design, or bug fixing.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/github-actions
+
+LANGUAGE: Plain Text
+CODE:
+```
+@claude implement this feature based on the issue description
+@claude how should I implement user authentication for this endpoint?
+@claude fix the TypeError in the user dashboard component
+```
+
+--------------------------------
+
+TITLE: Create Subagents via Direct File Management
+DESCRIPTION: This example illustrates how to create subagents by directly managing their configuration files. It shows how to create a project-level subagent by setting up a directory and writing a Markdown/YAML configuration file, defining its name, description, and behavior.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/sub-agents
+
+LANGUAGE: Bash
+CODE:
+```
+# Create a project subagent
+mkdir -p .claude/agents
+echo '---
+name: test-runner
+description: Use proactively to run tests and fix failures
+---
+
+You are a test automation expert. When you see code changes, proactively run the appropriate tests. If tests fail, analyze the failures and fix them while preserving the original test intent.' > .claude/agents/test-runner.md
+
+# Create a user subagent
+mkdir -p ~/.claude/agents
+# ... create subagent file
+```
+
+--------------------------------
+
+TITLE: Resolve npm OS/Platform Detection in WSL
+DESCRIPTION: Addresses issues where Windows `npm` interferes with WSL installations. Provides commands to configure `npm` for Linux or force installation without OS checks.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/troubleshooting
+
+LANGUAGE: bash
+CODE:
+```
+npm config set os linux
+npm install -g @anthropic-ai/claude-code --force --no-os-check
+```
+
+--------------------------------
+
+TITLE: JSON Schema for SessionStart Hook Input in Claude Code
+DESCRIPTION: This JSON example demonstrates the input structure for the `SessionStart` hook. It includes common session details and a `source` field, indicating how the session was initiated (e.g., 'startup', 'resume', 'clear', or 'compact').
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/hooks
+
+LANGUAGE: json
+CODE:
+```
+{
+  "session_id": "abc123",
+  "transcript_path": "~/.claude/projects/.../00893aaf-19fa-41d2-8238-13269b9b3ca0.jsonl",
+  "hook_event_name": "SessionStart",
+  "source": "startup"
+}
+```
+
+--------------------------------
+
+TITLE: Add a PreToolUse Hook to Log Bash Commands
+DESCRIPTION: This shell command, intended for a `PreToolUse` hook, uses `jq` to parse JSON input. It extracts the `command` and `description` from `tool_input`, formatting them into a string. This string is then appended to `~/.claude/bash-command-log.txt`, effectively logging every Bash command Claude Code is about to execute.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/hooks-guide
+
+LANGUAGE: Shell
+CODE:
+```
+jq -r '"\(.tool_input.command) - \(.tool_input.description // "No description")"' >> ~/.claude/bash-command-log.txt
+```
+
+--------------------------------
+
+TITLE: Configure Claude Hook for Automatic Markdown Formatting
+DESCRIPTION: This JSON configuration defines a `PostToolUse` hook that automates markdown file formatting. It triggers after `Edit`, `MultiEdit`, or `Write` operations and executes an external Python script (`markdown_formatter.py`) located in the project's `.claude/hooks` directory. This offloads complex formatting logic to a dedicated script.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/hooks-guide
+
+LANGUAGE: json
+CODE:
+```
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|MultiEdit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "$CLAUDE_PROJECT_DIR/.claude/hooks/markdown_formatter.py"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Implement Custom Permission Prompts for Claude Code SDK Tools
+DESCRIPTION: This example illustrates how to implement custom permission handling for tool calls using a permission prompt tool. It configures an MCP server for security, specifies allowed and disallowed tools, and includes an example of an MCP server implementation for an `approval_prompt` function to manage tool access.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-python
+
+LANGUAGE: python
+CODE:
+```
+import asyncio
+from claude_code_sdk import ClaudeSDKClient, ClaudeCodeOptions
+
+async def use_permission_prompt():
+    """Example using custom permission prompt tool"""
+
+    # MCP server configuration
+    mcp_servers = {
+        # Example configuration - uncomment and configure as needed:
+        # "security": {
+        #     "command": "npx",
+        #     "args": ["-y", "@modelcontextprotocol/server-security"],
+        #     "env": {"API_KEY": "your-key"}
+        # }
+    }
+
+    async with ClaudeSDKClient(
+        options=ClaudeCodeOptions(
+            permission_prompt_tool_name="mcp__security__approval_prompt",  # Changed from permission_prompt_tool
+            mcp_servers=mcp_servers,
+            allowed_tools=["Read", "Grep"],
+            disallowed_tools=["Bash(rm*)", "Write"],
+            system_prompt="You are a security auditor"
+        )
+    ) as client:
+        await client.query("Analyze and fix the security issues")
+
+        # Monitor tool usage and permissions
+        async for message in client.receive_response():
+            if hasattr(message, 'content'):
+                for block in message.content:
+                    if hasattr(block, 'type'):  # Added check for 'type' attribute
+                        if block.type == 'tool_use':
+                            print(f"[Tool: {block.name}] ", end='')
+                    if hasattr(block, 'text'):
+                        print(block.text, end='', flush=True)
+
+            # Check for permission denials in error messages
+            if type(message).__name__ == "ErrorMessage":
+                if hasattr(message, 'error') and "Permission denied" in str(message.error):
+                    print(f"\n⚠️ Permission denied: {message.error}")
+
+# Example MCP server implementation (Python)
+# This would be in your MCP server code
+async def approval_prompt(tool_name: str, input: dict, tool_use_id: str = None):
+    """Custom permission prompt handler"""
+    # Your custom logic here
+    if "allow" in str(input):
+        return json.dumps({
+            "behavior": "allow",
+            "updatedInput": input
+        })
+    else:
+        return json.dumps({
+            "behavior": "deny",
+            "message": f"Permission denied for {tool_name}"
+        })
+
+asyncio.run(use_permission_prompt())
+```
+
+--------------------------------
+
+TITLE: Perform Basic Query with Claude Code TypeScript SDK
+DESCRIPTION: This example demonstrates the basic usage of the `query` function from the `@anthropic-ai/claude-code` SDK. It shows how to initiate a query with a prompt, handle streaming messages, and configure options such as `maxTurns` and `allowedTools`.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-typescript
+
+LANGUAGE: typescript
+CODE:
+```
+import { query } from "@anthropic-ai/claude-code";
+
+for await (const message of query({
+  prompt: "Analyze system performance",
+  abortController: new AbortController(),
+  options: {
+    maxTurns: 5,
+    systemPrompt: "You are a performance engineer",
+    allowedTools: ["Bash", "Read", "WebSearch"]
+  }
+})) {
+  if (message.type === "result") {
+    console.log(message.result);
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Run Claude Code in Headless Mode with Basic Query
+DESCRIPTION: This example demonstrates the fundamental usage of Claude Code's headless mode. It shows how to execute a query non-interactively using the `-p` or `--print` flag, specify allowed tools, set permission modes, and define the current working directory for the operation.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-headless
+
+LANGUAGE: bash
+CODE:
+```
+claude -p "Stage my changes and write a set of commits for them" \
+  --allowedTools "Bash,Read" \
+  --permission-mode acceptEdits \
+  --cwd /path/to/project
+```
+
+--------------------------------
+
+TITLE: Start Claude Code interactive REPL
+DESCRIPTION: Initiates an interactive Read-Eval-Print Loop (REPL) session with Claude Code.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/cli-reference
+
+LANGUAGE: Shell
+CODE:
+```
+claude
+```
+
+--------------------------------
+
+TITLE: Importing multiple files within a CLAUDE.md configuration
+DESCRIPTION: This example demonstrates how a `CLAUDE.md` file can import additional files using the `@path/to/import` syntax. It shows importing a README, a package.json, and a git-instructions.md file, illustrating the use of both relative and absolute paths.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/memory
+
+LANGUAGE: CLAUDE.md Syntax
+CODE:
+```
+See @README for project overview and @package.json for available npm commands for this project.
+
+# Additional Instructions
+- git workflow @docs/git-instructions.md
+
+```
+
+--------------------------------
+
+TITLE: Begin Claude Code in a specified permission mode
+DESCRIPTION: Starts Claude Code with a predefined permission mode, influencing how it handles tool usage and actions.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/cli-reference
+
+LANGUAGE: Shell
+CODE:
+```
+claude --permission-mode plan
+```
+
+--------------------------------
+
+TITLE: Execute a simple one-shot query using the Claude Code Python SDK
+DESCRIPTION: This example demonstrates the `query` function for straightforward, single-turn interactions with the Claude Code SDK. It shows how to send a prompt with configuration options and extract the result from the received message, suitable for quick, non-streaming queries.
+
+SOURCE: https://docs.anthropic.com/en/docs/claude-code/sdk/sdk-python
+
+LANGUAGE: Python
+CODE:
+```
+from claude_code_sdk import query, ClaudeCodeOptions
+
+async for message in query(
+    prompt="Analyze system performance",
+    options=ClaudeCodeOptions(system_prompt="You are a performance engineer")
+):
+    if type(message).__name__ == "ResultMessage":
+        print(message.result)
+```

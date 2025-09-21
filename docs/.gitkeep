@@ -1,0 +1,20 @@
+# Documentação Agent Nuxt
+
+Este diretório contém toda a documentação do projeto Agent Nuxt.
+
+## Estrutura
+
+- `README.md` - Visão geral do projeto
+- `index.md` - Índice principal com navegação
+- `resources.md` - Recursos e funcionalidades
+- `installation-guide.md` - Guia de instalação
+- `usage-guides.md` - Guias de uso para IDEs
+- `use-cases.md` - Casos de uso e melhores práticas
+- `examples.md` - Exemplos práticos
+- `architecture.md` - Arquitetura técnica
+- `project/` - Documentação específica do projeto
+- `llms/` - Documentação sobre LLMs
+
+## Navegação
+
+Para uma navegação completa, consulte o [índice principal](./index.md).

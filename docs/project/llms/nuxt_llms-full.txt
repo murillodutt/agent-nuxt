@@ -1,0 +1,1840 @@
+================
+CODE SNIPPETS
+================
+TITLE: Install pnpm dependencies
+DESCRIPTION: These commands are necessary to setup dependencies, run tests, start the playground website, and run tests and lint checks before pushing.
+
+SOURCE: https://github.com/unjs/untyped#_snippet_14
+
+LANGUAGE: bash
+CODE:
+```
+pnpm install
+```
+
+LANGUAGE: bash
+CODE:
+```
+pnpm dev
+```
+
+LANGUAGE: bash
+CODE:
+```
+pnpm web
+```
+
+LANGUAGE: bash
+CODE:
+```
+pnpm test
+```
+
+--------------------------------
+
+TITLE: Get Started Articles
+DESCRIPTION: Guides to help you get started with creating your first VS Code extension.
+
+SOURCE: https://code.visualstudio.com/api/language-extensions/syntax-highlight-guide
+
+LANGUAGE: APIDOC
+CODE:
+```
+## Get Started
+
+### Description
+Guides to help you get started with creating your first VS Code extension.
+
+### Endpoint
+/api/get-started/*
+
+### Method
+GET
+```
+
+--------------------------------
+
+TITLE: Start Playground Website
+DESCRIPTION: Launches the project's playground website. This is typically used to showcase features or provide an interactive environment for using the project's tools.
+
+SOURCE: https://github.com/unjs/untyped#_snippet_8
+
+LANGUAGE: bash
+CODE:
+```
+pnpm web
+```
+
+--------------------------------
+
+TITLE: Nuxt Hello World Example
+DESCRIPTION: Demonstrates a basic 'Hello World' Nuxt application setup. This serves as a starting point for new Nuxt projects and showcases the fundamental structure of a Nuxt application.
+
+SOURCE: https://context7_llms
+
+LANGUAGE: vue
+CODE:
+```
+<template>
+  <div>
+    <h1>Hello World</h1>
+  </div>
+</template>
+
+<script setup>
+</script>
+
+```
+
+--------------------------------
+
+TITLE: Nuxt.js Getting Started
+DESCRIPTION: Provides links to essential resources for starting with Nuxt.js, including the official documentation, guides, API references, examples, and community channels.
+
+SOURCE: https://nuxt.com/docs/4.x/api/composables/use-fetch
+
+LANGUAGE: html
+CODE:
+```
+<a href="/docs/4.x/getting-started">Get Started</a>
+<a href="/docs/4.x/guide">Guide</a>
+<a href="/docs/4.x/api">API</a>
+<a href="/docs/4.x/examples">Examples</a>
+<a href="/docs/4.x/community">Community</a>
+```
+
+--------------------------------
+
+TITLE: Vite Guide - Introduction
+DESCRIPTION: Learn about Vite's core concepts, including getting started, philosophy, and why Vite is a great choice for frontend development.
+
+SOURCE: https://vitejs.dev/
+
+LANGUAGE: APIDOC
+CODE:
+```
+## GET /guide/
+
+### Description
+Provides an introduction to Vite, covering getting started, its philosophy, and reasons to choose Vite.
+
+### Method
+GET
+
+### Endpoint
+/guide/
+```
+
+LANGUAGE: APIDOC
+CODE:
+```
+## GET /guide/philosophy
+
+### Description
+Explains the underlying philosophy and design principles of Vite.
+
+### Method
+GET
+
+### Endpoint
+/guide/philosophy
+```
+
+LANGUAGE: APIDOC
+CODE:
+```
+## GET /guide/why
+
+### Description
+Details the advantages and benefits of using Vite compared to other build tools.
+
+### Method
+GET
+
+### Endpoint
+/guide/why
+```
+
+--------------------------------
+
+TITLE: Development Setup for Nuxt HTTP Module
+DESCRIPTION: Instructions for setting up the development environment for the Nuxt HTTP module. This includes cloning the repository, installing dependencies, and starting the development server.
+
+SOURCE: https://github.com/nuxt/http#_snippet_1
+
+LANGUAGE: bash
+CODE:
+```
+git clone <repository-url>
+yarn install
+yarn dev
+```
+
+--------------------------------
+
+TITLE: Vitest Global Setup Example (v2.0.0+)
+DESCRIPTION: Illustrates a global setup file for Vitest using a default setup function that accepts a destructured context object containing the 'provide' method.
+
+SOURCE: https://vitest.dev/config/
+
+LANGUAGE: typescript
+CODE:
+```
+import type { GlobalSetupContext } from 'vitest/node'
+
+export default function setup({ provide }: GlobalSetupContext) {
+  provide('wsPort', 3000)
+}
+
+declare module 'vitest' {
+  export interface ProvidedContext {
+    wsPort: number
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Install Dependencies and Run Nuxt Dev Server
+DESCRIPTION: This snippet outlines the basic commands to install project dependencies using pnpm and start the Nuxt development server for testing. It's a common starting point for Nuxt.js projects.
+
+SOURCE: https://github.com/nuxt/nuxt/pull/29871#_snippet_4
+
+LANGUAGE: bash
+CODE:
+```
+pnpm i
+pnpm dev:prepare
+pnpm nuxi dev test/fixtures/basic
+```
+
+--------------------------------
+
+TITLE: Install Nuxt HTTP Dependencies and Start Server
+DESCRIPTION: This snippet provides the commands to install project dependencies using 'yarn install' and start the development server using 'yarn dev'. These commands are essential for local development and testing of the Nuxt HTTP project.
+
+SOURCE: https://github.com/nuxt/http#_snippet_2
+
+LANGUAGE: bash
+CODE:
+```
+yarn install
+yarn dev
+```
+
+--------------------------------
+
+TITLE: Install Deno
+DESCRIPTION: This snippet shows the command to install Deno, a runtime for JavaScript and TypeScript that's built for security and productivity.
+
+SOURCE: https://github.com/unjs/untyped#_snippet_1
+
+LANGUAGE: bash
+CODE:
+```
+deno install untyped
+```
+
+--------------------------------
+
+TITLE: Project Setup and Development Commands
+DESCRIPTION: Provides essential commands for setting up and running the project in development mode. This includes installing pnpm, installing dependencies, generating type stubs, and starting the development server.
+
+SOURCE: https://nuxt.com/modules/icon
+
+LANGUAGE: bash
+CODE:
+```
+pnpm install
+npm run dev:prepare
+npm run dev
+```
+
+--------------------------------
+
+TITLE: Development Setup
+DESCRIPTION: Steps to set up the development environment for the changelogen project, including enabling Corepack, installing dependencies, and running interactive tests.
+
+SOURCE: https://github.com/unjs/changelogen#_snippet_30
+
+LANGUAGE: bash
+CODE:
+```
+# Clone the repository
+git clone <repository-url>
+cd changelogen
+
+# Enable Corepack
+corepack enable
+# (or npm i -g corepack for Node.js < 16.10)
+
+# Install dependencies
+pnpm install
+
+# Run interactive tests
+pnpm dev
+```
+
+--------------------------------
+
+TITLE: Project Setup and Build Command
+DESCRIPTION: Provides instructions for setting up the project, including enabling Corepack, installing dependencies with pnpm, and running the build process.
+
+SOURCE: https://github.com/unjs/unbuild#_snippet_18
+
+LANGUAGE: bash
+CODE:
+```
+corepack enable
+pnpm install
+npx unbuild
+```
+
+--------------------------------
+
+TITLE: Install Turso CLI
+DESCRIPTION: This command downloads and installs the Turso command-line interface (CLI) tool. It's a straightforward way to get started with Turso on your system.
+
+SOURCE: https://turso.tech/
+
+LANGUAGE: shell
+CODE:
+```
+curl -sSL tur.so/install | sh
+```
+
+--------------------------------
+
+TITLE: Setup Type Acquisition for LLM with Callbacks (TypeScript)
+DESCRIPTION: This TypeScript snippet demonstrates setting up type acquisition for a Language Model (LLM) project. It configures project name, TypeScript instance, logger, and delegates for handling file reception, start, progress, and completion events. The `setupTypeAcquisition` function is called with these configurations.
+
+SOURCE: https://github.com/microsoft/TypeScript-Website/tree/v2/packages/ata#_snippet_0
+
+LANGUAGE: typescript
+CODE:
+```
+// Create the function for running ATA with a series of callbacks
+const ata = setupTypeAcquisition({
+ projectName: "My ATA Project",
+ typescript: ts,
+ logger: console,
+ delegate: {
+ receivedFile: (code: string, path: string) => {
+ // Add code to your runtime at the path...
+ },
+ started: () => {
+ console.log("ATA start")
+ },
+ progress: (downloaded: number, total: number) => {
+ console.log(`Got ${downloaded} out of ${total}`)
+ },
+ finished: vfs => {
+ console.log("ATA done", vfs)
+ },
+ })
+
+// Run that function with the new sourcefile
+ata(`import danger from "danger"`)
+```
+
+--------------------------------
+
+TITLE: Example of Vitest Setup File Logic
+DESCRIPTION: Provides an example of code that might be placed in a Vitest setup file. It demonstrates conditional global variable assignment and resetting hooks after each test.
+
+SOURCE: https://vitest.dev/config/
+
+LANGUAGE: typescript
+CODE:
+```
+import { config } from '@some-testing-lib'
+
+if (!globalThis.defined) {
+  config.plugins = [myCoolPlugin]
+  computeHeavyThing()
+  globalThis.defined = true
+}
+
+// hooks are reset before each suite
+afterEach(() => {
+  cleanup()
+})
+
+globalThis.resetBeforeEachTest = true
+```
+
+--------------------------------
+
+TITLE: Bun SQL Setup
+DESCRIPTION: Guides for setting up Bun SQL in a Nuxt.js project. This includes options for existing installations and new project setups.
+
+SOURCE: https://orm.drizzle.team/docs/get-started
+
+LANGUAGE: javascript
+CODE:
+```
+const getStartedItems = [
+  {
+    "title": "PostgreSQL",
+    "items": [
+      {
+        "name": "Bun SQL",
+        "path": {
+          "existing": "/docs/get-started/bun-sql-existing",
+          "new": "/docs/get-started/bun-sql-new"
+        },
+        "icon": {
+          "light": {"path": "/public/svg/bun.svg", "style": {"width": 20}},
+          "dark": {"path": "/public/svg/bun.svg", "style": {"width": 20}}
+        }
+      }
+    ]
+  }
+];
+```
+
+--------------------------------
+
+TITLE: Install RC9 using npx
+DESCRIPTION: Installs RC9 and automatically detects the package manager. This is a convenient way to get started.
+
+SOURCE: https://github.com/unjs/rc9#_snippet_23
+
+LANGUAGE: bash
+CODE:
+```
+# ✨ Auto-detect
+npx nypm install rc9
+```
+
+--------------------------------
+
+TITLE: Nuxt Studio Development Setup
+DESCRIPTION: Commands to set up and run the Nuxt Studio development environment. Includes cloning the repository, installing dependencies, preparing the build, running the development server, and executing tests.
+
+SOURCE: https://github.com/nuxt/content#_snippet_1
+
+LANGUAGE: bash
+CODE:
+```
+pnpm install
+pnpm dev:prepare
+pnpm prepack
+pnpm dev
+pnpm test
+```
+
+--------------------------------
+
+TITLE: Vitest Global Setup Example (v3.0.0+)
+DESCRIPTION: Demonstrates how to set up a global context for Vitest tests using a default setup function. This function provides serializable data to tests via the 'provide' method.
+
+SOURCE: https://vitest.dev/config/
+
+LANGUAGE: typescript
+CODE:
+```
+import type { TestProject } from 'vitest/node'
+
+export default function setup(project: TestProject) {
+  project.provide('wsPort', 3000)
+}
+
+declare module 'vitest' {
+  export interface ProvidedContext {
+    wsPort: number
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Bash Script for Configuration
+DESCRIPTION: A simple bash script snippet demonstrating configuration setup, including checking for root privileges and defining functions. It includes an example of writing quoted text to a file.
+
+SOURCE: https://highlightjs.org/
+
+LANGUAGE: bash
+CODE:
+```
+#!/bin/bash  ###### CONFIG ACCEPTED_HOSTS="/root/.hag_accepted.conf" BE_VERBOSE=false  if [ "$UID" -ne 0 ] then  echo "Superuser rights required"  exit 2 fi  genApacheConf(){
+  echo -e "# Host ${HOME_DIR}$1/$2 :"
+}
+```
+
+--------------------------------
+
+TITLE: Contributing Setup
+DESCRIPTION: Steps to set up the development environment for contributing to the Nuxt Fonts project, including enabling Corepack, installing dependencies, and starting the development server.
+
+SOURCE: https://github.com/nuxt/fonts#_snippet_3
+
+LANGUAGE: bash
+CODE:
+```
+corepack enable
+pnpm install
+pnpm dev:prepare
+pnpm dev
+```
+
+--------------------------------
+
+TITLE: Nuxt CLI Usage Example
+DESCRIPTION: This snippet demonstrates the basic usage of the Nuxt CLI (nuxi) for project setup and development. It includes commands for installing dependencies, generating type stubs, navigating into the playground directory, and executing nuxi commands.
+
+SOURCE: https://github.com/nuxt/cli#_snippet_6
+
+LANGUAGE: shell
+CODE:
+```
+# Install dependencies
+pnpm i
+
+# Generate type stubs
+pnpm dev:prepare
+
+# Go to the playground directory
+cd playground
+
+# And run any commands
+pnpm nuxi <command>
+```
+
+--------------------------------
+
+TITLE: Local Development Setup for Nuxt LLMs
+DESCRIPTION: Instructions for setting up the local development environment. This includes cloning the repository, installing Node.js LTS, enabling Corepack, installing dependencies with pnpm, and running the project or tests.
+
+SOURCE: https://c12.unjs.io/
+
+LANGUAGE: bash
+CODE:
+```
+corepack enable
+pnpm install
+pnpm dev
+pnpm test
+```
+
+--------------------------------
+
+TITLE: Initialize and Deploy with Git
+DESCRIPTION: Steps to initialize a local Git repository, add a remote Clever Cloud deployment URL, and push your application code to the server. Ensures your application is tracked and deployed.
+
+SOURCE: https://www.clever-cloud.com/developers/doc/quickstart/
+
+LANGUAGE: git
+CODE:
+```
+git init
+git add .
+git commit -m "first commit"
+git remote add <remote-name> <your-git-deployment-url>
+git push <remote-name> <branch-name>:master
+```
+
+--------------------------------
+
+TITLE: Express Server Listen Example (JavaScript)
+DESCRIPTION: Demonstrates setting up an Express application to listen on port 3000 and logs a confirmation message. This is a basic server setup example.
+
+SOURCE: https://github.com/webpack/webpack-dev-middleware#_snippet_55
+
+LANGUAGE: javascript
+CODE:
+```
+app.listen(3000, () => console.log("Example app listening on port 3000"));
+```
+
+--------------------------------
+
+TITLE: Install zCLI
+DESCRIPTION: Instructions for installing the zCLI are provided, with a link to the official documentation for detailed steps. This section covers the general process of setting up the command-line interface.
+
+SOURCE: https://github.com/zeropsio/zcli#_snippet_0
+
+LANGUAGE: text
+CODE:
+```
+Read the docs →
+```
+
+--------------------------------
+
+TITLE: Install untyped using various package managers
+DESCRIPTION: This section shows how to install the 'untyped' library using different package managers like npx, npm, yarn, pnpm, bun, and deno.
+
+SOURCE: https://github.com/unjs/untyped#_snippet_9
+
+LANGUAGE: bash
+CODE:
+```
+npx nypm install untyped
+```
+
+LANGUAGE: bash
+CODE:
+```
+npm install untyped
+```
+
+LANGUAGE: bash
+CODE:
+```
+yarn add untyped
+```
+
+LANGUAGE: bash
+CODE:
+```
+pnpm install untyped
+```
+
+LANGUAGE: bash
+CODE:
+```
+bun install untyped
+```
+
+LANGUAGE: bash
+CODE:
+```
+deno install untyped
+```
+
+--------------------------------
+
+TITLE: CSS Generation Example
+DESCRIPTION: Shows an example of how to generate CSS for icons, which is useful for applying styles directly to elements referencing icons.
+
+SOURCE: https://iconify.design/docs/icons/icon-basics.html
+
+LANGUAGE: typescript
+CODE:
+```
+// Example: Generating CSS for icons
+// import { getIconsCSS } from "@iconify/utils/lib/css/icons";
+```
+
+--------------------------------
+
+TITLE: Sample netlify.toml Configuration
+DESCRIPTION: An example configuration file (`netlify.toml`) illustrating various build settings for Netlify deployments. This file allows for more granular control and context-specific configurations.
+
+SOURCE: https://docs.netlify.com/configure-builds/get-started/
+
+LANGUAGE: toml
+CODE:
+```
+[[redirects]]
+from = "/old-page"
+to = "/new-page"
+status = 301
+
+[build]
+command = "npm run build"
+publish = "dist"
+
+[dev]
+command = "npm start"
+
+[headers]
+/api/* =
+  "X-Frame-Options: DENY"
+  "X-XSS-Protection: 1; mode=block"
+```
+
+--------------------------------
+
+TITLE: Start Nuxt HTTP Development Server
+DESCRIPTION: This command starts the development server for the Nuxt HTTP module. After starting, you can access the application, for example, at http://localhost:3000/mounted.
+
+SOURCE: https://github.com/nuxt/http#_snippet_4
+
+LANGUAGE: bash
+CODE:
+```
+yarn dev
+```
+
+--------------------------------
+
+TITLE: Configure Nuxt.js with ESLint Module
+DESCRIPTION: This snippet shows how to add the '@nuxtjs/eslint-module' to the Nuxt.js configuration. It includes a basic setup and an example with module-specific options.
+
+SOURCE: https://github.com/nuxt-modules/eslint#_snippet_3
+
+LANGUAGE: javascript
+CODE:
+```
+export default defineNuxtConfig({
+ modules: [
+ '@nuxtjs/eslint-module'
+ ],
+ eslint: {
+ /* module options */
+ }
+})
+```
+
+--------------------------------
+
+TITLE: Start Nuxt Development Server
+DESCRIPTION: Starts the Nuxt.js development server, typically accessible at http://localhost:3000. This command is used for local development and testing.
+
+SOURCE: https://github.com/nuxt-community/strapi-module/tree/master/docs#_snippet_0
+
+LANGUAGE: shell
+CODE:
+```
+# npm
+npm run dev
+```
+
+--------------------------------
+
+TITLE: Toggle Get Started Links (JavaScript)
+DESCRIPTION: This JavaScript function toggles the visibility and links for 'new' and 'existing' get started sections. It iterates through defined getStartedItems to update href attributes based on the selected type. Dependencies include DOM manipulation and array iteration.
+
+SOURCE: https://orm.drizzle.team/docs/get-started
+
+LANGUAGE: javascript
+CODE:
+```
+const getStartedItems = [{"title":"Bun SQLite","items":[{"name":"Bun SQLite","path":{"existing":"/docs/get-started/bun-sqlite-existing","new":"/docs/get-started/bun-sqlite-new"},"icon":{"light":{"path":"/public/svg/bun.svg","style":{"width":20}}},"dark":{"path":"/public/svg/bun.svg","style":{"width":20}}}},{"name":"Cloudflare Durable Objects","path":{"existing":"/docs/get-started/do-existing","new":"/docs/get-started/do-new"},"icon":{"light":{"path":"/public/svg/cloudflare.svg","style":{"width":26}}},"dark":{"path":"/public/svg/cloudflare.svg","style":{"width":26}}}]},{"title":"Native SQLite","items":[{"name":"Expo SQLite","path":{"existing":"/docs/get-started/expo-existing","new":"/docs/get-started/expo-new"},"icon":{"light":{"path":"/public/svg/expo.svg","style":{"width":20}}},"dark":{"path":"/public/svg/expo.svg","style":{"width":20}}}},{"name":"OP SQLite","path":{"existing":"/docs/get-started/op-sqlite-existing","new":"/docs/get-started/op-sqlite-new"},"icon":{"light":{"path":"/public/svg/opsqlite.png","style":{"width":"20px","borderRadius":"4px"}}},"dark":{"path":"/public/svg/opsqlite.png","style":{"width":"20px","borderRadius":"4px"}}}}]};
+const toggleLinks = (type) => {
+  switch (type) {
+    case "new":
+      document.getElementById("new").classList.add("selected");
+      document.getElementById("existing").classList.remove("selected");
+      getStartedItems.forEach((group) => {
+        group.items.forEach((link) => {
+          document.getElementById(link.name).href = link.path.new;
+        });
+      });
+      break;
+    case "existing":
+      document.getElementById("new").classList.remove("selected");
+      document.getElementById("existing").classList.add("selected");
+      getStartedItems.forEach((group) => {
+        group.items.forEach((link) => {
+          document.getElementById(link.name).href = link.path.existing;
+        });
+      });
+      break;
+  }
+};
+document.getElementById("new")?.addEventListener("click", () => toggleLinks("new"));
+document.getElementById("existing")?.addEventListener("click", () => toggleLinks("existing"));
+```
+
+--------------------------------
+
+TITLE: Icon Export Examples (SVG)
+DESCRIPTION: Demonstrates how to export icons as SVGs from icon sets or directly from data. These examples showcase practical applications of the SVG building utilities.
+
+SOURCE: https://iconify.design/docs/icons/icon-basics.html
+
+LANGUAGE: typescript
+CODE:
+```
+// Example: Exporting SVGs from an icon set
+// import { iconToSVG } from "@iconify/utils/lib/svg/build";
+// import { getIcons } from "@iconify/utils/lib/icon-set/get-icons";
+
+// Example: Exporting SVG from data
+// import { iconToSVG } from "@iconify/utils/lib/svg/build";
+```
+
+--------------------------------
+
+TITLE: Command-line Usage of nuxt-start
+DESCRIPTION: Demonstrates how to start a Nuxt application from the command line using 'nuxt-start'. It allows specifying the directory, port, hostname, and configuration file.
+
+SOURCE: https://www.npmjs.com/package/nuxt-start
+
+LANGUAGE: bash
+CODE:
+```
+nuxt-start <dir> -p <port number> -H <hostname> -c <config file>
+```
+
+--------------------------------
+
+TITLE: Clone and Setup Nuxt Project
+DESCRIPTION: This snippet provides the necessary shell commands to clone the Nuxt.js project repository, navigate into the project directory, install dependencies using pnpm, and bootstrap the project. It's the initial setup step for working with the project.
+
+SOURCE: https://github.com/shikijs/twoslash#_snippet_1
+
+LANGUAGE: shell
+CODE:
+```
+git clone https://github.com/shikijs/twoslash
+cd twoslash
+
+pnpm i
+pnpm bootstrap
+pnpm test
+```
+
+--------------------------------
+
+TITLE: Install Nuxt Module with Options
+DESCRIPTION: Demonstrates how to install another Nuxt module within your module setup, passing specific configuration options. It utilizes the `installModule` utility from '@nuxt/kit'.
+
+SOURCE: https://context7_llms
+
+LANGUAGE: ts
+CODE:
+```
+import { defineNuxtModule, installModule } from '@nuxt/kit'
+
+export default defineNuxtModule({
+  async setup (options, nuxt) {
+    // will install @nuxtjs/fontaine with Roboto font and Impact fallback
+    await installModule('@nuxtjs/fontaine', {
+      // module configuration
+      fonts: [
+        {
+          family: 'Roboto',
+          fallbacks: ['Impact'],
+          fallbackName: 'fallback-a',
+        }
+      ]
+    })
+  }
+})
+```
+
+--------------------------------
+
+TITLE: Example: Import Icon Set from Figma
+DESCRIPTION: Illustrates the process of importing an icon set directly from a Figma file. This example requires specifying the Figma file ID and an access token.
+
+SOURCE: https://iconify.design/docs/icons/icon-basics.html
+
+LANGUAGE: javascript
+CODE:
+```
+import { importFigma } from '@iconify/tools/import/figma';
+
+async function importFromFigma(fileId, accessToken) {
+  await importFigma(fileId, accessToken, './figma-icons.json');
+}
+```
+
+--------------------------------
+
+TITLE: Example: Export All Iconify Icon Sets as SVG
+DESCRIPTION: Demonstrates how to export all available Iconify icon sets into individual SVG files. This example showcases the practical application of the export functionalities.
+
+SOURCE: https://iconify.design/docs/icons/icon-basics.html
+
+LANGUAGE: javascript
+CODE:
+```
+import { exportSVG } from '@iconify/tools/export/svg';
+import { listIconSets } from '@iconify/tools/lib/icon-set';
+
+async function exportAllIconSetsAsSVG() {
+  const iconSets = await listIconSets();
+  for (const iconSet of iconSets) {
+    await exportSVG(iconSet, `./svg/${iconSet}.svg`);
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Framework Quick Start Links
+DESCRIPTION: Links to quick start guides for different programming languages and frameworks, including JavaScript, React, Vue, and general Tools. This facilitates easy access to initial setup and usage instructions.
+
+SOURCE: https://motion.dev/docs/vue
+
+LANGUAGE: html
+CODE:
+```
+[JS
+--
+
+](./quick-start)[React
+-----
+
+](./react)[Vue
+
+](./vue)[Tools
+
+](./tools-quick-start)
+```
+
+--------------------------------
+
+TITLE: Initialize NuxtHub Project
+DESCRIPTION: Command to initialize a new NuxtHub project and start the development server. This assumes you have npx installed.
+
+SOURCE: https://nuxt.com/modules/hub
+
+LANGUAGE: bash
+CODE:
+```
+npx nuxthub init my-app
+cd my-app
+npm run dev
+```
+
+--------------------------------
+
+TITLE: Vitest Global Setup Basic Usage
+DESCRIPTION: A minimal example showing how to inject a provided value from the global setup into a Vitest test file.
+
+SOURCE: https://vitest.dev/config/
+
+LANGUAGE: typescript
+CODE:
+```
+import { inject } from 'vitest'
+
+inject('wsPort') === 3000
+```
+
+--------------------------------
+
+TITLE: Composition API: setup() - Basic Usage
+DESCRIPTION: Demonstrates the basic usage of the setup() hook for declaring reactive state and exposing it to the template and other Options API hooks.
+
+SOURCE: https://vuejs.org/api/composition-api-setup.html
+
+LANGUAGE: APIDOC
+CODE:
+```
+## POST /api/setup-basic-usage
+
+### Description
+This endpoint demonstrates the basic usage of the `setup()` hook in Vue.js Composition API. It shows how to declare reactive state using `ref` and expose it to the template by returning an object from `setup()`.
+
+### Method
+GET
+
+### Endpoint
+`/api/setup-basic-usage`
+
+### Parameters
+#### Query Parameters
+None
+
+#### Request Body
+None
+
+### Request Example
+```json
+{
+  "message": "Basic setup example"
+}
+```
+
+### Response
+#### Success Response (200)
+- **count** (number) - A reactive count variable.
+
+#### Response Example
+```json
+{
+  "count": 0
+}
+```
+```
+
+--------------------------------
+
+TITLE: Composition API - setup()
+DESCRIPTION: Documentation for the setup() function in the Composition API.
+
+SOURCE: https://vuejs.org/api
+
+LANGUAGE: APIDOC
+CODE:
+```
+## Composition API: setup()
+
+### Description
+Details the usage of the `setup()` function within the Vue.js Composition API for component logic.
+
+### Usage Scenarios
+
+- **Basic Usage**: Demonstrates the fundamental structure of the `setup()` function.
+- **Accessing Props**: Explains how to access component props within `setup()`.
+- **Setup Context**: Covers the context object provided to `setup()`, including `attrs`, `slots`, and `emit`.
+- **Usage with Render Functions**: Shows how to use `setup()` in conjunction with render functions.
+```
+
+--------------------------------
+
+TITLE: Linting on Project Startup
+DESCRIPTION: Controls whether ESLint should run on all matching files when the project starts. Enabling this provides immediate feedback but may impact startup performance.
+
+SOURCE: https://github.com/nuxt-modules/eslint#_snippet_10
+
+LANGUAGE: json
+CODE:
+```
+{
+  "lintOnStart": true
+}
+```
+
+--------------------------------
+
+TITLE: Setting up End-to-End Tests with Nuxt Test Utils
+DESCRIPTION: Explains the setup process for end-to-end testing in Nuxt using `@nuxt/test-utils/e2e`. It highlights the necessity of the `setup` function within `describe` blocks to initialize the test environment and provides an example using Vitest.
+
+SOURCE: https://nuxt.com/docs/4.x/getting-started/testing
+
+LANGUAGE: javascript
+CODE:
+```
+import { describe, test } from 'vitest'
+import { setup, $fetch } from '@nuxt/test-utils/e2e'
+
+describe('My test', async () => {
+  await setup({
+    // test context options
+  })
+
+  test('my test', () => {
+    // ...
+  })
+})
+```
+
+--------------------------------
+
+TITLE: Nuxt E2E Test Utils Setup
+DESCRIPTION: Demonstrates how to set up the test context using `setup()` from `@nuxt/test-utils/e2e`.
+
+SOURCE: https://context7_llms
+
+LANGUAGE: APIDOC
+CODE:
+```
+## Setup Nuxt E2E Test Context
+
+### Description
+Sets up the testing environment for Nuxt end-to-end tests using `@nuxt/test-utils/e2e`. This function handles the necessary tasks in `beforeAll`, `beforeEach`, `afterEach`, and `afterAll`.
+
+### Method
+`setup(options)`
+
+### Parameters
+#### Request Body
+- **rootDir** (string) - Optional - Path to the Nuxt app directory for testing. Defaults to `'.'`.
+- **configFile** (string) - Optional - Name of the Nuxt configuration file. Defaults to `'nuxt.config'`.
+- **setupTimeout** (number) - Optional - Timeout in milliseconds for `setupTest`. Defaults to `120000` (or `240000` on Windows).
+- **teardownTimeout** (number) - Optional - Timeout in milliseconds for tearing down the test environment. Defaults to `30000`.
+- **build** (boolean) - Optional - Whether to run a separate build step. Defaults to `true`.
+- **server** (boolean) - Optional - Whether to launch a server for requests. Defaults to `true`.
+- **port** (number | undefined) - Optional - Port for the test server. Defaults to `undefined`.
+- **host** (string) - Optional - URL to use as the test target instead of building a new server. Defaults to `undefined`.
+- **browser** (boolean) - Optional - Whether to launch a browser for testing. Defaults to `false`.
+- **browserOptions** (object) - Optional - Options for launching the browser. Includes `type` (chromium, firefox, webkit) and `launch` (Playwright launch options).
+- **runner** ('vitest' | 'jest' | 'cucumber') - Optional - The test runner to use. Defaults to `'vitest'`.
+
+### Request Example
+```ts
+import { describe } from 'vitest'
+import { setup } from '@nuxt/test-utils/e2e'
+
+describe('My test', async () => {
+  await setup({
+    // test context options
+    rootDir: './my-nuxt-app',
+    browser: true
+  })
+
+  // ... tests ...
+})
+```
+
+### Response
+This function does not return a value but sets up the test environment.
+```
+
+--------------------------------
+
+TITLE: Initialize a New NuxtHub Project
+DESCRIPTION: Create a new NuxtHub project using the CLI, navigate into the project directory, and run the development server. This sequence sets up a new project and starts it locally.
+
+SOURCE: https://nuxt.com/modules/hub
+
+LANGUAGE: bash
+CODE:
+```
+npx nuxthub init my-app
+cd my-app
+npm run dev
+
+```
+
+--------------------------------
+
+TITLE: Initialize Firebase Project and Hosting
+DESCRIPTION: Logs into Firebase and initializes hosting for the project. It prompts for configuration details, including the public directory for static assets.
+
+SOURCE: https://context7_llms
+
+LANGUAGE: bash
+CODE:
+```
+firebase login
+firebase init hosting
+```
+
+--------------------------------
+
+TITLE: Nuxt.js Chore: Skip Example Dependencies Installation
+DESCRIPTION: Prevents the installation of example dependencies in Nuxt.js. This streamlines the build process and reduces unnecessary package downloads for examples.
+
+SOURCE: https://github.com/nuxt/nuxt/pull/20559#_snippet_23
+
+LANGUAGE: javascript
+CODE:
+```
+- Do not install example dependencies ([#&#8203;20689](https://togithub.com/nuxt/nuxt/pull/20689))
+```
+
+--------------------------------
+
+TITLE: Install and Run jiti Project Dependencies
+DESCRIPTION: This snippet details the essential commands for setting up the jiti project. It includes enabling Corepack, installing project dependencies using pnpm, and running the development server. It's a standard setup process for Node.js projects managed with pnpm.
+
+SOURCE: https://github.com/unjs/jiti#_snippet_30
+
+LANGUAGE: bash
+CODE:
+```
+corepack enable
+pnpm install
+pnpm dev
+```
+
+--------------------------------
+
+TITLE: Example: Convert FontAwesome Pro to Iconify JSON
+DESCRIPTION: Demonstrates the conversion of icons from the FontAwesome Pro library into the Iconify JSON format. This facilitates the use of FontAwesome Pro icons within the Iconify ecosystem.
+
+SOURCE: https://iconify.design/docs/icons/icon-basics.html
+
+LANGUAGE: javascript
+CODE:
+```
+import { importDirectory } from '@iconify/tools/import/directory';
+
+async function convertFontAwesomeProToIconifyJSON(faProPath) {
+  await importDirectory(faProPath, './fa-pro.json', {
+    type: 'json'
+  });
+}
+```
+
+--------------------------------
+
+TITLE: Install nuxt-start
+DESCRIPTION: Installs the nuxt-start package as a project dependency.
+
+SOURCE: https://www.npmjs.com/package/nuxt-start
+
+LANGUAGE: bash
+CODE:
+```
+npm install --save nuxt-start
+```
+
+--------------------------------
+
+TITLE: Install Dependencies and Start with Node.js
+DESCRIPTION: Commands to install Node.js project dependencies and start the local Functions host for a Node.js project.
+
+SOURCE: https://docs.microsoft.com/en-us/azure/azure-functions/functions-run-local
+
+LANGUAGE: bash
+CODE:
+```
+npm install
+npm start
+```
+
+--------------------------------
+
+TITLE: Install ESLint with npm
+DESCRIPTION: Installs ESLint as a development dependency using npm.
+
+SOURCE: https://github.com/nuxt-modules/eslint#_snippet_18
+
+LANGUAGE: bash
+CODE:
+```
+npm install -D eslint
+```
+
+--------------------------------
+
+TITLE: Composition API - setup()
+DESCRIPTION: Provides documentation for the `setup()` function within the Vue.js Composition API.
+
+SOURCE: https://vuejs.org/api/sfc-script-setup.html
+
+LANGUAGE: APIDOC
+CODE:
+```
+## GET /api/composition-api-setup
+
+### Description
+Provides documentation for the `setup()` function within the Vue.js Composition API.
+
+### Method
+GET
+
+### Endpoint
+/api/composition-api-setup
+
+### Parameters
+#### Path Parameters
+None
+
+#### Query Parameters
+None
+
+#### Request Body
+None
+
+### Request Example
+None
+
+### Response
+#### Success Response (200)
+- **Documentation**: (string) - Detailed documentation for the setup() function.
+
+#### Response Example
+{
+  "Documentation": "The setup() function is the entry point for Composition API logic in a component. It is called before the component is mounted and its return value is exposed to the template."
+}
+```
+
+--------------------------------
+
+TITLE: Vue 3 Composition API Example
+DESCRIPTION: A basic example using Vue 3's Composition API with `<script setup>`, demonstrating `ref` for reactive state and `computed` for derived state.
+
+SOURCE: https://nuxt.com/blog/going-full-static
+
+LANGUAGE: javascript
+CODE:
+```
+import { ref, computed } from '#imports'
+const count = ref(1)
+const double = computed(() => count.value * 2)
+```
+
+--------------------------------
+
+TITLE: Example Build Command
+DESCRIPTION: Illustrates a common build command used for static site generators or build tools. This command is executed in the Bash shell.
+
+SOURCE: https://docs.netlify.com/configure-builds/get-started/
+
+LANGUAGE: bash
+CODE:
+```
+npm run build
+```
+
+--------------------------------
+
+TITLE: Example: Convert Material Design Icons to Iconify JSON
+DESCRIPTION: Shows how to convert icons from the Material Design Icons set into the Iconify JSON format. This is useful for integrating popular icon libraries into projects that use the Iconify format.
+
+SOURCE: https://iconify.design/docs/icons/icon-basics.html
+
+LANGUAGE: javascript
+CODE:
+```
+import { importDirectory } from '@iconify/tools/import/directory';
+
+async function convertMDIToIconifyJSON(mdiPath) {
+  await importDirectory(mdiPath, './mdi.json', {
+    type: 'json'
+  });
+}
+```
+
+--------------------------------
+
+TITLE: Clone and Install TypeScript Website Project
+DESCRIPTION: This snippet shows how to clone the TypeScript website repository, navigate into it, install dependencies using pnpm, and open the project in VS Code. It's a standard workflow for starting a new Node.js project with pnpm.
+
+SOURCE: https://github.com/microsoft/TypeScript-Website#_snippet_0
+
+LANGUAGE: shell
+CODE:
+```
+git clone https://github.com/microsoft/TypeScript-website
+cd TypeScript-website
+pnpm install
+code .
+```
+
+--------------------------------
+
+TITLE: README File
+DESCRIPTION: Provides an overview of the project, installation instructions, and usage guidelines.
+
+SOURCE: https://go.nuxt.com/github
+
+LANGUAGE: markdown
+CODE:
+```
+# Nuxt.js Project
+
+This is a Nuxt.js project template.
+
+## Getting Started
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/your-repo.git
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Run the development server:
+   ```bash
+   npm run dev
+   ```
+
+## Features
+
+- [List of features]
+
+## Contributing
+
+[Contribution guidelines]
+
+```
+
+--------------------------------
+
+TITLE: Install Defu with npm, yarn, or pnpm
+DESCRIPTION: Demonstrates how to install the defu package using various package managers.
+
+SOURCE: https://github.com/unjs/defu#_snippet_12
+
+LANGUAGE: bash
+CODE:
+```
+yarn add defu
+npm install defu
+pnpm install defu
+```
+
+--------------------------------
+
+TITLE: Local Development Setup for Nuxt Tailwind Module
+DESCRIPTION: This section provides commands for cloning the Nuxt Tailwind module repository, installing dependencies, preparing for development, and starting the development server. These steps are crucial for contributing to or modifying the module.
+
+SOURCE: https://nuxt.com/modules/tailwindcss
+
+LANGUAGE: bash
+CODE:
+```
+git clone https://github.com/nuxt-modules/tailwindcss.git
+cd tailwindcss
+pnpm i
+pnpm dev:prepare
+pnpm dev
+```
+
+--------------------------------
+
+TITLE: Connect to PostgreSQL with Go
+DESCRIPTION: Example of connecting to a PostgreSQL database using Go's `database/sql` package and the `pgx` driver. It demonstrates loading environment variables and establishing a connection.
+
+SOURCE: https://neon.tech/
+
+LANGUAGE: go
+CODE:
+```
+package main\nimport (\n "database/sql"\n "fmt"\n "log"\n "os"\n\n _ "github.com/jackc/pgx/v5/stdlib"\n "github.com/joho/godotenv"\n)\n\nfunc main() {\n err := godotenv.Load()\n if err != nil {\n log.Fatalf(\"
+```
+
+--------------------------------
+
+TITLE: Install ESLint with yarn
+DESCRIPTION: This command installs ESLint as a development dependency using the yarn package manager.
+
+SOURCE: https://github.com/nuxt-modules/eslint#_snippet_17
+
+LANGUAGE: bash
+CODE:
+```
+yarn add -D eslint
+```
+
+--------------------------------
+
+TITLE: Install ESLint with pnpm
+DESCRIPTION: This command installs ESLint as a development dependency using the pnpm package manager.
+
+SOURCE: https://github.com/nuxt-modules/eslint#_snippet_16
+
+LANGUAGE: bash
+CODE:
+```
+pnpm add -D eslint
+```
+
+--------------------------------
+
+TITLE: Netlify Configuration File (netlify.toml) Example
+DESCRIPTION: Shows how to specify the build command within the Netlify configuration file (`netlify.toml`) using the `command` property under the `[build]` settings. This method allows for file-based configuration.
+
+SOURCE: https://docs.netlify.com/configure-builds/get-started/
+
+LANGUAGE: toml
+CODE:
+```
+[build]
+command = "npm run build"
+```
+
+--------------------------------
+
+TITLE: NuxtHub Development Setup and Commands
+DESCRIPTION: This snippet outlines the essential commands for setting up and developing a Nuxt application with NuxtHub. It covers dependency installation, type stub generation, and running the development server.
+
+SOURCE: https://nuxt.com/modules/hub
+
+LANGUAGE: bash
+CODE:
+```
+# Install dependencies
+pnpm i
+
+# Generate type stubs
+pnpm dev:prepare
+
+# Develop with the playground
+pnpm dev
+
+# Build the playground
+pnpm dev:build
+
+# Run ESLint
+pnpm lint
+
+# Run Vitest
+pnpm test
+pnpm test:watch
+
+```
+
+--------------------------------
+
+TITLE: CodeRabbit Configuration File Example
+DESCRIPTION: An example of how to programmatically configure CodeRabbit using a `.coderabbit.yaml` file in the root of a repository. It also shows a directive for enabling YAML language server features.
+
+SOURCE: https://github.com/danielroe/nuxt-time/pull/251#_snippet_5
+
+LANGUAGE: yaml
+CODE:
+```
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+```
+
+--------------------------------
+
+TITLE: Initialize TypeScript Project with pnpm
+DESCRIPTION: Commands to clone the TypeScript-Website repository, install dependencies using pnpm, and set up the project. Assumes Node.js 18+ and Watchman are installed.
+
+SOURCE: https://github.com/microsoft/TypeScript-Website#_snippet_12
+
+LANGUAGE: bash
+CODE:
+```
+git clone https://github.com/microsoft/TypeScript-website
+cd TypeScript-website
+pnpm install
+code .
+
+pnpm bootstrap
+
+pnpm docs-sync pull microsoft/TypeScript-Website-localizations#main 1
+```
+
+--------------------------------
+
+TITLE: Clone Project Templates with Gigget CLI
+DESCRIPTION: These examples show how to clone project templates using the Gigget CLI. They cover cloning from different sources like GitHub, GitLab, and Bitbucket, specifying branches, subdirectories, and output directories. The `--install` flag is also demonstrated for installing dependencies.
+
+SOURCE: https://giget.unjs.io/
+
+LANGUAGE: shell
+CODE:
+```
+# Clone nuxt starter from giget template registry
+npx giget@latest nuxt
+
+# Clone the main branch of github.com/unjs/template to unjs-template directory
+npx giget@latest gh:unjs/template
+
+# Clone to myProject directory
+npx giget@latest gh:unjs/template myProject
+
+# Clone dev branch
+npx giget@latest gh:unjs/template#dev
+
+# Clone /test directory from main branch
+npx giget@latest gh:unjs/template/test
+
+# Clone from gitlab
+npx giget@latest gitlab:unjs/template
+
+# Clone from bitbucket
+npx giget@latest bitbucket:unjs/template
+
+# Clone from sourcehut
+npx giget@latest sourcehut:pi0/unjs-template
+
+# Clone from https URL (tarball)
+npx giget@latest https://api.github.com/repos/unjs/template/tarball/main
+
+# Clone from https URL (JSON)
+npx giget@latest https://raw.githubusercontent.com/unjs/giget/main/templates/unjs.json
+```
+
+--------------------------------
+
+TITLE: Install @nuxtjs/eslint-module with pnpm, yarn, or npm
+DESCRIPTION: Installs the Nuxt ESLint module as a development dependency. This module integrates ESLint into your Nuxt.js build process.
+
+SOURCE: https://github.com/nuxt-modules/eslint#_snippet_1
+
+LANGUAGE: shell
+CODE:
+```
+pnpm add -D @nuxtjs/eslint-module
+```
+
+LANGUAGE: shell
+CODE:
+```
+yarn add -D @nuxtjs/eslint-module
+```
+
+LANGUAGE: shell
+CODE:
+```
+npm install -D @nuxtjs/eslint-module
+```
+
+--------------------------------
+
+TITLE: Nuxt.js Development Server Startup
+DESCRIPTION: Example output from starting the Nuxt.js development server using pnpm. This includes version information for Nuxt, Nitro, and nuxi, as well as local and network URLs for accessing the application.
+
+SOURCE: https://github.com/nuxt/nuxt/pull/33018#_snippet_8
+
+LANGUAGE: bash
+CODE:
+```
+❯ pnpm nuxt dev playground
+Nuxt 4.0.3 with Nitro 2.12.4                                                                                            nuxi 2:22:00 PM
+                                                                                                                                 2:22:00 PM
+  ─ Local:    http://localhost:3000/
+  ─ Network:  use --host to expose
+
+  ─ DevTools: press Shift + Option + D in the browser (v2.6.2)                                                               2:22:00 PM
+
+✔ Vite client built in 15ms                                                                                                 2:22:00 PM
+✔ Vite server built in 9ms                                                                                                  2:22:00 PM
+✔ Nuxt Nitro server built in 335ms                                                                                    nitro 2:22:01 PM
+ℹ Vite client warmed up in 2ms                                                                                              2:22:01 PM
+```
+
+--------------------------------
+
+TITLE: Nuxt.js Composition API: setup() Basic Usage
+DESCRIPTION: Demonstrates the basic usage of the `setup()` function in Nuxt.js Composition API for component logic.
+
+SOURCE: https://vuejs.org/api
+
+LANGUAGE: javascript
+CODE:
+```
+import { defineComponent, ref } from 'vue';
+
+export default defineComponent({
+  setup() {
+    const count = ref(0);
+
+    function increment() {
+      count.value++;
+    }
+
+    return {
+      count,
+      increment
+    };
+  }
+});
+```
+
+--------------------------------
+
+TITLE: Programmatically Install Nuxt Module with Options
+DESCRIPTION: Demonstrates how to programmatically install another Nuxt module within the setup function of your module. It takes the module name and an options object, passing the options to the target module's setup function.
+
+SOURCE: https://nuxt.com/docs/4.x/api/kit/modules
+
+LANGUAGE: javascript
+CODE:
+```
+import { defineNuxtModule, installModule } from '@nuxt/kit'
+
+export default defineNuxtModule({
+  async setup () {
+    // will install @nuxtjs/fontaine with Roboto font and Impact fallback
+    await installModule('@nuxtjs/fontaine', {
+      // module configuration
+      fonts: [
+        {
+          family: 'Roboto',
+          fallbacks: ['Impact'],
+          fallbackName: 'fallback-a',
+        }
+      ]
+    })
+  }
+})
+```
+
+--------------------------------
+
+TITLE: Install SpinKit via Bower
+DESCRIPTION: This command installs the SpinKit library using the Bower package manager. Ensure you have Bower installed globally.
+
+SOURCE: https://github.com/tobiasahlin/SpinKit#_snippet_1
+
+LANGUAGE: shell
+CODE:
+```
+$ bower install spinkit
+```
+
+--------------------------------
+
+TITLE: Get Started Section with Animation
+DESCRIPTION: A 'Get Started' section featuring a prominent headline and a call-to-action button. It incorporates a Lottie or Rive animation using '/animations/shared/cta.riv' for visual appeal. The section is designed with responsive styling for various screen sizes.
+
+SOURCE: https://neon.tech/
+
+LANGUAGE: jsx
+CODE:
+```
+["$","section",null,{"
+  "className":"get-started relative overflow-hidden pb-[320px] pt-[390px] xl:pt-[250px] xl:pb-[220px] lg:pb-[156px] lg:pt-[200px] sm:pb-[100px] sm:pt-[140px]",
+  "children":["$","$L15",null,{"
+    "className":"absolute left-1/2 top-[60%] aspect-[1.87365] w-[1703px] -translate-x-1/2 -translate-y-1/2 xl:w-[1432px] lg:w-[1126px] sm:w-[818px]",
+    "src":"/animations/shared/cta.riv",
+    "artboard":"footer",
+    "intersectionRootMargin":"0px 0px 600px 0px",
+    "animationRootMargin":"0px 0px 300px 0px"
+  }],["$","div",null,{"
+    "className":"relative mx-auto lg:max-w-none lg:px-8 md:px-5 max-w-[1100px] pointer-events-none flex flex-col items-center justify-center",
+    "children":["$","h2",null,{"
+      "className":"relative text-center font-title text-[68px] font-medium leading-[0.9] -tracking-[0.03em] text-white xl:text-[56px] xl:tracking-extra-tight lg:text-[44px] md:text-[32px]",
+      "dangerouslySetInnerHTML":{"
+        "__html":"Features of tomorrow.\u003cbr /\u003e Available today."
+      }
+    }],null,["$","$L16",null,{"
+      "className":"pointer-events-auto relative !font-semibold tracking-tighter mt-[38px] h-11 px-7 min-w-[144px] text-[15px] xl:mt-8 lg:mt-7 sm:mt-5 sm:h-10",
+      "theme":"primary",
+      "to":"https://console.neon.tech/signup",
+      "target":"_blank",
+      "rel":"noopener noreferrer",
+      "tagName":"Footer",
+      "children":"Get Started"
+    }]]}]]}]}
+```
+
+--------------------------------
+
+TITLE: Highlighter Instance Method: codeToHtml
+DESCRIPTION: Uses a pre-created highlighter instance to synchronously highlight code.
+
+SOURCE: https://shiki.style/guide/install
+
+LANGUAGE: APIDOC
+CODE:
+```
+## POST /highlighterInstance/codeToHtml
+
+### Description
+Synchronously highlights a code snippet using a pre-initialized highlighter instance.
+
+### Method
+POST
+
+### Endpoint
+/highlighterInstance/codeToHtml
+
+### Parameters
+#### Request Body
+- **code** (string) - Required - The code snippet to highlight.
+- **lang** (string) - Required - The programming language of the code snippet.
+- **theme** (string) - Required - The theme to use for highlighting.
+
+### Request Example
+```json
+{
+  "code": "const a = 1",
+  "lang": "javascript",
+  "theme": "nord"
+}
+```
+
+### Response
+#### Success Response (200)
+- **html** (string) - The highlighted HTML string.
+
+#### Response Example
+```json
+{
+  "html": "<span class=\"token keyword\">const</span> <span class=\"token variable\">a</span> <span class=\"token operator\">=</span> <span class=\"token number\">1</span>"
+}
+```
+```
+
+--------------------------------
+
+TITLE: Install ESLint with pnpm, yarn, or npm
+DESCRIPTION: Installs the ESLint package as a development dependency using various package managers. This is a prerequisite for using the Nuxt ESLint module.
+
+SOURCE: https://github.com/nuxt-modules/eslint#_snippet_0
+
+LANGUAGE: shell
+CODE:
+```
+pnpm add -D eslint
+```
+
+LANGUAGE: shell
+CODE:
+```
+yarn add -D eslint
+```
+
+LANGUAGE: shell
+CODE:
+```
+npm install -D eslint
+```
+
+--------------------------------
+
+TITLE: Nuxt Theme Configuration Example
+DESCRIPTION: This snippet shows a typical theme configuration for a Nuxt project, including logo, outline settings, social links, footer details, edit link patterns, and Algolia search parameters. It covers aspects relevant to site appearance and external linking.
+
+SOURCE: https://test-utils.vuejs.org/guide/
+
+LANGUAGE: javascript
+CODE:
+```
+{
+  "refetchLinks": true,
+  "appearance": true,
+  "themeConfig": {
+    "logo": "/logo.svg",
+    "outline": [
+      2,
+      3
+    ],
+    "socialLinks": [
+      {
+        "icon": "github",
+        "link": "https://github.com/vuejs/test-utils/"
+      },
+      {
+        "icon": "discord",
+        "link": "https://chat.vuejs.org/"
+      }
+    ],
+    "footer": {
+      "copyright": "Copyright © 2014-present Evan You",
+      "message": "Released under the MIT License."
+    },
+    "editLink": {
+      "pattern": "https://github.com/vuejs/test-utils/edit/main/docs/:path",
+      "text": "Suggest changes"
+    },
+    "algolia": {
+      "appId": "BH4D9OD16A",
+      "apiKey": "ee1b8516c9e5a5be9b6c25684eafc42f",
+      "indexName": "vue_test_utils",
+      "searchParameters": {
+        "facetFilters": [
+          "tags:next"
+        ]
+      }
+    }
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Initialize Nuxt Project with Various Package Managers
+DESCRIPTION: Demonstrates how to create a new Nuxt project using npx, pnpm, or bun. This is the first step in setting up your Nuxt application.
+
+SOURCE: https://panda-css.com/docs/installation/nuxt
+
+LANGUAGE: bash
+CODE:
+```
+npx nuxi@latest init test-app
+```
+
+LANGUAGE: bash
+CODE:
+```
+pnpm dlx nuxi@latest init test-app
+```
+
+LANGUAGE: bash
+CODE:
+```
+bunx nuxi@latest init test-app
+```
+
+--------------------------------
+
+TITLE: Example Nuxt Plugin Implementation
+DESCRIPTION: Shows a complete example of a Nuxt plugin that modifies the application's behavior on mount, specifically handling color mode preference.
+
+SOURCE: https://context7_llms
+
+LANGUAGE: typescript
+CODE:
+```
+export default defineNuxtPlugin((nuxtApp) => {
+  const colorMode = useColorMode()
+
+  nuxtApp.hook('app:mounted', () => {
+    if (colorMode.preference !== 'dark') {
+      colorMode.preference = 'dark'
+    }
+  })
+})
+```

@@ -1,0 +1,1752 @@
+================
+CODE SNIPPETS
+================
+TITLE: Clone Example Project with Git
+DESCRIPTION: Clones the voxelize example project and opens it in Cursor. Ensure Git is installed before running this command.
+
+SOURCE: https://docs.cursor.com/en/get-started/quickstart
+
+LANGUAGE: shell
+CODE:
+```
+git clone git@github.com:voxelize/voxelize.git && \
+cd voxelize && \
+cursor .
+```
+
+--------------------------------
+
+TITLE: Start Cursor Agent
+DESCRIPTION: Starts the Cursor Agent after installation and setup.
+
+SOURCE: https://docs.cursor.com/en/cli/installation
+
+LANGUAGE: bash
+CODE:
+```
+cursor-agent
+```
+
+--------------------------------
+
+TITLE: Install Cursor CLI
+DESCRIPTION: Installs the Cursor CLI using a curl command. This command downloads and executes the installation script.
+
+SOURCE: https://docs.cursor.com/en/cli/installation
+
+LANGUAGE: bash
+CODE:
+```
+curl https://cursor.com/install -fsS | bash
+```
+
+--------------------------------
+
+TITLE: Install and Run Cursor CLI
+DESCRIPTION: This snippet shows how to install the Cursor CLI using curl and then run an interactive session with the agent. Installation is a one-time setup.
+
+SOURCE: https://docs.cursor.com/en/cli/overview
+
+LANGUAGE: shell
+CODE:
+```
+# Install
+curl https://cursor.com/install -fsS | bash
+
+# Run interactive session
+cursor-agent
+```
+
+--------------------------------
+
+TITLE: GitHub Actions: Install Cursor CLI
+DESCRIPTION: This step installs the Cursor CLI by downloading and executing the installation script from cursor.com. It then adds the CLI's binary directory to the system's PATH for subsequent steps.
+
+SOURCE: https://docs.cursor.com/en/cli/cookbook/code-review
+
+LANGUAGE: shell
+CODE:
+```
+- name: Install Cursor CLI
+  run: |
+    curl https://cursor.com/install -fsS | bash
+    echo "$HOME/.cursor/bin" >> $GITHUB_PATH
+```
+
+--------------------------------
+
+TITLE: Setup New Feature Command Example
+DESCRIPTION: An example of a custom command in Markdown for systematically setting up a new feature.
+
+SOURCE: https://docs.cursor.com/en/agent/chat/commands
+
+LANGUAGE: markdown
+CODE:
+```
+# Setup New Feature
+
+## Overview
+Systematically set up a new feature from initial planning through to implementation structure.
+
+## Steps
+1. **Define requirements**
+   - Clarify feature scope and goals
+   - Identify user stories and acceptance criteria
+   - Plan technical approach
+
+2. **Create feature branch**
+   - Branch from main/develop
+   - Set up local development environment
+   - Configure any new dependencies
+
+3. **Plan architecture**
+   - Design data models and APIs
+   - Plan UI components and flow
+   - Consider testing strategy
+
+## Feature Setup Checklist
+- [ ] Requirements documented
+- [ ] User stories written
+- [ ] Technical approach planned
+- [ ] Feature branch created
+- [ ] Development environment ready
+
+```
+
+--------------------------------
+
+TITLE: Verify Cursor CLI Installation
+DESCRIPTION: Verifies that the Cursor CLI is installed and functioning correctly by checking its version.
+
+SOURCE: https://docs.cursor.com/en/cli/installation
+
+LANGUAGE: bash
+CODE:
+```
+cursor-agent --version
+```
+
+--------------------------------
+
+TITLE: Create Pull Request Command Example
+DESCRIPTION: A Markdown example for a custom command to guide the creation of a well-structured pull request.
+
+SOURCE: https://docs.cursor.com/en/agent/chat/commands
+
+LANGUAGE: markdown
+CODE:
+```
+# Create PR
+
+## Overview
+Create a well-structured pull request with proper description, labels, and reviewers.
+
+## Steps
+1. **Prepare branch**
+   - Ensure all changes are committed
+   - Push branch to remote
+   - Verify branch is up to date with main
+
+2. **Write PR description**
+   - Summarize changes clearly
+   - Include context and motivation
+   - List any breaking changes
+   - Add screenshots if UI changes
+
+3. **Set up PR**
+   - Create PR with descriptive title
+   - Add appropriate labels
+   - Assign reviewers
+   - Link related issues
+
+## PR Template
+- [ ] Feature A
+- [ ] Bug fix B
+- [ ] Unit tests pass
+- [ ] Manual testing completed
+
+```
+
+--------------------------------
+
+TITLE: Repository Format Examples
+DESCRIPTION: Examples of how to specify a repository for the Background Agent, either as a full URL or a shorthand 'owner/repo' format.
+
+SOURCE: https://docs.cursor.com/en/integrations/slack
+
+LANGUAGE: text
+CODE:
+```
+https://github.com/org/repository
+```
+
+LANGUAGE: text
+CODE:
+```
+org/repository
+```
+
+--------------------------------
+
+TITLE: Autocomplete Function with Tab
+DESCRIPTION: Demonstrates how to use Cursor's Tab autocompletion for functions. Starts typing a function and accepts suggestions by pressing Tab.
+
+SOURCE: https://docs.cursor.com/en/get-started/quickstart
+
+LANGUAGE: javascript
+CODE:
+```
+function calculate
+```
+
+--------------------------------
+
+TITLE: Example .cursor/BUGBOT.md Content
+DESCRIPTION: An example of a `.cursor/BUGBOT.md` file, demonstrating how to define project-specific review guidelines, including security focus areas, architecture patterns, and common issues.
+
+SOURCE: https://docs.cursor.com/en/bugbot
+
+LANGUAGE: markdown
+CODE:
+```
+# Project review guidelines
+
+## Security focus areas
+
+- Validate user input in API endpoints
+- Check for SQL injection vulnerabilities in database queries
+- Ensure proper authentication on protected routes
+
+## Architecture patterns
+
+- Use dependency injection for services
+- Follow the repository pattern for data access
+- Implement proper error handling with custom error classes
+
+## Common issues
+
+- Memory leaks in React components (check useEffect cleanup)
+- Missing error boundaries in UI components
+- Inconsistent naming conventions (use camelCase for functions)
+
+
+```
+
+--------------------------------
+
+TITLE: Example MCP Server Configuration (PostgreSQL)
+DESCRIPTION: An example JSON configuration for a single MCP server, specifically for setting up a PostgreSQL server using npx.
+
+SOURCE: https://docs.cursor.com/en/deeplinks
+
+LANGUAGE: json
+CODE:
+```
+{
+  "postgres": {
+    "command": "npx",
+    "args": [
+      "-y",
+      "@modelcontextprotocol/server-postgres",
+      "postgresql://localhost/mydb"
+    ]
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Dockerfile Setup for Python Environment
+DESCRIPTION: This Dockerfile sets up a Python 3.11 development environment. It starts from a Microsoft-provided Python image, copies the requirements.txt file into the container, and then installs the specified Python packages using pip.
+
+SOURCE: https://docs.cursor.com/en/guides/advanced/datascience
+
+LANGUAGE: dockerfile
+CODE:
+```
+FROM mcr.microsoft.com/devcontainers/python:3.11
+COPY requirements.txt .
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
+```
+
+--------------------------------
+
+TITLE: Start Interactive AI Agent Session
+DESCRIPTION: Initiates a conversational session with the AI agent. You can start a general session or provide an initial prompt to guide the AI's task.
+
+SOURCE: https://docs.cursor.com/en/cli/overview
+
+LANGUAGE: shell
+CODE:
+```
+# Start interactive session
+cursor-agent
+
+# Start with initial prompt
+cursor-agent "refactor the auth module to use JWT tokens"
+```
+
+--------------------------------
+
+TITLE: Install MCP Server Dependencies
+DESCRIPTION: Installs the necessary npm packages for building the MCP server: 'postgres' for database interaction, '@modelcontextprotocol/sdk' for the MCP SDK, and 'zod' for schema definition.
+
+SOURCE: https://docs.cursor.com/en/guides/tutorials/building-mcp-server
+
+LANGUAGE: bash
+CODE:
+```
+bun add postgres @modelcontextprotocol/sdk zod
+```
+
+--------------------------------
+
+TITLE: Run Tests and Fix Failures Command Example
+DESCRIPTION: An example of a custom command in Markdown for executing tests and addressing failures.
+
+SOURCE: https://docs.cursor.com/en/agent/chat/commands
+
+LANGUAGE: markdown
+CODE:
+```
+# Run All Tests and Fix Failures
+
+## Overview
+Execute the full test suite and systematically fix any failures, ensuring code quality and functionality.
+
+```
+
+--------------------------------
+
+TITLE: Reopening Onboarding Wizard in Cursor
+DESCRIPTION: This snippet shows the command to reopen the initial setup wizard within the Cursor IDE. It's useful for users who want to reconfigure their settings after the first-time setup.
+
+SOURCE: https://docs.cursor.com/en/get-started/installation
+
+LANGUAGE: text
+CODE:
+```
+Ctrl+Shift+P and search for Cursor: Start Onboarding
+```
+
+--------------------------------
+
+TITLE: Tokenization Example with a Tokenizer
+DESCRIPTION: Demonstrates how text is broken down into tokens, which are the fundamental units processed by large language models. This example shows a practical way to visualize tokenization.
+
+SOURCE: https://docs.cursor.com/en/guides
+
+LANGUAGE: text
+CODE:
+```
+To see how some text tokenizes, you can use a tokenizer like this one.
+```
+
+--------------------------------
+
+TITLE: Code Review Checklist Command Example
+DESCRIPTION: An example of a custom command written in Markdown, detailing a checklist for code reviews.
+
+SOURCE: https://docs.cursor.com/en/agent/chat/commands
+
+LANGUAGE: markdown
+CODE:
+```
+# Code Review Checklist
+
+## Overview
+Comprehensive checklist for conducting thorough code reviews to ensure quality, security, and maintainability.
+
+## Review Categories
+
+### Functionality
+- [ ] Code does what it's supposed to do
+- [ ] Edge cases are handled
+- [ ] Error handling is appropriate
+- [ ] No obvious bugs or logic errors
+
+### Code Quality
+- [ ] Code is readable and well-structured
+- [ ] Functions are small and focused
+- [ ] Variable names are descriptive
+- [ ] No code duplication
+- [ ] Follows project conventions
+
+### Security
+- [ ] No obvious security vulnerabilities
+- [ ] Input validation is present
+- [ ] Sensitive data is handled properly
+- [ ] No hardcoded secrets
+
+```
+
+--------------------------------
+
+TITLE: Cursor CLI Permissions Configuration
+DESCRIPTION: A JSON configuration file (`.cursor/cli.json`) to define permissions for the Cursor agent. This example denies operations like 'git push' and 'gh pr create', limiting the agent to reading files and using GitHub CLI for comments.
+
+SOURCE: https://docs.cursor.com/en/cli/cookbook/code-review
+
+LANGUAGE: json
+CODE:
+```
+{
+  "permissions": {
+    "deny": [
+      "Shell(git push)",
+      "Shell(gh pr create)",
+      "Write(**)"
+    ]
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Installing Cursor Command Line Tool
+DESCRIPTION: Steps to install the Cursor command-line interface (CLI) tool from within the Cursor application. This allows users to open Cursor from their terminal.
+
+SOURCE: https://docs.cursor.com/en/troubleshooting/common-issues
+
+LANGUAGE: plaintext
+CODE:
+```
+Open command palette ⌘⇧P
+Type install command
+Select Install 'cursor' command
+```
+
+--------------------------------
+
+TITLE: Add Cursor CLI to PATH (Bash)
+DESCRIPTION: Appends the Cursor CLI's binary directory to the PATH environment variable for bash shell and sources the profile to apply changes.
+
+SOURCE: https://docs.cursor.com/en/cli/installation
+
+LANGUAGE: bash
+CODE:
+```
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+--------------------------------
+
+TITLE: Add Cursor CLI to PATH (Zsh)
+DESCRIPTION: Appends the Cursor CLI's binary directory to the PATH environment variable for zsh shell and sources the profile to apply changes.
+
+SOURCE: https://docs.cursor.com/en/cli/installation
+
+LANGUAGE: bash
+CODE:
+```
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+--------------------------------
+
+TITLE: Opening Cursor from Command Line
+DESCRIPTION: The command to launch the Cursor IDE from the terminal. If the command is not recognized, instructions are provided to install it via the command palette.
+
+SOURCE: https://docs.cursor.com/en/troubleshooting/common-issues
+
+LANGUAGE: plaintext
+CODE:
+```
+cursor
+```
+
+--------------------------------
+
+TITLE: Use @Docs for API References
+DESCRIPTION: The @Docs tool connects Cursor to official documentation for tools and frameworks. It's useful for retrieving API references, getting started guides, best practices, and framework-specific debugging information.
+
+SOURCE: https://docs.cursor.com/en/guides/advanced/working-with-documentation
+
+LANGUAGE: text
+CODE:
+```
+@Docs Next.js How do I set up dynamic routing with catch-all routes?
+```
+
+--------------------------------
+
+TITLE: Install .NET SDK via Command Palette
+DESCRIPTION: Demonstrates how to install the .NET SDK using the Command Palette in Cursor IDE. This method integrates with file explorer for solution management and CLI for NuGet packages.
+
+SOURCE: https://docs.cursor.com/en/guides/migration/jetbrains
+
+LANGUAGE: IDE Command
+CODE:
+```
+Press `⌘`/`Ctrl` + `Shift` + `P` to open Command Palette
+```
+
+--------------------------------
+
+TITLE: Security Audit Command Example
+DESCRIPTION: An example of a custom command written in Markdown, outlining steps for a security audit.
+
+SOURCE: https://docs.cursor.com/en/agent/chat/commands
+
+LANGUAGE: markdown
+CODE:
+```
+# Security Audit
+
+## Overview
+Comprehensive security review to identify and fix vulnerabilities in the codebase.
+
+## Steps
+1. **Dependency audit**
+   - Check for known vulnerabilities
+   - Update outdated packages
+   - Review third-party dependencies
+
+2. **Code security review**
+   - Check for common vulnerabilities
+   - Review authentication/authorization
+   - Audit data handling practices
+
+3. **Infrastructure security**
+   - Review environment variables
+   - Check access controls
+   - Audit network security
+
+## Security Checklist
+- [ ] Dependencies updated and secure
+- [ ] No hardcoded secrets
+- [ ] Input validation implemented
+- [ ] Authentication secure
+- [ ] Authorization properly configured
+
+```
+
+--------------------------------
+
+TITLE: MCP Server Implementation Guide Reference
+DESCRIPTION: This indicates a reference to a guide on building Model Context Protocol (MCP) servers. MCP allows extending Cursor's capabilities by integrating external tools and data sources like documentation or project management systems.
+
+SOURCE: https://docs.cursor.com/en/guides/working-with-context
+
+LANGUAGE: documentation-reference
+CODE:
+```
+Here’s a short guide on how to build MCP servers.
+```
+
+--------------------------------
+
+TITLE: Go Tool Installation Prompt
+DESCRIPTION: Explains the automatic prompting for Go tools installation when using the official Go extension in Cursor IDE. This ensures necessary tools for debugging and package management are readily available.
+
+SOURCE: https://docs.cursor.com/en/guides/migration/jetbrains
+
+LANGUAGE: IDE Feature
+CODE:
+```
+Go tools installation prompted automatically
+```
+
+--------------------------------
+
+TITLE: GitHub Actions Workflow: Basic Setup
+DESCRIPTION: Defines a GitHub Actions workflow named 'Cursor Code Review' that triggers on pull request events (opened, synchronize, reopened, ready_for_review). It specifies the runner and necessary permissions for the job.
+
+SOURCE: https://docs.cursor.com/en/cli/cookbook/code-review
+
+LANGUAGE: yaml
+CODE:
+```
+name: Cursor Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  code-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    
+    steps:
+
+
+```
+
+--------------------------------
+
+TITLE: Get Spending Data (JSON Response)
+DESCRIPTION: Example JSON response for the 'Get Spending Data' endpoint, detailing team member spending, cycle start, and total members.
+
+SOURCE: https://docs.cursor.com/en/account/teams/admin-api
+
+LANGUAGE: json
+CODE:
+```
+{
+  "teamMemberSpend": [
+    {
+      "spendCents": 2450,
+      "fastPremiumRequests": 1250,
+      "name": "Alex",
+      "email": "developer@company.com",
+      "role": "member",
+      "hardLimitOverrideDollars": 100
+    },
+    {
+      "spendCents": 1875,
+      "fastPremiumRequests": 980,
+      "name": "Sam",
+      "email": "admin@company.com",
+      "role": "owner",
+      "hardLimitOverrideDollars": 0
+    }
+  ],
+  "subscriptionCycleStart": 1708992000000,
+  "totalMembers": 15,
+  "totalPages": 1
+}
+```
+
+--------------------------------
+
+TITLE: Cursor CLI GitHub Actions Workflow
+DESCRIPTION: This YAML file defines a GitHub Actions workflow for automated code review using the Cursor CLI. It triggers on pull request events, checks out the repository, installs the Cursor CLI, configures git, and executes the review agent with specific prompts and rules for identifying and commenting on code issues.
+
+SOURCE: https://docs.cursor.com/en/cli/cookbook/code-review
+
+LANGUAGE: yaml
+CODE:
+```
+name: Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+permissions:
+  pull-requests: write
+  contents: read
+  issues: write
+
+jobs:
+  code-review:
+    runs-on: ubuntu-latest
+    # Skip automated code review for draft PRs
+    if: github.event.pull_request.draft == false
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event.pull_request.head.sha }}
+
+      - name: Install Cursor CLI
+        run: |
+          curl https://cursor.com/install -fsS | bash
+          echo "$HOME/.cursor/bin" >> $GITHUB_PATH
+
+      - name: Configure git identity
+        run: |
+          git config user.name "Cursor Agent"
+          git config user.email "cursoragent@cursor.com"
+
+      - name: Perform automated code review
+        env:
+          CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+          MODEL: gpt-5
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BLOCKING_REVIEW: ${{ vars.BLOCKING_REVIEW || 'false' }}
+        run: |
+          cursor-agent --force --model "$MODEL" --output-format=text --print 'You are operating in a GitHub Actions runner performing automated code review. The gh CLI is available and authenticated via GH_TOKEN. You may comment on pull requests.
+
+          Context:
+          - Repo: ${{ github.repository }}
+          - PR Number: ${{ github.event.pull_request.number }}
+          - PR Head SHA: ${{ github.event.pull_request.head.sha }}
+          - PR Base SHA: ${{ github.event.pull_request.base.sha }}
+          - Blocking Review: ${{ env.BLOCKING_REVIEW }}
+
+          Objectives:
+          1) Re-check existing review comments and reply resolved when addressed.
+          2) Review the current PR diff and flag only clear, high-severity issues.
+          3) Leave very short inline comments (1-2 sentences) on changed lines only and a brief summary at the end.
+
+          Procedure:
+          - Get existing comments: gh pr view --json comments
+          - Get diff: gh pr diff
+          - Get changed files with patches to compute inline positions: gh api repos/${{ github.repository }}/pulls/${{ github.event.pull_request.number }}/files --paginate --jq ".[] | {filename,patch}"
+          - Compute exact inline anchors for each issue (file path + diff position). Comments MUST be placed inline on the changed line in the diff, not as top-level comments.
+          - Detect prior top-level "no issues" style comments authored by this bot (match bodies like: "✅ no issues", "No issues found", "LGTM").
+          - If CURRENT run finds issues and any prior "no issues" comments exist:
+            - Prefer to remove them to avoid confusion:
+              - Try deleting top-level issue comments via: gh api -X DELETE repos/${{ github.repository }}/issues/comments/<comment_id>
+              - If deletion isn't possible, minimize them via GraphQL (minimizeComment) or edit to prefix "[Superseded by new findings]".
+            - If neither delete nor minimize is possible, reply to that comment: "⚠️ Superseded: issues were found in newer commits".
+          - If a previously reported issue appears fixed by nearby changes, reply: ✅ This issue appears to be resolved by the recent changes
+          - Analyze ONLY for:
+            - Null/undefined dereferences
+            - Resource leaks (unclosed files or connections)
+            - Injection (SQL/XSS)
+            - Concurrency/race conditions
+            - Missing error handling for critical operations
+            - Obvious logic errors with incorrect behavior
+            - Clear performance anti-patterns with measurable impact
+            - Definitive security vulnerabilities
+          - Avoid duplicates: skip if similar feedback already exists on or near the same lines.
+
+          Commenting rules:
+          - Max 10 inline comments total; prioritize the most critical issues
+          - One issue per comment; place on the exact changed line
+          - All issue comments MUST be inline (anchored to a file and line/position in the PR diff)
+          - Natural tone, specific and actionable; do not mention automated or high-confidence
+          - Use emojis: 🚨 Critical 🔒 Security ⚡ Performance ⚠️ Logic ✅ Resolved ✨ Improvement
+
+          Submission:
+          - If there are NO issues to report and an existing top-level comment indicating "no issues" already exists (e.g., "✅ no issues", "No issues found", "LGTM"), do NOT submit another comment. Skip submission to avoid redundancy.
+
+```
+
+--------------------------------
+
+TITLE: Install Cursor CLI and Set API Key
+DESCRIPTION: Provides commands to install the Cursor CLI using `curl` and set the `CURSOR_API_KEY` environment variable for authentication in scripts.
+
+SOURCE: https://docs.cursor.com/en/cli/headless
+
+LANGUAGE: Bash
+CODE:
+```
+# Install Cursor CLI
+curl https://cursor.com/install -fsS | bash
+
+# Set API key for scripts  
+export CURSOR_API_KEY=your_api_key_here
+cursor-agent -p "Analyze this code"
+
+```
+
+--------------------------------
+
+TITLE: Define UI Component Reuse Rules in MDC
+DESCRIPTION: An example of a .mdc file used to define rules for component reuse within Cursor. This helps ensure consistency by guiding the AI to leverage existing UI components from a specified path (e.g., '/src/components/ui') or to create new ones using existing primitives.
+
+SOURCE: https://docs.cursor.com/en/guides/tutorials/web-development
+
+LANGUAGE: markdown
+CODE:
+```
+---
+description: Implementing designs and building UI
+---
+- reuse existing UI components from `/src/components/ui`. these are the primitives we can build with
+- create new components by orchestrating ui components if you can't find any existing that solves the problem
+- ask the human how they want to proceed when there are missing components and designs
+
+```
+
+--------------------------------
+
+TITLE: Update Cursor CLI
+DESCRIPTION: Manually updates the Cursor CLI to the latest version using either the 'update' or 'upgrade' command.
+
+SOURCE: https://docs.cursor.com/en/cli/installation
+
+LANGUAGE: bash
+CODE:
+```
+cursor-agent update
+```
+
+LANGUAGE: bash
+CODE:
+```
+cursor-agent upgrade
+```
+
+--------------------------------
+
+TITLE: Get Team Members Example Response
+DESCRIPTION: This is an example of the JSON response structure for the 'Get Team Members' endpoint, illustrating the data format for team members.
+
+SOURCE: https://docs.cursor.com/en/account/teams/admin-api
+
+LANGUAGE: json
+CODE:
+```
+{
+  "teamMembers": [
+    {
+      "name": "Alex",
+      "email": "developer@company.com",
+      "role": "member"
+    },
+    {
+      "name": "Sam",
+      "email": "admin@company.com",
+      "role": "owner"
+    }
+  ]
+}
+```
+
+--------------------------------
+
+TITLE: Example Model List Array
+DESCRIPTION: An example array showcasing the format of available model names returned by the Cursor API.
+
+SOURCE: https://docs.cursor.com/en/background-agent/api/list-models
+
+LANGUAGE: JSON
+CODE:
+```
+[
+  "claude-4-sonnet-thinking",
+  "o3",
+  "claude-4-opus-thinking"
+]
+```
+
+--------------------------------
+
+TITLE: Cursor AI Model Examples
+DESCRIPTION: Lists example AI models supported by Cursor, categorized by their behavioral traits like assertiveness, curiosity, and whether they are 'thinking' or 'non-thinking' models. This helps users understand the characteristics of each model.
+
+SOURCE: https://docs.cursor.com/en/guides/selecting-models
+
+LANGUAGE: text
+CODE:
+```
+Thinking models:
+  * `claude-4-opus`
+  * `gemini-2.5-pro`
+  * `o3` (designed for complex reasoning)
+
+Non-thinking models:
+  * `claude-4-sonnet`
+  * `gpt-4.1`
+```
+
+--------------------------------
+
+TITLE: Basic Slack Command
+DESCRIPTION: Initiate a Background Agent in Slack by mentioning @Cursor followed by your prompt. This is the simplest way to start a task.
+
+SOURCE: https://docs.cursor.com/en/integrations/slack
+
+LANGUAGE: slack
+CODE:
+```
+@Cursor fix the login bug
+```
+
+--------------------------------
+
+TITLE: Install Development Tools via Homebrew
+DESCRIPTION: Installs essential command-line tools for Swift development, including Xcode Build Server for building projects without Xcode, xcbeautify for pretty-printing build output, and swiftformat for code formatting.
+
+SOURCE: https://docs.cursor.com/en/guides/languages/swift
+
+LANGUAGE: shell
+CODE:
+```
+# Builds your projects without needing Xcode open
+brew install xcode-build-server
+
+# Pretty print's the `xcodebuild` command output into Cursor's terminal
+brew install xcbeautify
+
+# Allows for advanced formating and language features
+brew install swiftformat
+
+```
+
+--------------------------------
+
+TITLE: Example Project Rule Definition (.mdc)
+DESCRIPTION: Demonstrates the structure of a project rule file in MDC format, including metadata like description and globs, and rule content.
+
+SOURCE: https://docs.cursor.com/en/context/rules
+
+LANGUAGE: mdc
+CODE:
+```
+---
+description: RPC Service boilerplate
+globs:
+alwaysApply: false
+---
+
+- Use our internal RPC pattern when defining services
+- Always use snake_case for service names.
+
+@service-template.ts
+
+```
+
+--------------------------------
+
+TITLE: Example API Response for Repositories
+DESCRIPTION: This is an example of a successful JSON response when listing GitHub repositories via the Cursor API. It returns an array of repository objects, each containing the owner, name, and the GitHub repository URL.
+
+SOURCE: https://docs.cursor.com/en/background-agent/api/list-repositories
+
+LANGUAGE: json
+CODE:
+```
+{
+  "repositories": [
+    {
+      "owner": "your-org",
+      "name": "your-repo",
+      "repository": "https://github.com/your-org/your-repo"
+    }
+  ]
+}
+```
+
+--------------------------------
+
+TITLE: macOS Configuration Profile Example
+DESCRIPTION: An example .mobileconfig file for macOS, demonstrating the structure for managing Cursor settings. It includes payloads for display name, identifier, type, version, allowed extensions, and team IDs.
+
+SOURCE: https://docs.cursor.com/en/account/teams/enterprise-settings
+
+LANGUAGE: xml
+CODE:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+	<dict>
+		<key>PayloadContent</key>
+		<array>
+			<dict>
+				<key>PayloadDisplayName</key>
+				<string>Cursor</string>
+				<key>PayloadIdentifier</key>
+				<string>com.todesktop.230313mzl4w4u92.J6B5723A-6539-4F31-8A4E-3CC96E51F48C</string>
+				<key>PayloadType</key>
+				<string>com.todesktop.230313mzl4w4u92</string>
+				<key>PayloadUUID</key>
+				<string>J6B5723A-6539-4F31-8A4E-3CC96E51F48C</string>
+				<key>PayloadVersion</key>
+				<integer>1</integer>
+				<key>AllowedExtensions</key>
+				<string>{"anysphere":true}</string>
+				<key>AllowedTeamId</key>
+				<string>1,2</string>
+			</dict>
+		</array>
+		<key>PayloadDescription</key>
+		<string>This profile manages Cursor.</string>
+		<key>PayloadDisplayName</key>
+		<string>Cursor</string>
+		<key>PayloadIdentifier</key>
+		<string>com.todesktop.230313mzl4w4u92</string>
+		<key>PayloadOrganization</key>
+		<string>Anysphere</string>
+		<key>PayloadType</key>
+		<string>Configuration</string>
+		<key>PayloadUUID</key>
+		<string>F2C1A7B3-9D4E-4B2C-8E1F-7A6C5D4B3E2F</string>
+		<key>PayloadVersion</key>
+		<integer>1</integer>
+		<key>TargetDeviceType</key>
+		<integer>5</integer>
+	</dict>
+</plist>
+```
+
+--------------------------------
+
+TITLE: Group Policy Configuration Example on Windows
+DESCRIPTION: Example of setting the `AllowedExtensions` policy using the Local Group Policy Editor on Windows, by providing a JSON string.
+
+SOURCE: https://docs.cursor.com/en/account/teams/enterprise-settings
+
+LANGUAGE: JSON
+CODE:
+```
+{\"anysphere\": true, \"github\": true}
+```
+
+--------------------------------
+
+TITLE: Agent Conversation Request Body Example
+DESCRIPTION: An example of the JSON payload that might be sent to an agent endpoint. This structure includes the agent's ID and a list of messages, each with a type and text content.
+
+SOURCE: https://docs.cursor.com/en/background-agent/api/agent-conversation
+
+LANGUAGE: json
+CODE:
+```
+{
+  "id": "bc_abc123",
+  "messages": [
+    {
+      "id": "msg_123",
+      "type": "user_message",
+      "text": "Add a README.md file with installation instructions"
+    }
+  ]
+}
+```
+
+--------------------------------
+
+TITLE: Uninstalling Remote-SSH Extension
+DESCRIPTION: Instructions for uninstalling the Remote-SSH extension from Cursor, which is necessary for installing the Anysphere Remote SSH extension. This process involves accessing the Extensions view, searching for the extension, and using the gear icon to uninstall.
+
+SOURCE: https://docs.cursor.com/en/troubleshooting/common-issues
+
+LANGUAGE: plaintext
+CODE:
+```
+Open Extensions view (Ctrl + Shift + X)
+Search “Remote-SSH”
+Click gear icon → “Uninstall”
+```
+
+--------------------------------
+
+TITLE: MCP Server Install Deeplink
+DESCRIPTION: This is the format for a Cursor deeplink used to install MCP servers. It requires a server name and a base64 encoded JSON configuration.
+
+SOURCE: https://docs.cursor.com/en/deeplinks
+
+LANGUAGE: deeplink
+CODE:
+```
+cursor://anysphere.cursor-deeplink/mcp/install?name=$NAME&config=$BASE64_ENCODED_CONFIG
+```
+
+--------------------------------
+
+TITLE: Install Black Python Code Formatter
+DESCRIPTION: Installs Black, a Python code formatter that automatically formats code to a consistent style with no configuration required.
+
+SOURCE: https://docs.cursor.com/en/guides/languages/python
+
+LANGUAGE: bash
+CODE:
+```
+pip install black
+```
+
+--------------------------------
+
+TITLE: Bugbot Configuration File Structure
+DESCRIPTION: Example of the directory structure for Bugbot's configuration files (`.cursor/BUGBOT.md`). These files provide project-specific context for reviews and are included based on the files changed in a PR.
+
+SOURCE: https://docs.cursor.com/en/bugbot
+
+LANGUAGE: file structure
+CODE:
+```
+project/
+  .cursor/BUGBOT.md          # Always included (project-wide rules)
+  backend/
+    .cursor/BUGBOT.md        # Included when reviewing backend files
+    api/
+      .cursor/BUGBOT.md      # Included when reviewing API files
+  frontend/
+    .cursor/BUGBOT.md        # Included when reviewing frontend files
+
+```
+
+--------------------------------
+
+TITLE: Install and Run Cursor CLI in GitHub Actions
+DESCRIPTION: This snippet shows how to install the Cursor CLI and then run the Cursor Agent with a prompt within a GitHub Actions workflow. It requires the CURSOR_API_KEY to be set as a secret.
+
+SOURCE: https://docs.cursor.com/en/cli/github-actions
+
+LANGUAGE: yaml
+CODE:
+```
+- name: Install Cursor CLI
+  run: |
+    curl https://cursor.com/install -fsS | bash
+    echo "$HOME/.cursor/bin" >> $GITHUB_PATH
+
+- name: Run Cursor Agent
+  env:
+    CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+  run: |
+    cursor-agent -p "Your prompt here" --model gpt-5
+
+```
+
+--------------------------------
+
+TITLE: Cursor API Successful Spend Limit Response Example (JSON)
+DESCRIPTION: An example of a successful response when setting a user's spend limit, confirming the action with a message.
+
+SOURCE: https://docs.cursor.com/en/account/teams/admin-api
+
+LANGUAGE: json
+CODE:
+```
+{
+  "outcome": "success",
+  "message": "Spend limit set to $100 for user developer@company.com"
+}
+
+```
+
+--------------------------------
+
+TITLE: Implement MCP Server HTTP Protocol
+DESCRIPTION: This prompt instructs Cursor to create a new file implementing the HTTP protocol for the MCP server, based on an existing MCP server setup. It also directs the separation of shared logic into 'mcp-core' and naming transport implementations like 'mcp-server-stdio' and 'mcp-server-http'.
+
+SOURCE: https://docs.cursor.com/en/guides/tutorials/building-mcp-server
+
+LANGUAGE: markdown
+CODE:
+```
+Based on the existing MCP server, create a new file that implements the HTTP protocol.
+
+Move shared logic to mcp-core, and name each transport implementation by name (mcp-server-stdio, mcp-server-http)
+
+@https://raw.githubusercontent.com/modelcontextprotocol/typescript-sdk/refs/heads/main/README.md 
+
+```
+
+--------------------------------
+
+TITLE: Initialize Bun Project
+DESCRIPTION: Creates a new directory and initializes a new Bun project. This is the first step in setting up the MCP server.
+
+SOURCE: https://docs.cursor.com/en/guides/tutorials/building-mcp-server
+
+LANGUAGE: bash
+CODE:
+```
+mkdir postgres-mcp-server
+Bun init
+```
+
+--------------------------------
+
+TITLE: Install `uv` Python Environment Manager
+DESCRIPTION: Installs `uv`, a modern Python package manager for creating and managing virtual environments and replacing pip.
+
+SOURCE: https://docs.cursor.com/en/guides/languages/python
+
+LANGUAGE: bash
+CODE:
+```
+pip install uv
+```
+
+--------------------------------
+
+TITLE: Get Daily Usage Data Response Structure
+DESCRIPTION: The response for 'Get Daily Usage Data' includes an array of 'data' objects, each representing a day's usage metrics, and a 'period' object with the queried start and end dates.
+
+SOURCE: https://docs.cursor.com/en/account/teams/admin-api
+
+LANGUAGE: json
+CODE:
+```
+{
+  "data": [
+    {
+      "date": 1678886400000,
+      "isActive": true,
+      "totalLinesAdded": 150,
+      "totalLinesDeleted": 20,
+      "acceptedLinesAdded": 120,
+      "acceptedLinesDeleted": 15,
+      "totalApplies": 50,
+      "totalAccepts": 45,
+      "totalRejects": 5,
+      "totalTabsShown": 100,
+      "totalTabsAccepted": 80,
+      "composerRequests": 10,
+      "chatRequests": 5,
+      "agentRequests": 2,
+      "cmdkUsages": 25,
+      "subscriptionIncludedReqs": 500,
+      "apiKeyReqs": 100,
+      "usageBasedReqs": 50,
+      "bugbotUsages": 3,
+      "mostUsedModel": "gpt-4",
+      "applyMostUsedExtension": ".py",
+      "tabMostUsedExtension": ".js",
+      "clientVersion": "1.2.3",
+      "email": "developer@company.com"
+    }
+  ],
+  "period": {
+    "startDate": 1678886400000,
+    "endDate": 1679750400000
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Get Daily Usage Data (cURL Request)
+DESCRIPTION: Example cURL command to fetch daily usage data for a team, specifying a date range. Requires an API key for authentication.
+
+SOURCE: https://docs.cursor.com/en/account/teams/admin-api
+
+LANGUAGE: curl
+CODE:
+```
+curl -X POST https://api.cursor.com/teams/daily-usage-data \
+  -u YOUR_API_KEY: \
+  -H "Content-Type: application/json" \
+  -d '{
+    "startDate": 1710720000000,
+    "endDate": 1710892800000
+  }'
+```
+
+--------------------------------
+
+TITLE: Check Java Installation
+DESCRIPTION: Verifies if Java Development Kit (JDK) and Java compiler are installed and accessible in your system's PATH.
+
+SOURCE: https://docs.cursor.com/en/guides/languages/java
+
+LANGUAGE: shell
+CODE:
+```
+java -version
+javac -version
+```
+
+--------------------------------
+
+TITLE: Mermaid Flowchart Example
+DESCRIPTION: This Mermaid syntax generates a basic flowchart to visualize logic and sequences within a system.
+
+SOURCE: https://docs.cursor.com/en/guides/tutorials/architectural-diagrams
+
+LANGUAGE: mermaid
+CODE:
+```
+flowchart TD
+    A[Start] --> B{Decision}
+    B -->|Yes| C[Action 1]
+    B -->|No| D[Action 2]
+    C --> E[End]
+    D --> E
+```
+
+--------------------------------
+
+TITLE: Debugging Go with launch.json
+DESCRIPTION: Details the process of debugging Go applications in Cursor IDE using the launch.json configuration file. This allows for customized debugging setups tailored to specific projects.
+
+SOURCE: https://docs.cursor.com/en/guides/migration/jetbrains
+
+LANGUAGE: Go Debugging
+CODE:
+```
+Debugging through launch.json
+```
+
+--------------------------------
+
+TITLE: Mermaid Sequence Diagram Example
+DESCRIPTION: This Mermaid syntax illustrates interactions between different components or participants over time.
+
+SOURCE: https://docs.cursor.com/en/guides/tutorials/architectural-diagrams
+
+LANGUAGE: mermaid
+CODE:
+```
+sequenceDiagram
+    participant User
+    participant Server
+    User->>Server: Request data
+    Server-->>User: Data response
+```
+
+--------------------------------
+
+TITLE: Get AI Commit Metrics (JSON) - Basic Request
+DESCRIPTION: Retrieves aggregated per-commit AI metrics in JSON format. This example demonstrates a basic request using cURL, specifying a date range and pagination parameters. The API requires authentication via an API key.
+
+SOURCE: https://docs.cursor.com/en/account/teams/ai-code-tracking-api
+
+LANGUAGE: curl
+CODE:
+```
+curl -X GET "https://api.cursor.com/analytics/ai-code/commits?startDate=7d&endDate=now&page=1&pageSize=100" \
+  -u YOUR_API_KEY:
+```
+
+--------------------------------
+
+TITLE: Cursor API Example Usage Events Response (JSON)
+DESCRIPTION: An example of a response from the Cursor API for usage events. This illustrates the data format with sample values for total events, pagination, and several usage event records.
+
+SOURCE: https://docs.cursor.com/en/account/teams/admin-api
+
+LANGUAGE: json
+CODE:
+```
+{
+  "totalUsageEventsCount": 113,
+  "pagination": {
+    "numPages": 12,
+    "currentPage": 1,
+    "pageSize": 10,
+    "hasNextPage": true,
+    "hasPreviousPage": false
+  },
+  "usageEvents": [
+    {
+      "timestamp": "1750979225854",
+      "model": "claude-4-opus",
+      "kind": "Usage-based",
+      "maxMode": true,
+      "requestsCosts": 5,
+      "isTokenBasedCall": true,
+      "tokenUsage": {
+        "inputTokens": 126,
+        "outputTokens": 450,
+        "cacheWriteTokens": 6112,
+        "cacheReadTokens": 11964,
+        "totalCents": 20.18232
+      },
+      "isFreeBugbot": false,
+      "userEmail": "developer@company.com"
+    },
+    {
+      "timestamp": "1750979173824",
+      "model": "claude-4-opus",
+      "kind": "Usage-based",
+      "maxMode": true,
+      "requestsCosts": 10,
+      "isTokenBasedCall": true,
+      "tokenUsage": {
+        "inputTokens": 5805,
+        "outputTokens": 311,
+        "cacheWriteTokens": 11964,
+        "cacheReadTokens": 0,
+        "totalCents": 40.16699999999999
+      },
+      "isFreeBugbot": false,
+      "userEmail": "developer@company.com"
+    },
+    {
+      "timestamp": "1750978339901",
+      "model": "claude-4-sonnet-thinking",
+      "kind": "Included in Business",
+      "maxMode": true,
+      "requestsCosts": 1.4,
+      "isTokenBasedCall": false,
+      "isFreeBugbot": false,
+      "userEmail": "admin@company.com"
+    }
+  ],
+  "period": {
+    "startDate": 1748411762359,
+    "endDate": 1751003762359
+  }
+}
+
+```
+
+--------------------------------
+
+TITLE: Install MyPy Python Type Checker
+DESCRIPTION: Installs MyPy, a static type checker for Python that helps detect type errors in code.
+
+SOURCE: https://docs.cursor.com/en/guides/languages/python
+
+LANGUAGE: bash
+CODE:
+```
+pip install mypy
+```
+
+--------------------------------
+
+TITLE: Install `ruff` Python Linter and Formatter
+DESCRIPTION: Installs `ruff`, a linter and formatter for Python that checks for errors, enforces coding standards, and suggests refactoring. It can be used with Black.
+
+SOURCE: https://docs.cursor.com/en/guides/languages/python
+
+LANGUAGE: bash
+CODE:
+```
+pip install ruff
+```
+
+--------------------------------
+
+TITLE: Install PyLint Python Linter
+DESCRIPTION: Installs PyLint, a tool used to check for programming errors, enforce coding standards, and suggest refactoring in Python code.
+
+SOURCE: https://docs.cursor.com/en/guides/languages/python
+
+LANGUAGE: bash
+CODE:
+```
+pip install pylint
+```
+
+--------------------------------
+
+TITLE: Get AI Commit Metrics (JSON) - Filter by User
+DESCRIPTION: Retrieves aggregated per-commit AI metrics in JSON format, filtered by a specific user's email. This cURL example shows how to apply a user filter along with a date range. Authentication is required.
+
+SOURCE: https://docs.cursor.com/en/account/teams/ai-code-tracking-api
+
+LANGUAGE: curl
+CODE:
+```
+curl -X GET "https://api.cursor.com/analytics/ai-code/commits?startDate=2025-06-01T00:00:00Z&endDate=now&user=developer@company.com" \
+  -u YOUR_API_KEY:
+```
+
+--------------------------------
+
+TITLE: IntelliJ IDEA Keybindings in Cursor
+DESCRIPTION: Demonstrates common keyboard shortcut differences between default Cursor (VS Code) and IntelliJ IDEA, suggesting the installation of a specific extension to enable JetBrains IDE shortcuts within Cursor.
+
+SOURCE: https://docs.cursor.com/en/guides/migration/jetbrains
+
+LANGUAGE: Text
+CODE:
+```
+Find Action: ⌘/Ctrl+Shift+P (vs. ⌘/Ctrl+Shift+A)
+Quick Fix: ⌘/Ctrl+. (vs. Alt+Enter)
+Go to File: ⌘/Ctrl+P (vs. ⌘/Ctrl+Shift+N)
+```
+
+--------------------------------
+
+TITLE: Mermaid Class Diagram Example
+DESCRIPTION: This Mermaid syntax defines the structure of classes, their attributes, methods, and relationships.
+
+SOURCE: https://docs.cursor.com/en/guides/tutorials/architectural-diagrams
+
+LANGUAGE: mermaid
+CODE:
+```
+classDiagram
+    class Animal {
+        +String name
+        +int age
+    }
+    class Dog {
+        +String breed
+    }
+    Animal <|-- Dog
+```
+
+--------------------------------
+
+TITLE: Perform code review with Cursor Agent
+DESCRIPTION: This YAML snippet configures a GitHub Actions step to perform a code review using the `cursor-agent`. It sets environment variables for API keys and defines the agent's behavior, including reviewing diffs, commenting on changed lines, and summarizing findings. The prompt specifies rules for comment content, emoji usage, and submission format.
+
+SOURCE: https://docs.cursor.com/en/cli/cookbook/code-review
+
+LANGUAGE: yaml
+CODE:
+```
+- name: Perform code review
+  env:
+    CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
+    GH_TOKEN: ${{ github.token }}
+  run: |
+    cursor-agent --force --model "$MODEL" --output-format=text --print "You are operating in a GitHub Actions runner performing automated code review. The gh CLI is available and authenticated via GH_TOKEN. You may comment on pull requests.
+    
+    Context:
+    - Repo: ${{ github.repository }}
+    - PR Number: ${{ github.event.pull_request.number }}
+    - PR Head SHA: ${{ github.event.pull_request.head.sha }}
+    - PR Base SHA: ${{ github.event.pull_request.base.sha }}
+    
+    Objectives:
+    1) Re-check existing review comments and reply resolved when addressed
+    2) Review the current PR diff and flag only clear, high-severity issues
+    3) Leave very short inline comments (1-2 sentences) on changed lines only and a brief summary at the end
+    
+    Procedure:
+    - Get existing comments: gh pr view --json comments
+    - Get diff: gh pr diff
+    - If a previously reported issue appears fixed by nearby changes, reply: ✅ This issue appears to be resolved by the recent changes
+    - Avoid duplicates: skip if similar feedback already exists on or near the same lines
+    
+    Commenting rules:
+    - Max 10 inline comments total; prioritize the most critical issues
+    - One issue per comment; place on the exact changed line
+    - Natural tone, specific and actionable; do not mention automated or high-confidence
+    - Use emojis: 🚨 Critical 🔒 Security ⚡ Performance ⚠️ Logic ✅ Resolved ✨ Improvement
+    
+    Submission:
+    - Submit one review containing inline comments plus a concise summary
+    - Use only: gh pr review --comment
+    - Do not use: gh pr review --approve or --request-changes"
+```
+
+--------------------------------
+
+TITLE: Cursor Agent Interactive Chat Mode Prompt
+DESCRIPTION: Starting the Cursor Agent in interactive chat mode with an initial prompt.
+
+SOURCE: https://docs.cursor.com/en/cli/reference/parameters
+
+LANGUAGE: bash
+CODE:
+```
+cursor-agent "Your initial prompt here"
+```
+
+--------------------------------
+
+TITLE: Test MCP Server with Inspector
+DESCRIPTION: Launches the MCP server using the MCP Inspector with a Bun runtime. This command allows for testing the server's exposed tools and resources.
+
+SOURCE: https://docs.cursor.com/en/guides/tutorials/building-mcp-server
+
+LANGUAGE: bash
+CODE:
+```
+npx @modelcontextprotocol/inspector bun run index.ts
+```
+
+--------------------------------
+
+TITLE: GitHub Actions: Checkout Repository
+DESCRIPTION: A step in a GitHub Actions workflow that checks out the repository code. It uses 'actions/checkout@v4' and specifically fetches the SHA of the pull request's head to ensure the correct code version is used.
+
+SOURCE: https://docs.cursor.com/en/cli/cookbook/code-review
+
+LANGUAGE: yaml
+CODE:
+```
+- name: Checkout repository
+  uses: actions/checkout@v4
+  with:
+    fetch-depth: 0
+    ref: ${{ github.event.pull_request.head.sha }}
+```
+
+--------------------------------
+
+TITLE: Tokenizer Example for LLM Text Analysis
+DESCRIPTION: This snippet illustrates how text is broken down into tokens, which are the fundamental units processed by Large Language Models (LLMs). It's useful for understanding how LLMs interpret input and predict output.
+
+SOURCE: https://docs.cursor.com/en/guides/working-with-context
+
+LANGUAGE: python
+CODE:
+```
+def tokenize_text(text):
+    # Placeholder for actual tokenization logic
+    # In a real scenario, this would use an LLM's tokenizer
+    tokens = text.split() # Simple example: split by space
+    return tokens
+
+# Example Usage:
+text_to_tokenize = "This is an example sentence."
+processed_tokens = tokenize_text(text_to_tokenize)
+print(processed_tokens)
+```
+
+--------------------------------
+
+TITLE: Cursor API Error Spend Limit Response Example (JSON)
+DESCRIPTION: An example of an error response when attempting to set a user's spend limit, indicating an issue such as an invalid email format.
+
+SOURCE: https://docs.cursor.com/en/account/teams/admin-api
+
+LANGUAGE: json
+CODE:
+```
+{
+  "outcome": "error",
+  "message": "Invalid email format"
+}
+
+```
+
+--------------------------------
+
+TITLE: Environment Configuration for Cursor Background Agents
+DESCRIPTION: Defines the `environment.json` structure for setting up a background agent's environment. It includes options for snapshots, installation commands, and running terminal processes.
+
+SOURCE: https://docs.cursor.com/en/background-agent
+
+LANGUAGE: json
+CODE:
+```
+{
+  "snapshot": "POPULATED_FROM_SETTINGS",
+  "install": "npm install",
+  "terminals": [
+    {
+      "name": "Run Next.js",
+      "command": "npm run dev"
+    }
+  ]
+}
+```
+
+--------------------------------
+
+TITLE: Migrating PhpStorm to Cursor
+DESCRIPTION: Details essential PHP extensions for Cursor and points out key differences in Xdebug configuration, Composer integration, and database tool access compared to PhpStorm.
+
+SOURCE: https://docs.cursor.com/en/guides/migration/jetbrains
+
+LANGUAGE: Text
+CODE:
+```
+Key differences:
+  * Xdebug configuration through launch.json
+  * Composer integration via terminal
+  * Database tools through “SQLTools” extension
+```
+
+--------------------------------
+
+TITLE: Slack Commands for Cursor Background Agents
+DESCRIPTION: This section outlines the various commands that can be used within Slack to interact with Cursor Background Agents. These commands allow users to start agents, configure settings, specify options like repository and model, and manage active agents.
+
+SOURCE: https://docs.cursor.com/en/slack
+
+LANGUAGE: text
+CODE:
+```
+@Cursor [prompt]
+@Cursor settings
+@Cursor [options] [prompt]
+@Cursor agent [prompt]
+@Cursor list my agents
+```
+
+--------------------------------
+
+TITLE: GET /v0/repositories
+DESCRIPTION: Retrieves a list of GitHub repositories that the authenticated user has access to. This endpoint has strict rate limits.
+
+SOURCE: https://docs.cursor.com/en/background-agent/api/list-repositories
+
+LANGUAGE: APIDOC
+CODE:
+```
+## GET /v0/repositories
+
+### Description
+Retrieves a list of GitHub repositories accessible to the authenticated user. This endpoint is subject to strict rate limiting.
+
+### Method
+GET
+
+### Endpoint
+/v0/repositories
+
+### Parameters
+#### Header Parameters
+- **Authorization** (string) - Required - API key from Cursor Dashboard (e.g., 'Bearer <token>')
+
+### Request Example
+```
+curl --request GET \
+  --url https://api.cursor.com/v0/repositories \
+  --header 'Authorization: Bearer <token>'
+```
+
+### Response
+#### Success Response (200)
+- **repositories** (object[]) - Required - An array of GitHub repository objects.
+  - **owner** (string) - The owner of the repository.
+  - **name** (string) - The name of the repository.
+  - **repository** (string) - The full URL to the GitHub repository.
+
+#### Response Example
+```json
+{
+  "repositories": [
+    {
+      "owner": "your-org",
+      "name": "your-repo",
+      "repository": "https://github.com/your-org/your-repo"
+    }
+  ]
+}
+```
+
+#### Error Responses
+- **401** - Unauthorized
+- **429** - Too Many Requests
+- **500** - Internal Server Error
+
+### Rate Limiting
+This endpoint has very strict rate limits: 1 request per user per minute, and 30 requests per user per hour. Responses may take tens of seconds for users with access to many repositories.
+```
+
+--------------------------------
+
+TITLE: Configure CLI Server with mcp.json (Node.js)
+DESCRIPTION: This JSON configuration defines a command-line interface (CLI) server named 'server-name'. It specifies the command to execute ('npx'), arguments to pass ('-y', 'mcp-server'), and environment variables like 'API_KEY'. This setup is typically used for local server execution.
+
+SOURCE: https://docs.cursor.com/en/context/mcp
+
+LANGUAGE: json
+CODE:
+```
+{
+  "mcpServers": {
+    "server-name": {
+      "command": "npx",
+      "args": ["-y", "mcp-server"],
+      "env": {
+        "API_KEY": "value"
+      }
+    }
+  }
+}
+```
+
+--------------------------------
+
+TITLE: Define Agent Instructions with AGENTS.md
+DESCRIPTION: Shows how to define project instructions using a simple markdown file named `AGENTS.md`. This file is placed in the project root for straightforward agent configurations, covering code style and architectural guidelines.
+
+SOURCE: https://docs.cursor.com/en/context/rules
+
+LANGUAGE: markdown
+CODE:
+```
+# Project Instructions
+
+## Code Style
+- Use TypeScript for all new files
+- Prefer functional components in React
+- Use snake_case for database columns
+
+## Architecture
+- Follow the repository pattern
+- Keep business logic in service layers
+
+```
+
+--------------------------------
+
+TITLE: Slack Command to Create a New Agent
+DESCRIPTION: Force the creation of a new agent in a thread, even if an agent already exists. This is useful for isolating tasks or starting a fresh context.
+
+SOURCE: https://docs.cursor.com/en/integrations/slack
+
+LANGUAGE: slack
+CODE:
+```
+@Cursor agent [prompt]
+```

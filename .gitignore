@@ -1,0 +1,378 @@
+# Agent Nuxt - Configuração .gitignore
+# Data: 21/09/2025 10:30:45 (America/Sao_Paulo)
+# Autor: Murillo Dutt - Dutt eCommerce Website Design
+
+# ========================
+# NODE.JS DEPENDENCIES
+# ========================
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ========================
+# NUXT.JS SPECIFIC
+# ========================
+.nuxt/
+.nitro/
+.cache/
+.output/
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*.local
+
+# Nuxt generate
+dist/
+
+# Vite cache
+.vite/
+
+# ========================
+# ENVIRONMENT VARIABLES
+# ========================
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.env.staging
+*.env
+.envrc
+
+# ========================
+# TYPESCRIPT
+# ========================
+*.tsbuildinfo
+.tscache/
+
+# ========================
+# TESTING
+# ========================
+coverage/
+*.lcov
+.nyc_output/
+test-results/
+playwright-report/
+playwright/.cache/
+
+# Jest
+jest-coverage/
+
+# Cypress
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
+
+# ========================
+# BUILD OUTPUTS
+# ========================
+build/
+dist/
+out/
+.output/
+.vercel/
+.netlify/
+.firebase/
+
+# ========================
+# LOGS
+# ========================
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.seed
+*.pid.lock
+
+# ========================
+# IDE AND EDITORS
+# ========================
+# VSCode
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Cursor
+.cursor/
+*.code-workspace
+
+# JetBrains IDEs
+.idea/
+*.swp
+*.swo
+*~
+
+# Vim
+*.swp
+*.swo
+*.tmp
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Atom
+.atom/
+
+# ========================
+# OPERATING SYSTEMS
+# ========================
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+Icon?
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# ========================
+# TEMPORARY FILES
+# ========================
+*.tmp
+*.temp
+*.bak
+*.backup
+*.swp
+*.swo
+tmp/
+temp/
+
+# ========================
+# SECURITY AND SECRETS
+# ========================
+# API Keys
+.env
+.env.local
+.env.*.local
+secrets.json
+config/secrets.json
+
+# SSL Certificates
+*.pem
+*.key
+*.crt
+*.cert
+*.p12
+*.pfx
+
+# ========================
+# DATABASES
+# ========================
+*.sqlite
+*.sqlite3
+*.db
+*.sql
+
+# ========================
+# DEPLOYMENT
+# ========================
+# Vercel
+.vercel/
+
+# Netlify
+.netlify/
+
+# Firebase
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
+# AWS
+.aws/
+
+# Docker
+.dockerignore
+docker-compose.override.yml
+
+# ========================
+# MONITORING AND ANALYTICS
+# ========================
+# Sentry
+.sentryclirc
+
+# Google Analytics
+ga-debug.log
+
+# ========================
+# PACKAGE MANAGERS
+# ========================
+# npm
+package-lock.json
+npm-shrinkwrap.json
+
+# yarn
+yarn.lock
+.yarn/
+.yarn-integrity
+
+# pnpm
+pnpm-lock.yaml
+.pnpm-store/
+
+# Lerna
+lerna-debug.log*
+
+# ========================
+# MISCELLANEOUS
+# ========================
+# Optional npm cache directory
+.npm
+
+# Optional eslint cache
+.eslintcache
+
+# Optional stylelint cache
+.stylelintcache
+
+# Microbundle cache
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Optional REPL history
+.node_repl_history
+
+# Output of 'npm pack'
+*.tgz
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.parcel-cache
+
+# Next.js build output
+.next
+
+# Nuxt.js build / generate output
+.nuxt
+dist
+
+# Gatsby files
+.cache/
+public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# Rollup.js default build output
+dist/
+
+# Uncomment the public line in if your project uses Gatsby and not Next.js
+# public
+
+# Storybook build outputs
+.out
+.storybook-out
+
+# vuepress build output
+.vuepress/dist
+
+# Serverless directories
+.serverless/
+
+# FuseBox cache
+.fusebox/
+
+# DynamoDB Local files
+.dynamodb/
+
+# TernJS port file
+.tern-port
+
+# Stores VSCode versions used for testing VSCode extensions
+.vscode-test
+
+# ========================
+# AGENT OS SPECIFIC
+# ========================
+# Manter arquivos Agent OS importantes
+!.agent-os/
+!.agent-os/**/*
+
+# Excluir caches e temporários do Agent OS
+.agent-os/.cache/
+.agent-os/temp/
+.agent-os/logs/
+
+# ========================
+# PROJECT SPECIFIC
+# ========================
+# Documentação gerada automaticamente
+docs/generated/
+
+# Backups
+*.backup
+backup/
+
+# Arquivos de configuração local
+config.local.json
+settings.local.json
+
+# ========================
+# PERFORMANCE TESTING
+# ========================
+lighthouse-reports/
+performance-reports/
+benchmark-results/
+
+# ========================
+# ACCESSIBILITY TESTING
+# ========================
+a11y-reports/
+axe-reports/
+
+# ========================
+# END OF FILE
+# ========================

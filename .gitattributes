@@ -1,0 +1,226 @@
+# Agent Nuxt - Configuração de Atributos Git
+# Data: 21/09/2025 10:30:45 (America/Sao_Paulo)
+# Autor: Murillo Dutt - Dutt eCommerce Website Design
+
+# ========================
+# AUTO DETECT TEXT FILES
+# ========================
+* text=auto
+
+# ========================
+# TEXT FILES
+# ========================
+*.txt text
+*.md text
+*.json text
+*.yml text
+*.yaml text
+*.xml text
+*.html text
+*.css text
+*.scss text
+*.sass text
+*.less text
+*.js text
+*.ts text
+*.jsx text
+*.tsx text
+*.vue text
+*.php text
+*.py text
+*.rb text
+*.go text
+*.java text
+*.c text
+*.cpp text
+*.h text
+*.hpp text
+
+# ========================
+# CONFIGURATION FILES
+# ========================
+*.conf text
+*.config text
+*.cfg text
+*.ini text
+*.toml text
+.env* text
+.gitignore text
+.gitattributes text
+.editorconfig text
+.eslintrc* text
+.prettierrc* text
+tsconfig.json text
+package.json text
+package-lock.json text
+yarn.lock text
+pnpm-lock.yaml text
+
+# ========================
+# DOCUMENTATION
+# ========================
+*.md text
+*.rst text
+*.tex text
+LICENSE text
+README* text
+CHANGELOG* text
+CONTRIBUTING* text
+
+# ========================
+# SHELL SCRIPTS
+# ========================
+*.sh text eol=lf
+*.bash text eol=lf
+*.zsh text eol=lf
+*.fish text eol=lf
+
+# ========================
+# WINDOWS BATCH FILES
+# ========================
+*.bat text eol=crlf
+*.cmd text eol=crlf
+*.ps1 text eol=crlf
+
+# ========================
+# BINARY FILES
+# ========================
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.svg binary
+*.webp binary
+*.bmp binary
+*.tiff binary
+*.tif binary
+
+# ========================
+# FONTS
+# ========================
+*.woff binary
+*.woff2 binary
+*.eot binary
+*.ttf binary
+*.otf binary
+
+# ========================
+# ARCHIVES
+# ========================
+*.zip binary
+*.tar binary
+*.gz binary
+*.bz2 binary
+*.7z binary
+*.rar binary
+
+# ========================
+# EXECUTABLES
+# ========================
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.app binary
+
+# ========================
+# DATABASES
+# ========================
+*.sqlite binary
+*.sqlite3 binary
+*.db binary
+
+# ========================
+# CERTIFICATES
+# ========================
+*.pem binary
+*.key binary
+*.crt binary
+*.cert binary
+*.p12 binary
+*.pfx binary
+
+# ========================
+# NUXT/VUE SPECIFIC
+# ========================
+*.vue text
+nuxt.config.js text
+nuxt.config.ts text
+vue.config.js text
+vite.config.js text
+vite.config.ts text
+
+# ========================
+# AGENT OS SPECIFIC
+# ========================
+.agent-os/**/*.md text
+.agent-os/**/*.yml text
+.agent-os/**/*.yaml text
+.agent-os/**/*.json text
+.agent-os/**/*.js text
+.agent-os/**/*.ts text
+
+# ========================
+# LINE ENDING NORMALIZATION
+# ========================
+# Ensure Unix line endings for shell scripts
+*.sh text eol=lf
+*.bash text eol=lf
+
+# Ensure Windows line endings for Windows batch files
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# ========================
+# LINGUIST OVERRIDES
+# ========================
+# Treat certain files as documentation
+*.md linguist-documentation
+docs/** linguist-documentation
+
+# Exclude certain directories from language statistics
+node_modules/** linguist-vendored
+.nuxt/** linguist-generated
+dist/** linguist-generated
+.output/** linguist-generated
+coverage/** linguist-generated
+
+# Mark Agent OS files as configuration
+.agent-os/** linguist-language=YAML
+
+# ========================
+# DIFF SETTINGS
+# ========================
+# Use custom diff driver for package-lock.json
+package-lock.json diff=json
+yarn.lock diff=json
+pnpm-lock.yaml diff=yaml
+
+# ========================
+# MERGE SETTINGS
+# ========================
+# Don't merge generated files
+package-lock.json merge=ours
+yarn.lock merge=ours
+pnpm-lock.yaml merge=ours
+CHANGELOG.md merge=union
+
+# ========================
+# EXPORT IGNORE
+# ========================
+# Files to exclude from git archive
+.gitattributes export-ignore
+.gitignore export-ignore
+.github/ export-ignore
+.vscode/ export-ignore
+.cursor/ export-ignore
+tests/ export-ignore
+test/ export-ignore
+spec/ export-ignore
+*.test.* export-ignore
+*.spec.* export-ignore
+
+# ========================
+# END OF FILE
+# ========================

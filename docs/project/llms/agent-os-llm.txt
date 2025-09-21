@@ -1,0 +1,1504 @@
+================
+CODE SNIPPETS
+================
+TITLE: Agent OS Final Verification Checklist and Summary
+DESCRIPTION: Outlines the final verification steps for Agent OS installation, including a checklist and a summary template to inform the user about the setup and next steps.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/analyze-product.md#_snippet_3
+
+LANGUAGE: APIDOC
+CODE:
+```
+final_verification:
+  verification_checklist:
+    - [ ] .agent-os/product/ directory created
+    - [ ] All product documentation reflects actual codebase
+    - [ ] Roadmap shows completed and planned features accurately
+    - [ ] Tech stack matches installed dependencies
+  summary_template:
+    ## ✅ Agent OS Successfully Installed
+
+    I've analyzed your [PRODUCT_TYPE] codebase and set up Agent OS with documentation that reflects your actual implementation.
+
+    ### What I Found
+
+    - **Tech Stack**: [SUMMARY_OF_DETECTED_STACK]
+    - **Completed Features**: [COUNT] features already implemented
+    - **Code Style**: [DETECTED_PATTERNS]
+    - **Current Phase**: [IDENTIFIED_DEVELOPMENT_STAGE]
+
+    ### What Was Created
+
+    - ✓ Product documentation in `.agent-os/product/`
+    - ✓ Roadmap with completed work in Phase 0
+    - ✓ Tech stack reflecting actual dependencies
+
+    ### Next Steps
+
+    1. Review the generated documentation in `.agent-os/product/`
+    2. Make any necessary adjustments to reflect your vision
+    3. See the Agent OS README for usage instructions: https://github.com/buildermethods/agent-os
+    4. Start using Agent OS for your next feature:
+       ```
+       @~/.agent-os/instructions/core/create-spec.md
+       ```
+
+    Your codebase is now Agent OS-enabled! 🚀
+```
+
+--------------------------------
+
+TITLE: Agent OS Execution Summary Checklist
+DESCRIPTION: A checklist to verify the thoroughness of the Agent OS analysis and setup process, ensuring all steps are completed for successful team adoption.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/analyze-product.md#_snippet_5
+
+LANGUAGE: APIDOC
+CODE:
+```
+execution_summary:
+  final_checklist:
+    verify:
+      - [ ] Codebase analyzed thoroughly
+      - [ ] User context gathered
+      - [ ] plan-product.md executed with proper context
+      - [ ] Documentation customized for existing product
+      - [ ] Team can adopt Agent OS workflow
+```
+
+--------------------------------
+
+TITLE: Agent OS Installation Steps
+DESCRIPTION: Details the four main steps involved in installing Agent OS into an existing product, including pre-flight checks, codebase analysis, context gathering, and plan-product execution.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/analyze-product.md#_snippet_0
+
+LANGUAGE: markdown
+CODE:
+```
+<pre_flight_check>
+  EXECUTE: @~/.agent-os/instructions/meta/pre-flight.md
+</pre_flight_check>
+
+<process_flow>
+
+<step number="1" name="analyze_existing_codebase">
+
+### Step 1: Analyze Existing Codebase
+
+Perform a deep codebase analysis of the current codebase to understand current state before documentation purposes.
+
+<analysis_areas>
+  <project_structure>
+    - Directory organization
+    - File naming patterns
+    - Module structure
+    - Build configuration
+  </project_structure>
+  <technology_stack>
+    - Frameworks in use
+    - Dependencies (package.json, Gemfile, requirements.txt, etc.)
+    - Database systems
+    - Infrastructure configuration
+  </technology_stack>
+  <implementation_progress>
+    - Completed features
+    - Work in progress
+    - Authentication/authorization state
+    - API endpoints
+    - Database schema
+  </implementation_progress>
+  <code_patterns>
+    - Coding style in use
+    - Naming conventions
+    - File organization patterns
+    - Testing approach
+  </code_patterns>
+</analysis_areas>
+
+<instructions>
+  ACTION: Thoroughly analyze the existing codebase
+  DOCUMENT: Current technologies, features, and patterns
+  IDENTIFY: Architectural decisions already made
+  NOTE: Development progress and completed work
+</instructions>
+
+</step>
+
+<step number="2" subagent="context-fetcher" name="gather_product_context">
+
+### Step 2: Gather Product Context
+
+Use the context-fetcher subagent to supplement codebase analysis with business context and future plans.
+
+<context_questions>
+  Based on my analysis of your codebase, I can see you're building [OBSERVED_PRODUCT_TYPE].
+
+  To properly set up Agent OS, I need to understand:
+
+  1. **Product Vision**: What problem does this solve? Who are the target users?
+
+  2. **Current State**: Are there features I should know about that aren't obvious from the code?
+
+  3. **Roadmap**: What features are planned next? Any major refactoring planned?
+
+  4. **Decisions**: Are there important technical or product decisions I should document?
+
+  5. **Team Preferences**: Any coding standards or practices the team follows that I should capture?
+</context_questions>
+
+<instructions>
+  ACTION: Ask user for product context
+  COMBINE: Merge user input with codebase analysis
+  PREPARE: Information for plan-product.md execution
+</instructions>
+
+</step>
+
+<step number="3" name="execute_plan_product">
+
+### Step 3: Execute Plan-Product with Context
+
+Execute our standard flow for installing Agent OS in existing products
+
+<execution_parameters>
+  <main_idea>[DERIVED_FROM_ANALYSIS_AND_USER_INPUT]</main_idea>
+  <key_features>[IDENTIFIED_IMPLEMENTED_AND_PLANNED_FEATURES]</key_features>
+  <target_users>[FROM_USER_CONTEXT]</target_users>
+  <tech_stack>[DETECTED_FROM_CODEBASE]</tech_stack>
+</execution_parameters>
+
+<execution_prompt>
+  @~/.agent-os/instructions/core/plan-product.md
+
+  I'm installing Agent OS into an existing product. Here's what I've gathered:
+
+  **Main Idea**: [SUMMARY_FROM_ANALYSIS_AND_CONTEXT]
+
+  **Key Features**:
+  - Already Implemented: [LIST_FROM_ANALYSIS]
+  - Planned: [LIST_FROM_USER]
+
+  **Target Users**: [FROM_USER_RESPONSE]
+
+  **Tech Stack**: [DETECTED_STACK_WITH_VERSIONS]
+</execution_prompt>
+
+<instructions>
+  ACTION: Execute plan-product.md with gathered information
+  PROVIDE: All context as structured input
+  ALLOW: plan-product.md to create .agent-os/product/ structure
+</instructions>
+
+</step>
+
+<step number="4" name="customize_generated_files">
+
+
+```
+
+--------------------------------
+
+TITLE: Agent OS Error Handling Scenarios
+DESCRIPTION: Details potential error scenarios during Agent OS setup and the corresponding actions to resolve them, such as asking for user clarification or identifying missing information.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/analyze-product.md#_snippet_4
+
+LANGUAGE: APIDOC
+CODE:
+```
+error_scenarios:
+  scenario name="no_clear_structure":
+    condition: Cannot determine project type or structure
+    action: Ask user for clarification about project
+  scenario name="conflicting_patterns":
+    condition: Multiple coding styles detected
+    action: Ask user which pattern to document
+  scenario name="missing_dependencies":
+    condition: Cannot determine full tech stack
+    action: List detected technologies and ask for missing pieces
+```
+
+--------------------------------
+
+TITLE: Ruby Code Commenting and Function Example
+DESCRIPTION: Shows the recommended format for code comments in Ruby, including explaining business logic and documenting complex algorithms, along with a function signature. Comments should explain the 'why' and be maintained with code changes.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/standards/code-style.md#_snippet_2
+
+LANGUAGE: ruby
+CODE:
+```
+# Calculate compound interest with monthly contributions
+# Uses the formula: A = P(1 + r/n)^(nt) + PMT × (((1 + r/n)^(nt) - 1) / (r/n))
+def calculate_compound_interest(principal, rate, time, monthly_payment)
+  # Implementation here
+end
+```
+
+--------------------------------
+
+TITLE: HTML Structure and Attribute Formatting Example
+DESCRIPTION: Demonstrates the recommended HTML structure and attribute formatting rules, including indentation, new lines for nested elements, and vertical alignment of attributes.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/standards/code-style/html-style.md#_snippet_0
+
+LANGUAGE: html
+CODE:
+```
+<div class="container">
+  <header class="flex flex-col space-y-2
+                 md:flex-row md:space-y-0 md:space-x-4">
+    <h1 class="text-primary dark:text-primary-300">
+      Page Title
+    </h1>
+    <nav class="flex flex-col space-y-2
+                md:flex-row md:space-y-0 md:space-x-4">
+      <a href="/"
+         class="btn-ghost">
+        Home
+      </a>
+      <a href="/about"
+         class="btn-ghost">
+        About
+      </a>
+    </nav>
+  </header>
+</div>
+```
+
+--------------------------------
+
+TITLE: Roadmap Template for Agent OS
+DESCRIPTION: Provides a template for structuring the project roadmap, categorizing features into 'Already Completed', 'Current Development', and future phases.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/analyze-product.md#_snippet_2
+
+LANGUAGE: APIDOC
+CODE:
+```
+roadmap_template:
+  ## Phase 0: Already Completed
+
+  The following features have been implemented:
+
+  - [x] [FEATURE_1] - [DESCRIPTION_FROM_CODE]
+  - [x] [FEATURE_2] - [DESCRIPTION_FROM_CODE]
+  - [x] [FEATURE_3] - [DESCRIPTION_FROM_CODE]
+
+  ## Phase 1: Current Development
+
+  - [ ] [IN_PROGRESS_FEATURE] - [DESCRIPTION]
+
+  [CONTINUE_WITH_STANDARD_PHASES]
+```
+
+--------------------------------
+
+TITLE: Agent OS Code Style Guide
+DESCRIPTION: Defines the global code style rules for Agent OS projects, including indentation, naming conventions, string formatting, and commenting practices. It also outlines conditional logic for fetching HTML, CSS, and JavaScript style guides based on the current task and context.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/standards/code-style.md#_snippet_0
+
+LANGUAGE: APIDOC
+CODE:
+```
+Project: /buildermethods/agent-os
+
+# Code Style Guide
+
+## Context
+Global code style rules for Agent OS projects.
+
+<conditional-block context-check="general-formatting">
+IF this General Formatting section already read in current context:
+  SKIP: Re-reading this section
+  NOTE: "Using General Formatting rules already in context"
+ELSE:
+  READ: The following formatting rules
+
+## General Formatting
+
+### Indentation
+- Use 2 spaces for indentation (never tabs)
+- Maintain consistent indentation throughout files
+- Align nested structures for readability
+
+### Naming Conventions
+- **Methods and Variables**: Use snake_case (e.g., `user_profile`, `calculate_total`)
+- **Classes and Modules**: Use PascalCase (e.g., `UserProfile`, `PaymentProcessor`)
+- **Constants**: Use UPPER_SNAKE_CASE (e.g., `MAX_RETRY_COUNT`)
+
+### String Formatting
+- Use single quotes for strings: `'Hello World'`
+- Use double quotes only when interpolation is needed
+- Use template literals for multi-line strings or complex interpolation
+
+### Code Comments
+- Add brief comments above non-obvious business logic
+- Document complex algorithms or calculations
+- Explain the "why" behind implementation choices
+- Never remove existing comments unless removing the associated code
+- Update comments when modifying code to maintain accuracy
+- Keep comments concise and relevant
+</conditional-block>
+
+<conditional-block task-condition="html-css-tailwind" context-check="html-css-style">
+IF current task involves writing or updating HTML, CSS, or TailwindCSS:
+  IF html-style.md AND css-style.md already in context:
+    SKIP: Re-reading these files
+    NOTE: "Using HTML/CSS style guides already in context"
+  ELSE:
+    <context_fetcher_strategy>
+      IF current agent is Claude Code AND context-fetcher agent exists:
+        USE: @agent:context-fetcher
+        REQUEST: "Get HTML formatting rules from code-style/html-style.md"
+        REQUEST: "Get CSS and TailwindCSS rules from code-style/css-style.md"
+        PROCESS: Returned style rules
+      ELSE:
+        READ the following style guides (only if not already in context):
+        - @~/.agent-os/standards/code-style/html-style.md (if not in context)
+        - @~/.agent-os/standards/code-style/css-style.md (if not in context)
+    </context_fetcher_strategy>
+ELSE:
+  SKIP: HTML/CSS style guides not relevant to current task
+</conditional-block>
+
+<conditional-block task-condition="javascript" context-check="javascript-style">
+IF current task involves writing or updating JavaScript:
+  IF javascript-style.md already in context:
+    SKIP: Re-reading this file
+    NOTE: "Using JavaScript style guide already in context"
+  ELSE:
+    <context_fetcher_strategy>
+      IF current agent is Claude Code AND context-fetcher agent exists:
+        USE: @agent:context-fetcher
+        REQUEST: "Get JavaScript style rules from code-style/javascript-style.md"
+        PROCESS: Returned style rules
+      ELSE:
+        READ: @~/.agent-os/standards/code-style/javascript-style.md
+    </context_fetcher_strategy>
+ELSE:
+  SKIP: JavaScript style guide not relevant to current task
+</conditional-block>
+```
+
+--------------------------------
+
+TITLE: Create mission-lite.md
+DESCRIPTION: This snippet outlines the creation of the mission-lite.md file, which serves as a condensed mission statement for efficient AI context usage. It details the file template, content structure including elevator pitch and value summary, and provides an example of the expected output.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/plan-product.md#_snippet_5
+
+LANGUAGE: APIDOC
+CODE:
+```
+APIDOC:
+  create_mission_lite_md():
+    description: "Creates the .agent-os/product/mission-lite.md file for a condensed mission."
+    subagent: "file-creator"
+    file_path: ".agent-os/product/mission-lite.md"
+    template:
+      header: "# Product Mission (Lite)"
+    content_structure:
+      elevator_pitch:
+        source: "Step 3 mission.md pitch section"
+        format: "single sentence"
+      value_summary:
+        length: "1-3 sentences"
+        includes: "value proposition, target users, key differentiator"
+        excludes: "secondary users, secondary differentiators"
+    content_template: "[ELEVATOR_PITCH_FROM_MISSION_MD]\n\n[1-3_SENTENCES_SUMMARIZING_VALUE_TARGET_USERS_AND_PRIMARY_DIFFERENTIATOR]"
+    example:
+      content: "TaskFlow is a project management tool that helps remote teams coordinate work efficiently by providing real-time collaboration and automated workflow tracking.\n\nTaskFlow serves distributed software teams who need seamless task coordination across time zones. Unlike traditional project management tools, TaskFlow automatically syncs with development workflows and provides intelligent task prioritization based on team capacity and dependencies."
+```
+
+--------------------------------
+
+TITLE: Agent OS Customization Tasks
+DESCRIPTION: Defines tasks for customizing generated documentation, including roadmap adjustments, tech stack verification, and documenting architectural decisions.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/analyze-product.md#_snippet_1
+
+LANGUAGE: APIDOC
+CODE:
+```
+customization_tasks:
+  roadmap_adjustment:
+    - Mark completed features as done
+    - Move implemented items to "Phase 0: Already Completed"
+    - Adjust future phases based on actual progress
+  tech_stack_verification:
+    - Verify detected versions are correct
+    - Add any missing infrastructure details
+    - Document actual deployment setup
+  decisions_documentation:
+    - Add historical decisions that shaped current architecture
+    - Document why certain technologies were chosen
+    - Capture any pivots or major changes
+```
+
+--------------------------------
+
+TITLE: Example Git Workflow Requests
+DESCRIPTION: Provides examples of how to request different git operations, from a complete workflow to specific actions like committing or creating a pull request.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/claude-code/agents/git-workflow.md#_snippet_2
+
+LANGUAGE: APIDOC
+CODE:
+```
+Complete Workflow:
+Complete git workflow for password-reset feature:
+- Spec: .agent-os/specs/2025-01-29-password-reset/
+- Changes: All files modified
+- Target: main branch
+
+Just Commit:
+Commit current changes:
+- Message: "Implement password reset email functionality"
+- Include: All modified files
+
+Create PR Only:
+Create pull request:
+- Title: "Add password reset functionality"
+- Target: main
+- Include test results from last run
+```
+
+--------------------------------
+
+TITLE: Agent OS Context Fetcher Constraints and Usage
+DESCRIPTION: Outlines the critical constraints for the context fetcher, such as avoiding duplicate information and minimizing content extraction, along with example usage scenarios.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/claude-code/agents/context-fetcher.md#_snippet_1
+
+LANGUAGE: markdown
+CODE:
+```
+## Important Constraints
+
+- Never return information already visible in current context
+- Extract minimal necessary content
+- Use grep for targeted searches
+- Never modify any files
+- Keep responses concise
+
+Example usage:
+- "Get the product pitch from mission-lite.md"
+- "Find Ruby style rules from code-style.md"
+- "Extract Task 3 requirements from the password-reset spec"
+```
+
+--------------------------------
+
+TITLE: Multi-line Tailwind CSS Classes in Markup
+DESCRIPTION: Demonstrates the recommended multi-line formatting for Tailwind CSS classes in HTML markup, aligning classes by responsive breakpoints and including hover/focus states.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/standards/code-style/css-style.md#_snippet_0
+
+LANGUAGE: html
+CODE:
+```
+<div class="custom-cta bg-gray-50 dark:bg-gray-900 p-4 rounded cursor-pointer w-full
+            hover:bg-gray-100 dark:hover:bg-gray-800
+            xs:p-6
+            sm:p-8 sm:font-medium
+            md:p-10 md:text-lg
+            lg:p-12 lg:text-xl lg:font-semibold lg:2-3/5
+            xl:p-14 xl:text-2xl
+            2xl:p-16 2xl:text-3xl 2xl:font-bold 2xl:w-3/4">
+  I'm a call-to-action!
+</div>
+```
+
+--------------------------------
+
+TITLE: Tailwind CSS Multi-line Class Formatting
+DESCRIPTION: Illustrates the specific multi-line formatting style for Tailwind CSS classes in HTML, aligning classes by responsive breakpoints for improved maintainability. Custom classes, hover states, and responsive prefixes are handled on dedicated lines.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/standards/code-style.md#_snippet_1
+
+LANGUAGE: html
+CODE:
+```
+<div class="custom-cta bg-gray-50 dark:bg-gray-900 p-4 rounded cursor-pointer w-full
+            hover:bg-gray-100 dark:hover:bg-gray-800
+            xs:p-6
+            sm:p-8 sm:font-medium
+            md:p-10 md:text-lg
+            lg:p-12 lg:text-xl lg:font-semibold lg:2-3/5
+            xl:p-14 xl:text-2xl
+            2xl:p-16 2xl:text-3xl 2xl:font-bold 2xl:w-3/4">
+  I'm a call-to-action!
+</div>
+```
+
+--------------------------------
+
+TITLE: Agent OS Commands
+DESCRIPTION: Commands to invoke Agent OS workflows for structured AI-assisted development. These commands guide the agent through product planning, feature specification, task execution, and code analysis.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/claude-code/user/CLAUDE.md#_snippet_0
+
+LANGUAGE: APIDOC
+CODE:
+```
+Agent OS Commands:
+
+/plan-product
+  - Description: Start a new product.
+  - Usage: Invoke to begin the product initialization process.
+
+/create-spec
+  - Description: Plan a new feature.
+  - Usage: Use to define and plan new features for a product.
+
+/execute-task
+  - Description: Build and ship code.
+  - Usage: Command to execute development tasks and ship code.
+
+/analyze-product
+  - Description: Add Agent OS to existing code.
+  - Usage: Apply Agent OS standards and analysis to existing projects.
+```
+
+--------------------------------
+
+TITLE: Agent OS Step 2: Create Documentation Structure
+DESCRIPTION: Details the second step in Agent OS product planning: creating the initial directory structure and files for product documentation. It specifies the files to be created and includes Git configuration for the initial commit.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/plan-product.md#_snippet_4
+
+LANGUAGE: APIDOC
+CODE:
+```
+STEP: create_documentation_structure
+
+TITLE: Create Documentation Structure
+
+DESCRIPTION: Establishes the foundational directory and file structure for product documentation.
+
+METADATA:
+  creates:
+    - directory: ".agent-os/product/"
+    - files: 4
+
+FILE_STRUCTURE:
+  - ".agent-os/"
+    - "└── product/"
+      - "├── mission.md          # Product vision and purpose"
+      - "├── tech-stack.md       # Technical architecture"
+      - "├── roadmap.md          # Development phases"
+      - "└── decisions.md        # Decision log"
+
+GIT_CONFIG:
+  commit_message: "Initialize Agent OS product documentation"
+  tag: "v0.1.0-planning"
+  gitignore_consideration: true
+
+INSTRUCTIONS:
+  ACTION: Create directory structure as specified
+  VALIDATION: Verify write permissions before creating
+  PROTECTION: Confirm before overwriting existing files
+```
+
+--------------------------------
+
+TITLE: Agent OS Execution Summary and Checklist
+DESCRIPTION: Outlines the final verification steps and execution order for the Agent OS project.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/plan-product.md#_snippet_11
+
+LANGUAGE: APIDOC
+CODE:
+```
+<final_checklist>
+  <verify>
+    - [ ] All 5 files created in .agent-os/product/
+    - [ ] User inputs incorporated throughout
+    - [ ] Missing tech stack items requested
+    - [ ] Initial decisions documented
+  </verify>
+</final_checklist>
+
+<execution_order>
+  1. Gather and validate all inputs
+  2. Create directory structure
+  3. Generate each file sequentially
+  4. Request any missing information
+  5. Validate complete documentation set
+</execution_order>
+```
+
+--------------------------------
+
+TITLE: Agent OS Step 1: Gather User Input
+DESCRIPTION: Gathers necessary user input using the context-fetcher subagent, including product idea, features, target users, and tech stack preferences. Includes fallback data sources and an error template for missing information.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/plan-product.md#_snippet_1
+
+LANGUAGE: agent-os-rules
+CODE:
+```
+<step number="1" subagent="context-fetcher" name="gather_user_input">
+
+### Step 1: Gather User Input
+
+Use the context-fetcher subagent to collect all required inp duts from the user including main idea, key features (minimum 3), target users (minimum 1), and tech stack preferences with blocking validation before proceeding.
+
+<data_sources>
+  <primary>user_direct_input</primary>
+  <fallback_sequence>
+    1. @~/.agent-os/standards/tech-stack.md
+    2. @~/.claude/CLAUDE.md
+    3. Cursor User Rules
+  </fallback_sequence>
+</data_sources>
+
+<error_template>
+  Please provide the following missing information:
+  1. Main idea for the product
+  2. List of key features (minimum 3)
+  3. Target users and use cases (minimum 1)
+  4. Tech stack preferences
+  5. Has the new application been initialized yet and we're inside the project folder? (yes/no)
+</error_template>
+
+</step>
+```
+
+--------------------------------
+
+TITLE: Agent OS Step 1: Gather User Input
+DESCRIPTION: Details the first step in the Agent OS product planning process: gathering essential user input for project initialization. It specifies required inputs, data sources, error handling, and validation logic.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/plan-product.md#_snippet_3
+
+LANGUAGE: APIDOC
+CODE:
+```
+STEP: gather_user_input
+
+TITLE: Gather User Input
+
+DESCRIPTION: Collects necessary information from the user to initialize a new project.
+
+METADATA:
+  required_inputs:
+    - main_idea: string
+    - key_features: array[string] (minimum: 3)
+    - target_users: array[string] (minimum: 1)
+    - tech_stack: object
+  validation: blocking
+
+DATA_SOURCES:
+  primary: user_direct_input
+  fallback_sequence:
+    - "@~/.agent-os/standards/tech-stack.md"
+    - "@~/.claude/CLAUDE.md"
+    - "Cursor User Rules"
+
+ERROR_TEMPLATE:
+  message: "Please provide the following missing information:"
+  details:
+    - "Main idea for the product"
+    - "List of key features (minimum 3)"
+    - "Target users and use cases (minimum 1)"
+    - "Tech stack preferences"
+    - "Has the new application been initialized yet and we're inside the project folder? (yes/no)"
+
+INSTRUCTIONS:
+  ACTION: Collect all required inputs from user
+  VALIDATION: Ensure all 4 inputs provided before proceeding
+  FALLBACK: Check configuration files for tech stack defaults
+  ERROR: Use error_template if inputs missing
+```
+
+--------------------------------
+
+TITLE: Initial Product Planning Decision Template
+DESCRIPTION: Provides a template for documenting the initial product planning decision, covering summary, context, alternatives, rationale, and consequences.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/plan-product.md#_snippet_10
+
+LANGUAGE: APIDOC
+CODE:
+```
+<initial_decision_template>
+  ## [CURRENT_DATE]: Initial Product Planning
+
+  **ID:** DEC-001
+  **Status:** Accepted
+  **Category:** Product
+  **Stakeholders:** Product Owner, Tech Lead, Team
+
+  ### Decision
+
+  [SUMMARIZE: product mission, target market, key features]
+
+  ### Context
+
+  [EXPLAIN: why this product, why now, market opportunity]
+
+  ### Alternatives Considered
+
+  1. **[ALTERNATIVE]**
+     - Pros: [LIST]
+     - Cons: [LIST]
+
+  ### Rationale
+
+  [EXPLAIN: key factors in decision]
+
+  ### Consequences
+
+  **Positive:**
+  - [EXPECTED_BENEFITS]
+
+  **Negative:**
+  - [KNOWN_TRADEOFFS]
+</initial_decision_template>
+```
+
+--------------------------------
+
+TITLE: Create tech-stack.md
+DESCRIPTION: This snippet details the process of creating the tech-stack.md file using a file-creator subagent. It specifies the file template, required technical items, data resolution logic for missing items, and a template for requesting missing information from the user.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/plan-product.md#_snippet_4
+
+LANGUAGE: APIDOC
+CODE:
+```
+APIDOC:
+  create_tech_stack_md():
+    description: "Creates the .agent-os/product/tech-stack.md file."
+    subagent: "file-creator"
+    file_path: ".agent-os/product/tech-stack.md"
+    template:
+      header: "# Technical Stack"
+    required_items:
+      - application_framework: string + version
+      - database_system: string
+      - javascript_framework: string
+      - import_strategy: ["importmaps", "node"]
+      - css_framework: string + version
+      - ui_component_library: string
+      - fonts_provider: string
+      - icon_library: string
+      - application_hosting: string
+      - database_hosting: string
+      - asset_hosting: string
+      - deployment_solution: string
+      - code_repository_url: string
+    data_resolution:
+      if: "has_context_fetcher"
+      for_missing: "USE: @agent:context-fetcher REQUEST: \"Find [ITEM_NAME] from tech-stack.md\" PROCESS: Use found defaults"
+      else:
+        manual_resolution:
+          for_each: "required_items"
+          if_not_in: "user_input"
+          then_check: ["@~/.agent-os/standards/tech-stack.md", "@~/.claude/CLAUDE.md", "Cursor User Rules"]
+          else: "add_to_missing_list"
+    missing_items_template:
+      prompt: "Please provide the following technical stack details:"
+      list_format: "[NUMBERED_LIST_OF_MISSING_ITEMS]"
+      response_instruction: "You can respond with the technology choice or \"n/a\" for each item."
+```
+
+--------------------------------
+
+TITLE: Agent OS Execution Summary and Checklist
+DESCRIPTION: Provides a summary of the Agent OS execution process and a final checklist for verification, including file creation, user input incorporation, and documentation validation.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/plan-product.md#_snippet_14
+
+LANGUAGE: APIDOC
+CODE:
+```
+execution_summary:
+  final_checklist:
+    verify:
+      - "[ ] All 4 files created in .agent-os/product/"
+      - "[ ] User inputs incorporated throughout"
+      - "[ ] Missing tech stack items requested"
+      - "[ ] Initial decisions documented"
+      - "[ ] CLAUDE.md created or updated with Agent OS documentation"
+  execution_order:
+    - "1. Gather and validate all inputs"
+    - "2. Create directory structure"
+    - "3. Generate each file sequentially"
+    - "4. Request any missing information"
+    - "5. Create or update project CLAUDE.md file"
+    - "6. Validate complete documentation set"
+```
+
+--------------------------------
+
+TITLE: Agent OS Product Planning Overview
+DESCRIPTION: Provides an overview of the product planning process in Agent OS, including its purpose, context, prerequisites, and the overall process flow.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/plan-product.md#_snippet_2
+
+LANGUAGE: markdown
+CODE:
+```
+## Overview
+
+<purpose>
+  - Generate comprehensive product documentation for new projects
+  - Create structured files for AI agent consumption
+  - Establish consistent project initialization
+</purpose>
+
+<context>
+  - Part of Agent OS framework
+  - Triggered during project initialization
+  - Output used by AI agents throughout development
+</context>
+
+<prerequisites>
+  - Write access to project root
+  - Git initialized (recommended)
+  - User has product requirements
+  - Access to @~/.claude/CLAUDE.md and Cursor rules
+</prerequisites>
+
+<process_flow>
+```
+
+--------------------------------
+
+TITLE: Context Fetcher Workflow and Output
+DESCRIPTION: Illustrates the process of fetching information, including checking context, locating files, extracting relevant sections, and the expected output formats for both new and existing information.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/claude-code/agents/context-fetcher.md#_snippet_0
+
+LANGUAGE: markdown
+CODE:
+```
+## Workflow
+
+1. Check if the requested information appears to be in context already
+2. If not in context, locate the requested file(s)
+3. Extract only the relevant sections
+4. Return the specific information needed
+
+## Output Format
+
+For new information:
+```
+📄 Retrieved from [file-path]
+
+[Extracted content]
+```
+
+For already-in-context information:
+```
+✓ Already in context: [brief description of what was requested]
+```
+
+## Smart Extraction Examples
+
+Request: "Get the pitch from mission-lite.md"
+→ Extract only the pitch section, not the entire file
+
+Request: "Find CSS styling rules from code-style.md"
+→ Use grep to find CSS-related sections only
+
+Request: "Get Task 2.1 details from tasks.md"
+→ Extract only that specific task and its subtasks
+```
+
+--------------------------------
+
+TITLE: Agent OS Step 2: Create Documentation Structure
+DESCRIPTION: Creates the standard documentation file structure using the file-creator subagent, ensuring write permissions and preventing overwrites.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/plan-product.md#_snippet_2
+
+LANGUAGE: agent-os-rules
+CODE:
+```
+<step number="2" subagent="file-creator" name="create_documentation_structure">
+
+### Step 2: Create Documentation Structure
+
+Use the file-creator subagent to create the following file_structure with validation for write permissions and protection against overwriting existing files:
+
+<file_structure>
+  .agent-os/
+  └── product/
+      ├── mission.md          # Product vision and purpose
+      ├── mission-lite.md     # Condensed mission for AI context
+      ├── tech-stack.md       # Technical architecture
+      ├── roadmap.md          # Development phases
+      └── decisions.md        # Decision log
+</file_structure>
+
+</step>
+```
+
+--------------------------------
+
+TITLE: Agent OS File Creation Patterns
+DESCRIPTION: Illustrates common patterns for creating files and directories within Agent OS projects, including single file requests with specified content and templates, and batch creation requests for structured directory and file generation.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/claude-code/agents/file-creator.md#_snippet_2
+
+LANGUAGE: bash
+CODE:
+```
+# Single File Request
+Create file: .agent-os/specs/2025-01-29-auth/spec.md
+Content: [provided content]
+Template: spec
+```
+
+LANGUAGE: bash
+CODE:
+```
+# Batch Creation Request
+Create spec structure:
+Directory: .agent-os/specs/2025-01-29-user-auth/
+Files:
+- spec.md (content: [provided])
+- spec-lite.md (content: [provided])
+- sub-specs/technical-spec.md (content: [provided])
+- sub-specs/database-schema.md (content: [provided])
+- tasks.md (content: [provided])
+```
+
+--------------------------------
+
+TITLE: Agent OS Spec Creation Process Overview
+DESCRIPTION: Provides an overview of the Agent OS spec creation process, including its purpose, context within the framework, and prerequisites for execution. It highlights the goal of creating detailed spec plans and structured documentation.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/create-spec.md#_snippet_1
+
+LANGUAGE: APIDOC
+CODE:
+```
+<purpose>
+  - Create detailed spec plans for specific features
+  - Generate structured documentation for implementation
+  - Ensure alignment with product roadmap and mission
+</purpose>
+
+<context>
+  - Part of Agent OS framework
+  - Executed when implementing roadmap items
+  - Creates spec-specific documentation
+</context>
+
+<prerequisites>
+  - Product documentation exists in .agent-os/product/
+  - Access to:
+    - @.agent-os/product/mission.md,
+    - @.agent-os/product/roadmap.md,
+    - @.agent-os/product/tech-stack.md
+  - User has spec idea or roadmap reference
+</prerequisites>
+```
+
+--------------------------------
+
+TITLE: Agent OS Step 3: Create mission.md Template
+DESCRIPTION: Defines the structure and content requirements for the mission.md file, including sections like Pitch, Users, Problem, Differentiators, and Key Features, with specific templates and constraints for each.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/plan-product.md#_snippet_3
+
+LANGUAGE: agent-os-rules
+CODE:
+```
+<step number="3" subagent="file-creator" name="create_mission_md">
+
+### Step 3: Create mission.md
+
+Use the file-creator subagent to create the file: .agent-os/product/mission.md and use the following template:
+
+<file_template>
+  <header>
+    # Product Mission
+  </header>
+  <required_sections>
+    - Pitch
+    - Users
+    - The Problem
+    - Differentiators
+    - Key Features
+  </required_sections>
+</file_template>
+
+<section name="pitch">
+  <template>
+    ## Pitch
+
+    [PRODUCT_NAME] is a [PRODUCT_TYPE] that helps [TARGET_USERS] [SOLVE_PROBLEM] by providing [KEY_VALUE_PROPOSITION].
+  </template>
+  <constraints>
+    - length: 1-2 sentences
+    - style: elevator pitch
+  </constraints>
+</section>
+
+<section name="users">
+  <template>
+    ## Users
+
+    ### Primary Customers
+
+    - [CUSTOMER_SEGMENT_1]: [DESCRIPTION]
+    - [CUSTOMER_SEGMENT_2]: [DESCRIPTION]
+
+    ### User Personas
+
+    **[USER_TYPE]** ([AGE_RANGE])
+    - **Role:** [JOB_TITLE]
+    - **Context:** [BUSINESS_CONTEXT]
+    - **Pain Points:** [PAIN_POINT_1], [PAIN_POINT_2]
+    - **Goals:** [GOAL_1], [GOAL_2]
+  </template>
+  <schema>
+    - name: string
+    - age_range: "XX-XX years old"
+    - role: string
+    - context: string
+    - pain_points: array[string]
+    - goals: array[string]
+  </schema>
+</section>
+
+<section name="problem">
+  <template>
+    ## The Problem
+
+    ### [PROBLEM_TITLE]
+
+    [PROBLEM_DESCRIPTION]. [QUANTIFIABLE_IMPACT].
+
+    **Our Solution:** [SOLUTION_DESCRIPTION]
+  </template>
+  <constraints>
+    - problems: 2-4
+    - description: 1-3 sentences
+    - impact: include metrics
+    - solution: 1 sentence
+  </constraints>
+</section>
+
+<section name="differentiators">
+  <template>
+    ## Differentiators
+
+    ### [DIFFERENTIATOR_TITLE]
+
+    Unlike [COMPETITOR_OR_ALTERNATIVE], we provide [SPECIFIC_ADVANTAGE]. This results in [MEASURABLE_BENEFIT].
+  </template>
+  <constraints>
+    - count: 2-3
+    - focus: competitive advantages
+    - evidence: required
+  </constraints>
+</section>
+
+<section name="features">
+  <template>
+    ## Key Features
+
+    ### Core Features
+
+    - **[FEATURE_NAME]:** [USER_BENEFIT_DESCRIPTION]
+
+    ### Collaboration Features
+
+    - **[FEATURE_NAME]:** [USER_BENEFIT_DESCRIPTION]
+  </template>
+  <constraints>
+    - total: 8-10 features
+    - grouping: by category
+    - description: user-benefit focused
+  </constraints>
+</section>
+
+</step>
+```
+
+--------------------------------
+
+TITLE: Create Product Documentation
+DESCRIPTION: Specifies the creation of product documentation files within a designated directory. It lists the files to be created and their content placeholders.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/claude-code/agents/file-creator.md#_snippet_3
+
+LANGUAGE: shell
+CODE:
+```
+Create product documentation:
+Directory: .agent-os/product/
+Files:
+- mission.md (content: [provided])
+- mission-lite.md (content: [provided])
+- tech-stack.md (content: [provided])
+- roadmap.md (content: [provided])
+- decisions.md (content: [provided])
+```
+
+--------------------------------
+
+TITLE: Agent OS Spec Creation: Step 1 - Initiation
+DESCRIPTION: Details the first step in the spec creation process: Spec Initiation. It outlines two trigger options (user asking 'what's next?' or providing a specific spec idea) and the corresponding actions and flows.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/create-spec.md#_snippet_2
+
+LANGUAGE: APIDOC
+CODE:
+```
+<step number="1" name="spec_initiation">
+
+### Step 1: Spec Initiation
+
+<step_metadata>
+  <trigger_options>
+    - option_a: user_asks_whats_next
+    - option_b: user_provides_specific_spec
+  </trigger_options>
+</step_metadata>
+
+<option_a_flow>
+  <trigger_phrases>
+    - "what's next?"
+    - "what should we work on next?"
+  </trigger_phrases>
+  <actions>
+    1. CHECK @.agent-os/product/roadmap.md
+    2. FIND next uncompleted item
+    3. SUGGEST item to user
+    4. WAIT for approval
+  </actions>
+</option_a_flow>
+
+<option_b_flow>
+  <trigger>user describes specific spec idea</trigger>
+  <accept>any format, length, or detail level</accept>
+  <proceed>to context gathering</proceed>
+</option_b_flow>
+
+<instructions>
+  ACTION: Identify spec initiation method
+  ROUTE: Follow appropriate flow based on trigger
+  WAIT: Ensure user agreement before proceeding
+</instructions>
+
+</step>
+```
+
+--------------------------------
+
+TITLE: Create roadmap.md
+DESCRIPTION: This snippet describes the process for creating the roadmap.md file. It includes the file template, guidelines for phase structure (number of phases, features per phase), a template for each phase, and a defined effort scale for feature estimation.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/core/plan-product.md#_snippet_6
+
+LANGUAGE: APIDOC
+CODE:
+```
+APIDOC:
+  create_roadmap_md():
+    description: "Creates the .agent-os/product/roadmap.md file."
+    subagent: "file-creator"
+    file_path: ".agent-os/product/roadmap.md"
+    template:
+      header: "# Product Roadmap"
+    phase_structure:
+      phase_count: "1-3"
+      features_per_phase: "3-7"
+      phase_template:
+        title: "## Phase [NUMBER]: [NAME]"
+        goal: "**Goal:** [PHASE_GOAL]"
+        success_criteria: "**Success Criteria:** [MEASURABLE_CRITERIA]"
+        features_header: "### Features"
+        feature_item: "- [ ] [FEATURE] - [DESCRIPTION] `[EFFORT]`"
+        dependencies_header: "### Dependencies"
+        dependency_item: "- [DEPENDENCY]"
+    phase_guidelines:
+      - "Phase 1: Core MVP functionality"
+      - "Phase 2: Key differentiators"
+      - "Phase 3: Scale and polish"
+      - "Phase 4: Advanced features"
+      - "Phase 5: Enterprise features"
+    effort_scale:
+      - "XS: 1 day"
+      - "S: 2-3 days"
+      - "M: 1 week"
+      - "L: 2 weeks"
+      - "XL: 3+ weeks"
+```
+
+--------------------------------
+
+TITLE: User Review Process
+DESCRIPTION: Details the process for requesting and managing user reviews for project specifications. It specifies which files to include in the review and outlines the steps for revision based on feedback.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/create-spec.md#_snippet_15
+
+LANGUAGE: markdown
+CODE:
+```
+### Step 11: User Review
+
+<step_metadata>
+  <action>request user review</action>
+  <reviews>
+    - spec.md
+    - all sub-specs files
+  </reviews>
+</step_metadata>
+
+<review_request>
+  I've created the spec documentation:
+
+  - Spec Requirements: @.agent-os/specs/YYYY-MM-DD-spec-name/spec.md
+  - Technical Spec: @.agent-os/specs/YYYY-MM-DD-spec-name/sub-specs/technical-spec.md
+  [LIST_OTHER_CREATED_SPECS]
+
+  Please review and let me know if any changes are needed before I create the task breakdown.
+</review_request>
+
+<instructions>
+  ACTION: Request user review of all documents
+  WAIT: For approval or revision requests
+  REVISE: Make requested changes if any
+</instructions>
+
+```
+
+--------------------------------
+
+TITLE: Agent OS Configuration Globals
+DESCRIPTION: Defines global configuration settings for Agent OS, including versioning, encoding, and application rules.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/plan-product.md#_snippet_0
+
+LANGUAGE: yaml
+CODE:
+```
+description: Product Planning Rules for Agent OS
+globs:
+  alwaysApply: false
+  version: 4.0
+  encoding: UTF-8
+```
+
+--------------------------------
+
+TITLE: Agent OS Project Configuration
+DESCRIPTION: YAML frontmatter defining project-level configuration for Agent OS, including a description, glob patterns, version, and encoding settings.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/create-spec.md#_snippet_6
+
+LANGUAGE: YAML
+CODE:
+```
+description: Spec Creation Rules for Agent OS
+globs:
+alwaysApply: false
+version: 1.1
+encoding: UTF-8
+```
+
+--------------------------------
+
+TITLE: Test Specification Metadata and Instructions
+DESCRIPTION: Provides metadata for creating the test specification file, including the file it creates and the general instructions for the action. It specifies the need for comprehensive test coverage and mock requirements.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/create-spec.md#_snippet_14
+
+LANGUAGE: text
+CODE:
+```
+<step_metadata>
+  <creates>
+    - file: sub-specs/tests.md
+  </creates>
+</step_metadata>
+
+<instructions>
+  ACTION: Create comprehensive test specification
+  ENSURE: All new functionality has test coverage
+  SPECIFY: Mock requirements for external services
+</instructions>
+
+```
+
+--------------------------------
+
+TITLE: Agent OS Dependency Management
+DESCRIPTION: Guidelines for selecting and integrating third-party libraries. Emphasizes choosing popular, well-maintained libraries and verifying their quality through repository checks.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/standards/best-practices.md#_snippet_1
+
+LANGUAGE: APIDOC
+CODE:
+```
+Dependencies:
+  Choose Libraries Wisely:
+    When adding third-party dependencies:
+    - Select the most popular and actively maintained option
+    - Check the library's GitHub repository for:
+      - Recent commits (within last 6 months)
+      - Active issue resolution
+      - Number of stars/downloads
+      - Clear documentation
+```
+
+--------------------------------
+
+TITLE: Agent OS Execution Instructions
+DESCRIPTION: Outlines the specific actions to be performed during Agent OS project execution, such as checking for file existence and merging content.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/plan-product.md#_snippet_13
+
+LANGUAGE: APIDOC
+CODE:
+```
+instructions:
+  ACTION: Check if CLAUDE.md exists in project root
+  MERGE: Replace "Agent OS Documentation" section if it exists
+  APPEND: Add section to end if file exists but section doesn't
+  CREATE: Create new file with template content if file doesn't exist
+  PRESERVE: Keep all other existing content in the file
+```
+
+--------------------------------
+
+TITLE: Execution Readiness Check and Task Initiation
+DESCRIPTION: Details the process for checking readiness to begin implementation, summarizing the first task, and requesting user confirmation to proceed. It emphasizes focusing only on the first task and its subtasks unless otherwise specified.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/create-spec.md#_snippet_19
+
+LANGUAGE: APIDOC
+CODE:
+```
+EXECUTION_READINESS_CHECK:
+  ACTION: Summarize first task and request user confirmation
+  REFERENCE: Use execute-tasks.md for implementation
+  SCOPE: Limit to Task 1 only unless user specifies otherwise
+
+EXECUTION_PROMPT:
+  PROMPT: "The spec planning is complete. The first task is:
+
+  **Task 1:** [FIRST_TASK_TITLE]
+  [BRIEF_DESCRIPTION_OF_TASK_1_AND_SUBTASKS]
+
+  Would you like me to proceed with implementing Task 1? I will follow the execution guidelines in @~/.agent-os/instructions/execute-tasks.md and focus only on this first task and its subtasks unless you specify otherwise.
+
+  Type 'yes' to proceed with Task 1, or let me know if you'd like to review or modify the plan first."
+
+EXECUTION_FLOW:
+  IF user_confirms_yes:
+    REFERENCE: @~/.agent-os/instructions/execute-tasks.md
+    FOCUS: Only Task 1 and its subtasks
+    CONSTRAINT: Do not proceed to additional tasks without explicit user request
+  ELSE:
+    WAIT: For user clarification or modifications
+```
+
+--------------------------------
+
+TITLE: tech-stack.md File Template and Requirements
+DESCRIPTION: Outlines the structure and required technical stack items for the tech-stack.md file. It includes a header, a list of required technical items with their expected formats, a data resolution strategy for finding missing items, and a template for requesting user input.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/plan-product.md#_snippet_7
+
+LANGUAGE: APIDOC
+CODE:
+```
+tech-stack.md File Structure:
+  <file_template>
+    <header>
+      # Technical Stack
+
+      > Last Updated: [CURRENT_DATE]
+      > Version: 1.0.0
+    </header>
+  </file_template>
+
+Required Items:
+  - application_framework: string + version
+  - database_system: string
+  - javascript_framework: string
+  - import_strategy: ["importmaps", "node"]
+  - css_framework: string + version
+  - ui_component_library: string
+  - fonts_provider: string
+  - icon_library: string
+  - application_hosting: string
+  - database_hosting: string
+  - asset_hosting: string
+  - deployment_solution: string
+  - code_repository_url: string
+
+Data Resolution Strategy:
+  <data_resolution>
+    <for_each item="required_items">
+      <if_not_in>user_input</if_not_in>
+      <then_check>
+        1. @~/.agent-os/standards/tech-stack.md
+        2. @~/.claude/CLAUDE.md
+        3. Cursor User Rules
+      </then_check>
+      <else>add_to_missing_list</else>
+    </for_each>
+  </data_resolution>
+
+Missing Items Template:
+  Please provide the following technical stack details:
+  [NUMBERED_LIST_OF_MISSING_ITEMS]
+
+  You can respond with the technology choice or "n/a" for each item.
+
+Instructions:
+  ACTION: Document all tech stack choices
+  RESOLUTION: Check user input first, then config files
+  REQUEST: Ask for any missing items using template
+```
+
+--------------------------------
+
+TITLE: Agent OS Main Documentation Structure (CLAUDE.md)
+DESCRIPTION: Defines the structure and content for the main project documentation file (CLAUDE.md). It links to other documentation files and provides workflow instructions for developers.
+
+SOURCE: https://github.com/buildermethods/agent-os/blob/main/instructions/plan-product.md#_snippet_10
+
+LANGUAGE: markdown
+CODE:
+```
+## Agent OS Documentation
+
+### Product Context
+- **Mission & Vision:** @.agent-os/product/mission.md
+- **Technical Architecture:** @.agent-os/product/tech-stack.md
+- **Development Roadmap:** @.agent-os/product/roadmap.md
+- **Decision History:** @.agent-os/product/decisions.md
+
+### Development Standards
+- **Code Style:** @~/.agent-os/standards/code-style.md
+- **Best Practices:** @~/.agent-os/standards/best-practices.md
+
+### Project Management
+- **Active Specs:** @.agent-os/specs/
+- **Spec Planning:** Use `@~/.agent-os/instructions/create-spec.md`
+- **Tasks Execution:** Use `@~/.agent-os/instructions/execute-tasks.md`
+
+## Workflow Instructions
+
+When asked to work on this codebase:
+
+1.  **First**, check @.agent-os/product/roadmap.md for current priorities
+2.  **Then**, follow the appropriate instruction file:
+    -   For new features: @.agent-os/instructions/create-spec.md
+    -   For tasks execution: @.agent-os/instructions/execute-tasks.md
+3.  **Always**, adhere to the standards in the files listed above
+```

@@ -1,0 +1,87 @@
+# Agent OS Configuration - Nuxt Development Agent
+# Baseado na arquitetura Agent OS com integração Nuxt UI v4
+
+version: "1.0.0"
+project_type: "nuxt-4x-ui-v4"
+agent_specialization: "nuxt-development"
+
+# Configurações específicas do projeto
+project:
+  name: "Agent Nuxt"
+  framework: "nuxt"
+  version: "4.x"
+  ui_library: "nuxt-ui-v4"
+  
+# Configurações de contexto inteligente
+context:
+  max_tokens: 8000
+  optimization_level: "aggressive"
+  conditional_loading: true
+  nuxt_ui_integration: true
+  accessibility_focus: true
+  
+# Camadas de contexto Agent OS (Hybrid Structure)
+layers:
+  standards:
+    enabled: true
+    global_path: "~/.agent-os/standards/"
+    local_path: "./.agent-os/standards/"
+    priority: "high"
+    strategy: "hybrid"
+    
+  product:
+    enabled: true
+    path: "./.agent-os/product/"
+    priority: "medium"
+    
+  specs:
+    enabled: true
+    path: "./.agent-os/specs/"
+    priority: "high"
+
+# Agentes especializados
+agents:
+  nuxt_4x:
+    enabled: true
+    specialization: "nuxt-4x-core"
+    
+  ui_v4:
+    enabled: true
+    specialization: "nuxt-ui-v4"
+    
+  accessibility:
+    enabled: true
+    specialization: "wcag-2.1-aa"
+    
+  performance:
+    enabled: true
+    specialization: "optimization"
+
+# Integrações MCP
+mcp:
+  servers:
+    - name: "nuxt-ui-v4"
+      enabled: true
+      priority: "high"
+    - name: "nuxt-4x-core"
+      enabled: true
+      priority: "high"
+    - name: "accessibility"
+      enabled: true
+      priority: "medium"
+
+# Sistema de fallback
+fallback:
+  enabled: true
+  strategies:
+    - "mcp-fallback"
+    - "docs-fallback"
+    - "ui-v4-fallback"
+    - "community-fallback"
+
+# Métricas e monitoramento
+monitoring:
+  performance_tracking: true
+  accessibility_validation: true
+  code_quality_metrics: true
+  token_optimization: true
